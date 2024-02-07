@@ -1,19 +1,19 @@
 [gd_scene load_steps=8 format=3 uid="uid://chov0xyeuwhtw"]
 
-[ext_resource type="Texture2D" uid="uid://dmvol3h2afdbl" path="res://art/playerGrey_up1.png" id="1_fjqbi"]
-[ext_resource type="Script" path="res://player.gd" id="1_m148h"]
-[ext_resource type="Texture2D" uid="uid://c4syo2hntpktd" path="res://art/playerGrey_up2.png" id="2_vlttq"]
-[ext_resource type="Texture2D" uid="uid://cbgi0wvax5t38" path="res://art/playerGrey_walk1.png" id="3_6n2kj"]
-[ext_resource type="Texture2D" uid="uid://de3df61gusbs0" path="res://art/playerGrey_walk2.png" id="4_0biom"]
+[ext_resource type="Script" path="res://player.gd" id="1_6kjxs"]
+[ext_resource type="Texture2D" uid="uid://dmvol3h2afdbl" path="res://art/playerGrey_up1.png" id="2_434fj"]
+[ext_resource type="Texture2D" uid="uid://c4syo2hntpktd" path="res://art/playerGrey_up2.png" id="3_kn7a0"]
+[ext_resource type="Texture2D" uid="uid://cbgi0wvax5t38" path="res://art/playerGrey_walk1.png" id="4_ur1xj"]
+[ext_resource type="Texture2D" uid="uid://de3df61gusbs0" path="res://art/playerGrey_walk2.png" id="5_3t7ts"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gjr1r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_fjqbi")
+"texture": ExtResource("2_434fj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_vlttq")
+"texture": ExtResource("3_kn7a0")
 }],
 "loop": true,
 "name": &"up",
@@ -21,10 +21,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_6n2kj")
+"texture": ExtResource("4_ur1xj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_0biom")
+"texture": ExtResource("5_3t7ts")
 }],
 "loop": true,
 "name": &"walk",
@@ -36,7 +36,7 @@ radius = 28.0
 height = 70.0
 
 [node name="Player" type="Area2D"]
-script = ExtResource("1_m148h")
+script = ExtResource("1_6kjxs")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -46,3 +46,5 @@ animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_g5mqq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
