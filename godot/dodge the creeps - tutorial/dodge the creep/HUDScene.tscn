@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlqtb1wnvg3sl"]
+[gd_scene load_steps=6 format=3 uid="uid://dlqtb1wnvg3sl"]
 
 [ext_resource type="FontFile" uid="uid://cfidy6tlqybqp" path="res://fonts/Xolonium-Regular.ttf" id="1_1rmxl"]
 [ext_resource type="Script" path="res://hud.gd" id="1_vgrb5"]
+[ext_resource type="Texture2D" uid="uid://cmdl86x8wy0c7" path="res://art/triangle_arrowhead_100x100 semi-opaque.png" id="3_n7kmp"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_8t7g3"]
 action = &"start_game"
@@ -60,6 +61,40 @@ shortcut = SubResource("Shortcut_ob4ff")
 text = "Start"
 
 [node name="MessageTimer" type="Timer" parent="."]
+
+[node name="move_left TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(117, 505)
+scale = Vector2(-0.74, 0.49)
+texture_normal = ExtResource("3_n7kmp")
+passby_press = true
+action = "move_left"
+visibility_mode = 1
+
+[node name="move_right TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(167, 505)
+scale = Vector2(0.74, 0.498)
+texture_normal = ExtResource("3_n7kmp")
+passby_press = true
+action = "move_right"
+visibility_mode = 1
+
+[node name="move_up TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(117, 505)
+rotation = -1.5708
+scale = Vector2(0.74, 0.498)
+texture_normal = ExtResource("3_n7kmp")
+passby_press = true
+action = "move_up"
+visibility_mode = 1
+
+[node name="move_down TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(167, 554)
+rotation = 1.5708
+scale = Vector2(0.74, 0.498)
+texture_normal = ExtResource("3_n7kmp")
+passby_press = true
+action = "move_down"
+visibility_mode = 1
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

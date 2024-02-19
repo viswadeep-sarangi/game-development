@@ -4,9 +4,8 @@ extends Node
 var score
 
 ## Called when the node enters the scene tree for the first time.
-#func _ready():
-	#new_game()
-#
+func _ready():
+	print('game started')
 
 
 func game_over():
