@@ -1,0 +1,20 @@
+# Godot-specific files
+.import/
+.godot/
+.godot/mono/
+.mono/
+export_presets.cfg
+.tmp/
+/android/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Godot script metadata
+*.tscn.converted
+*.scn.converted
+
+# Compiled files
+*.pck
