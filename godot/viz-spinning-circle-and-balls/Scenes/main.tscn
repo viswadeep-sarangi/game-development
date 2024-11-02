@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://xrbhkdvd8cpp"]
+[gd_scene load_steps=8 format=3 uid="uid://xrbhkdvd8cpp"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a5l1e"]
 [ext_resource type="PackedScene" uid="uid://bq6108tywfw7e" path="res://Scenes/coin.tscn" id="1_th3jx"]
 [ext_resource type="PackedScene" uid="uid://bulkiwxq670e8" path="res://Scenes/coin_emitter.tscn" id="2_h42re"]
 [ext_resource type="Texture2D" uid="uid://4a4wgcvob5tq" path="res://Assets/BG.png" id="2_miy48"]
 [ext_resource type="PackedScene" uid="uid://b8p5pp4ro124c" path="res://Scenes/static_obstacle.tscn" id="2_uccyq"]
+[ext_resource type="AudioStream" uid="uid://bdpk4bpb3ns0y" path="res://Assets/Audio/drone-high-tension-and-suspense-background-162365.mp3" id="6_4vrbp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xssgc"]
 font_size = 32
@@ -38,3 +39,10 @@ offset_right = 491.0
 offset_bottom = -281.0
 text = "FPS:"
 label_settings = SubResource("LabelSettings_xssgc")
+
+[node name="BGAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4vrbp")
+volume_db = -6.303
+pitch_scale = 0.97
+autoplay = true
+parameters/looping = true

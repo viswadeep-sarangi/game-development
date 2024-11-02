@@ -40,7 +40,6 @@ texture = ExtResource("2_q8dd8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RectanbleStaticBody2D"]
 position = Vector2(0, 1)
 rotation = 0.785398
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bjyn3")
 debug_color = Color(0.716323, 2.23327e-05, 0.520642, 0.42)
 
