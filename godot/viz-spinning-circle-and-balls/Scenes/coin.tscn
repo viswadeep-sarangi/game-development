@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq6108tywfw7e"]
+
+[ext_resource type="Texture2D" uid="uid://qgti526arudt" path="res://Assets/shiny/3.png" id="1_cf2cy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_65ldv"]
+radius = 16.0
+
+[node name="CoinRigidBody2D" type="RigidBody2D"]
+scale = Vector2(1, 0.976)
+
+[node name="coin" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(0.13, 0.127)
+texture = ExtResource("1_cf2cy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_65ldv")
+debug_color = Color(0.866203, 0.000567943, 0.859965, 0.42)

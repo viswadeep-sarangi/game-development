@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8p5pp4ro124c"]
+
+[ext_resource type="Texture2D" uid="uid://b2d551bjomvvr" path="res://Assets/shiny/1.png" id="1_5dpru"]
+[ext_resource type="Script" path="res://Scripts/static_obstacle.gd" id="1_gmg2p"]
+[ext_resource type="Texture2D" uid="uid://drn8h7x2p1yvk" path="res://Assets/shiny/2.png" id="2_q8dd8"]
+[ext_resource type="Texture2D" uid="uid://82w02461453t" path="res://Assets/shiny/11.png" id="3_14skv"]
+[ext_resource type="Texture2D" uid="uid://b6cdl1624xi76" path="res://Assets/ring notch.png" id="5_1v8us"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjyn3"]
+size = Vector2(468.766, 56.5686)
+
+[node name="ObstaclesStaticBody2D" type="Node2D"]
+script = ExtResource("1_gmg2p")
+
+[node name="TriangleStaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(945, 275)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TriangleStaticBody2D"]
+position = Vector2(2.99998, -0.999985)
+scale = Vector2(0.68697, 0.68697)
+polygon = PackedVector2Array(-135, 110, -2, -123, 134, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="TriangleStaticBody2D"]
+position = Vector2(1, -1)
+scale = Vector2(0.716667, 0.716667)
+texture = ExtResource("1_5dpru")
+
+[node name="RectanbleStaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(456, 174)
+scale = Vector2(0.68, 0.68)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RectanbleStaticBody2D"]
+position = Vector2(6.10352e-05, 2.00006)
+rotation = 0.785398
+scale = Vector2(1.94893, 0.247174)
+texture = ExtResource("2_q8dd8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RectanbleStaticBody2D"]
+position = Vector2(0, 1)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_bjyn3")
+debug_color = Color(0.716323, 2.23327e-05, 0.520642, 0.42)
+
+[node name="StarStaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(700, 500)
+scale = Vector2(0.72, 0.72)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StarStaticBody2D"]
+position = Vector2(-0.00012207, -1)
+scale = Vector2(1.07917, 1.01738)
+texture = ExtResource("3_14skv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StarStaticBody2D"]
+polygon = PackedVector2Array(-87, 115, -68, 27, -138, -36, -44, -48, 0, -129, 41, -49, 134, -36, 69, 27, 85, 114, -1, 76)
+
+[node name="WallStaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WallStaticBody2D"]
+polygon = PackedVector2Array(-131, -4, -127, 774, 1288, 768, 1301, 1, 1153, -1, 1153, 649, -2, 649, 0, -4)
+
+[node name="CircleStaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(210, 417)
+scale = Vector2(0.799999, 0.799999)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CircleStaticBody2D"]
+texture = ExtResource("5_1v8us")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CircleStaticBody2D"]
+polygon = PackedVector2Array(-91.2501, -187.5, -23.75, -85.0001, 15, -92.5001, 57.5, -81.2501, 77.5, -58.7501, 95.0001, -36.2501, 102.5, -11.25, 100, 18.75, 90.0001, 46.25, 70, 70, 38.75, 86.2501, -3.75003, 92.5001, -38.75, 80.0001, -70.0001, 53.75, -81.2501, 30, -81.2501, 13.75, -200, 13.75, -192.5, 57.5, -173.75, 103.75, -140, 150, -82.5001, 188.75, -25, 208.75, 31.25, 211.25, 91.2501, 192.5, 136.25, 167.5, 181.25, 125, 208.75, 70, 218.75, 11.25, 211.25, -60.0001, 186.25, -118.75, 138.75, -170, 76.25, -202.5, 18.75, -212.5, -35, -207.5, -71.2501, -196.25)

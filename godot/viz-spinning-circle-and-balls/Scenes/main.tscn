@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://xrbhkdvd8cpp"]
+[gd_scene load_steps=7 format=3 uid="uid://xrbhkdvd8cpp"]
 
-[node name="Main" type="Node2D"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_a5l1e"]
+[ext_resource type="PackedScene" uid="uid://bq6108tywfw7e" path="res://Scenes/coin.tscn" id="1_th3jx"]
+[ext_resource type="PackedScene" uid="uid://bulkiwxq670e8" path="res://Scenes/coin_emitter.tscn" id="2_h42re"]
+[ext_resource type="Texture2D" uid="uid://4a4wgcvob5tq" path="res://Assets/BG.png" id="2_miy48"]
+[ext_resource type="PackedScene" uid="uid://b8p5pp4ro124c" path="res://Scenes/static_obstacle.tscn" id="2_uccyq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xssgc"]
+font_size = 32
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_a5l1e")
+
+[node name="BGSprite2D" type="Sprite2D" parent="."]
+position = Vector2(11, -4)
+scale = Vector2(0.980451, 0.958995)
+texture = ExtResource("2_miy48")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ObstaclesStaticBody2D" parent="." instance=ExtResource("2_uccyq")]
+position = Vector2(-572, -326)
+
+[node name="CoinEmitterNode2D" parent="." instance=ExtResource("2_h42re")]
+position = Vector2(0, -273)
+
+[node name="CoinRigidBody2D" parent="." instance=ExtResource("1_th3jx")]
+position = Vector2(53, -176)
+
+[node name="FPS Label" type="Label" parent="."]
+offset_left = 451.0
+offset_top = -304.0
+offset_right = 491.0
+offset_bottom = -281.0
+text = "FPS:"
+label_settings = SubResource("LabelSettings_xssgc")
