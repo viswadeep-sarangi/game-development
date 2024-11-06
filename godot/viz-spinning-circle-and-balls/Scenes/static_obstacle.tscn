@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8p5pp4ro124c"]
+[gd_scene load_steps=8 format=3 uid="uid://b8p5pp4ro124c"]
 
 [ext_resource type="Texture2D" uid="uid://b2d551bjomvvr" path="res://Assets/shiny/1.png" id="1_5dpru"]
 [ext_resource type="Script" path="res://Scripts/static_obstacle.gd" id="1_gmg2p"]
 [ext_resource type="Texture2D" uid="uid://drn8h7x2p1yvk" path="res://Assets/shiny/2.png" id="2_q8dd8"]
 [ext_resource type="Texture2D" uid="uid://82w02461453t" path="res://Assets/shiny/11.png" id="3_14skv"]
 [ext_resource type="Texture2D" uid="uid://b6cdl1624xi76" path="res://Assets/ring notch.png" id="5_1v8us"]
+[ext_resource type="Texture2D" uid="uid://bse3xenhlvylr" path="res://Assets/BG - Black.png" id="6_bduga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjyn3"]
 size = Vector2(468.766, 56.5686)
@@ -71,3 +72,19 @@ texture = ExtResource("5_1v8us")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CircleStaticBody2D"]
 polygon = PackedVector2Array(-91.2501, -187.5, -23.75, -85.0001, 15, -92.5001, 57.5, -81.2501, 77.5, -58.7501, 95.0001, -36.2501, 102.5, -11.25, 100, 18.75, 90.0001, 46.25, 70, 70, 38.75, 86.2501, -3.75003, 92.5001, -38.75, 80.0001, -70.0001, 53.75, -81.2501, 30, -81.2501, 13.75, -200, 13.75, -192.5, 57.5, -173.75, 103.75, -140, 150, -82.5001, 188.75, -25, 208.75, 31.25, 211.25, 91.2501, 192.5, 136.25, 167.5, 181.25, 125, 208.75, 70, 218.75, 11.25, 211.25, -60.0001, 186.25, -118.75, 138.75, -170, 76.25, -202.5, 18.75, -212.5, -35, -207.5, -71.2501, -196.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-65, 350)
+scale = Vector2(0.0974013, 0.915344)
+texture = ExtResource("6_bduga")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1224, 363.25)
+scale = Vector2(0.0974013, 0.957011)
+texture = ExtResource("6_bduga")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(579.663, 709)
+rotation = 1.57079
+scale = Vector2(0.085, 1.87569)
+texture = ExtResource("6_bduga")

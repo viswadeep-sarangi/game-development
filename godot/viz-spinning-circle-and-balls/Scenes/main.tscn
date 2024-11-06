@@ -8,20 +8,22 @@
 [ext_resource type="AudioStream" uid="uid://bdpk4bpb3ns0y" path="res://Assets/Audio/drone-high-tension-and-suspense-background-162365.mp3" id="6_4vrbp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xssgc"]
-font_size = 32
+font_size = 50
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.388235)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_a5l1e")
 
 [node name="BGSprite2D" type="Sprite2D" parent="."]
 position = Vector2(11, -4)
-scale = Vector2(0.980451, 0.958995)
+scale = Vector2(1.55298, 1.51899)
 texture = ExtResource("2_miy48")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.57, 0.57)
 
 [node name="ObstaclesStaticBody2D" parent="." instance=ExtResource("2_uccyq")]
 position = Vector2(-572, -326)
@@ -33,10 +35,10 @@ position = Vector2(0, -273)
 position = Vector2(53, -176)
 
 [node name="FPS Label" type="Label" parent="."]
-offset_left = 451.0
-offset_top = -304.0
-offset_right = 491.0
-offset_bottom = -281.0
+offset_left = -97.0
+offset_top = 348.0
+offset_right = 35.0
+offset_bottom = 440.0
 text = "FPS:"
 label_settings = SubResource("LabelSettings_xssgc")
 
