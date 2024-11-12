@@ -13,7 +13,17 @@ config_version=5
 config/name="viz-spinning-circle-and-balls"
 run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.278431, 0.54902, 0.74902, 1)
 config/icon="res://Assets/icon.svg"
+
+[editor]
+
+movie_writer/mjpeg_quality=0.9
+movie_writer/movie_file="C:/Users/Deepun/Videos/godot-viz.avi"
+
+[physics]
+
+2d/physics_engine="Rapier2D"
 
 [rendering]
 
