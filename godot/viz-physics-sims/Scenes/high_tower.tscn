@@ -1,0 +1,1551 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqlvl4smjhwqy"]
+
+[ext_resource type="Script" path="res://Scripts/high_tower.gd" id="1_41onx"]
+[ext_resource type="Texture2D" uid="uid://b37cg320wqcvf" path="res://Assets/BG - Black.png" id="2_5dlej"]
+[ext_resource type="PackedScene" uid="uid://8hmxs31rklwo" path="res://Prefabs/hex_rigid_body_2d.tscn" id="2_5woll"]
+[ext_resource type="Texture2D" uid="uid://qgti526arudt" path="res://Assets/shiny/3.png" id="2_6hbqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwp6s"]
+size = Vector2(1448.5, 46)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sblut"]
+radius = 52.4976
+
+[node name="TowerBaseNode2D" type="Node2D"]
+script = ExtResource("1_41onx")
+FORWARD_IMPULSE = 5000
+
+[node name="TowerNode2D" type="Node2D" parent="."]
+position = Vector2(795, 386)
+
+[node name="HexRigidBody2D" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+
+[node name="@RigidBody2D@73533" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, 0)
+
+[node name="@RigidBody2D@73534" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, 0)
+
+[node name="@RigidBody2D@73535" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, 0)
+
+[node name="_RigidBody2D_73536" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, 0)
+
+[node name="@RigidBody2D@73537" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -70)
+
+[node name="@RigidBody2D@73538" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -70)
+
+[node name="@RigidBody2D@73539" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -70)
+
+[node name="@RigidBody2D@73540" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -70)
+
+[node name="@RigidBody2D@73541" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -70)
+
+[node name="@RigidBody2D@73542" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -140)
+
+[node name="@RigidBody2D@73543" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -140)
+
+[node name="@RigidBody2D@73544" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -140)
+
+[node name="@RigidBody2D@73545" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -140)
+
+[node name="@RigidBody2D@73546" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -140)
+
+[node name="@RigidBody2D@73547" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -210)
+
+[node name="@RigidBody2D@73548" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -210)
+
+[node name="@RigidBody2D@73549" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -210)
+
+[node name="@RigidBody2D@73550" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -210)
+
+[node name="@RigidBody2D@73551" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -210)
+
+[node name="@RigidBody2D@73552" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -280)
+
+[node name="@RigidBody2D@73553" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -280)
+
+[node name="@RigidBody2D@73554" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -280)
+
+[node name="@RigidBody2D@73555" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -280)
+
+[node name="@RigidBody2D@73556" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -280)
+
+[node name="@RigidBody2D@73557" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -350)
+
+[node name="@RigidBody2D@73558" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -350)
+
+[node name="@RigidBody2D@73559" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -350)
+
+[node name="@RigidBody2D@73560" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -350)
+
+[node name="@RigidBody2D@73561" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -350)
+
+[node name="@RigidBody2D@73562" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -420)
+
+[node name="@RigidBody2D@73563" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -420)
+
+[node name="@RigidBody2D@73564" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -420)
+
+[node name="@RigidBody2D@73565" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -420)
+
+[node name="@RigidBody2D@73566" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -420)
+
+[node name="@RigidBody2D@73567" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -490)
+
+[node name="@RigidBody2D@73568" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -490)
+
+[node name="@RigidBody2D@73569" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -490)
+
+[node name="@RigidBody2D@73570" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -490)
+
+[node name="@RigidBody2D@73571" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -490)
+
+[node name="@RigidBody2D@73572" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -560)
+
+[node name="@RigidBody2D@73573" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -560)
+
+[node name="@RigidBody2D@73574" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -560)
+
+[node name="@RigidBody2D@73575" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -560)
+
+[node name="@RigidBody2D@73576" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -560)
+
+[node name="@RigidBody2D@73577" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -630)
+
+[node name="@RigidBody2D@73578" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -630)
+
+[node name="@RigidBody2D@73579" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -630)
+
+[node name="@RigidBody2D@73580" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -630)
+
+[node name="@RigidBody2D@73581" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -630)
+
+[node name="@RigidBody2D@73582" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -700)
+
+[node name="@RigidBody2D@73583" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -700)
+
+[node name="@RigidBody2D@73584" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -700)
+
+[node name="@RigidBody2D@73585" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -700)
+
+[node name="@RigidBody2D@73586" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -700)
+
+[node name="@RigidBody2D@73587" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -770)
+
+[node name="@RigidBody2D@73588" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -770)
+
+[node name="@RigidBody2D@73589" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -770)
+
+[node name="@RigidBody2D@73590" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -770)
+
+[node name="@RigidBody2D@73591" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -770)
+
+[node name="@RigidBody2D@73592" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -840)
+
+[node name="@RigidBody2D@73593" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -840)
+
+[node name="@RigidBody2D@73594" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -840)
+
+[node name="@RigidBody2D@73595" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -840)
+
+[node name="@RigidBody2D@73596" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -840)
+
+[node name="@RigidBody2D@73597" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -910)
+
+[node name="@RigidBody2D@73598" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -910)
+
+[node name="@RigidBody2D@73599" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -910)
+
+[node name="@RigidBody2D@73600" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -910)
+
+[node name="@RigidBody2D@73601" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -910)
+
+[node name="@RigidBody2D@73602" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -980)
+
+[node name="@RigidBody2D@73603" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -980)
+
+[node name="@RigidBody2D@73604" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -980)
+
+[node name="@RigidBody2D@73605" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -980)
+
+[node name="@RigidBody2D@73606" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -980)
+
+[node name="@RigidBody2D@73607" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1050)
+
+[node name="@RigidBody2D@73608" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1050)
+
+[node name="@RigidBody2D@73609" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1050)
+
+[node name="@RigidBody2D@73610" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1050)
+
+[node name="@RigidBody2D@73611" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1050)
+
+[node name="@RigidBody2D@73612" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1120)
+
+[node name="@RigidBody2D@73613" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1120)
+
+[node name="@RigidBody2D@73614" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1120)
+
+[node name="@RigidBody2D@73615" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1120)
+
+[node name="@RigidBody2D@73616" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1120)
+
+[node name="@RigidBody2D@73617" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1190)
+
+[node name="@RigidBody2D@73618" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1190)
+
+[node name="@RigidBody2D@73619" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1190)
+
+[node name="@RigidBody2D@73620" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1190)
+
+[node name="@RigidBody2D@73621" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1190)
+
+[node name="@RigidBody2D@73622" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1260)
+
+[node name="@RigidBody2D@73623" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1260)
+
+[node name="@RigidBody2D@73624" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1260)
+
+[node name="@RigidBody2D@73625" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1260)
+
+[node name="@RigidBody2D@73626" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1260)
+
+[node name="@RigidBody2D@73627" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1330)
+
+[node name="@RigidBody2D@73628" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1330)
+
+[node name="@RigidBody2D@73629" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1330)
+
+[node name="@RigidBody2D@73630" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1330)
+
+[node name="@RigidBody2D@73631" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1330)
+
+[node name="@RigidBody2D@73632" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1400)
+
+[node name="@RigidBody2D@73633" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1400)
+
+[node name="@RigidBody2D@73634" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1400)
+
+[node name="@RigidBody2D@73635" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1400)
+
+[node name="@RigidBody2D@73636" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1400)
+
+[node name="@RigidBody2D@73637" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1470)
+
+[node name="@RigidBody2D@73638" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1470)
+
+[node name="@RigidBody2D@73639" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1470)
+
+[node name="@RigidBody2D@73640" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1470)
+
+[node name="@RigidBody2D@73641" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1470)
+
+[node name="@RigidBody2D@73642" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1540)
+
+[node name="@RigidBody2D@73643" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1540)
+
+[node name="@RigidBody2D@73644" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1540)
+
+[node name="@RigidBody2D@73645" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1540)
+
+[node name="@RigidBody2D@73646" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1540)
+
+[node name="@RigidBody2D@73647" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1610)
+
+[node name="@RigidBody2D@73648" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1610)
+
+[node name="@RigidBody2D@73649" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1610)
+
+[node name="@RigidBody2D@73650" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1610)
+
+[node name="@RigidBody2D@73651" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1610)
+
+[node name="@RigidBody2D@73652" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1680)
+
+[node name="@RigidBody2D@73653" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1680)
+
+[node name="@RigidBody2D@73654" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1680)
+
+[node name="@RigidBody2D@73655" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1680)
+
+[node name="@RigidBody2D@73656" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1680)
+
+[node name="@RigidBody2D@73657" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1750)
+
+[node name="@RigidBody2D@73658" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1750)
+
+[node name="@RigidBody2D@73659" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1750)
+
+[node name="@RigidBody2D@73660" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1750)
+
+[node name="@RigidBody2D@73661" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1750)
+
+[node name="@RigidBody2D@73662" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1820)
+
+[node name="@RigidBody2D@73663" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1820)
+
+[node name="@RigidBody2D@73664" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1820)
+
+[node name="@RigidBody2D@73665" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1820)
+
+[node name="@RigidBody2D@73666" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1820)
+
+[node name="@RigidBody2D@73667" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1890)
+
+[node name="@RigidBody2D@73668" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1890)
+
+[node name="@RigidBody2D@73669" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1890)
+
+[node name="@RigidBody2D@73670" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1890)
+
+[node name="@RigidBody2D@73671" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1890)
+
+[node name="@RigidBody2D@73672" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -1960)
+
+[node name="@RigidBody2D@73673" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -1960)
+
+[node name="@RigidBody2D@73674" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -1960)
+
+[node name="@RigidBody2D@73675" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -1960)
+
+[node name="@RigidBody2D@73676" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -1960)
+
+[node name="@RigidBody2D@73677" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2030)
+
+[node name="@RigidBody2D@73678" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2030)
+
+[node name="@RigidBody2D@73679" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2030)
+
+[node name="@RigidBody2D@73680" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2030)
+
+[node name="@RigidBody2D@73681" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2030)
+
+[node name="@RigidBody2D@73682" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2100)
+
+[node name="@RigidBody2D@73683" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2100)
+
+[node name="@RigidBody2D@73684" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2100)
+
+[node name="@RigidBody2D@73685" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2100)
+
+[node name="@RigidBody2D@73686" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2100)
+
+[node name="@RigidBody2D@73687" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2170)
+
+[node name="@RigidBody2D@73688" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2170)
+
+[node name="@RigidBody2D@73689" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2170)
+
+[node name="@RigidBody2D@73690" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2170)
+
+[node name="@RigidBody2D@73691" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2170)
+
+[node name="@RigidBody2D@73692" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2240)
+
+[node name="@RigidBody2D@73693" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2240)
+
+[node name="@RigidBody2D@73694" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2240)
+
+[node name="@RigidBody2D@73695" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2240)
+
+[node name="@RigidBody2D@73696" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2240)
+
+[node name="@RigidBody2D@73697" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2310)
+
+[node name="@RigidBody2D@73698" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2310)
+
+[node name="@RigidBody2D@73699" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2310)
+
+[node name="@RigidBody2D@73700" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2310)
+
+[node name="@RigidBody2D@73701" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2310)
+
+[node name="@RigidBody2D@73702" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2380)
+
+[node name="@RigidBody2D@73703" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2380)
+
+[node name="@RigidBody2D@73704" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2380)
+
+[node name="@RigidBody2D@73705" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2380)
+
+[node name="@RigidBody2D@73706" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2380)
+
+[node name="@RigidBody2D@73707" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2450)
+
+[node name="@RigidBody2D@73708" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2450)
+
+[node name="@RigidBody2D@73709" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2450)
+
+[node name="@RigidBody2D@73710" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2450)
+
+[node name="@RigidBody2D@73711" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2450)
+
+[node name="@RigidBody2D@73712" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2520)
+
+[node name="@RigidBody2D@73713" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2520)
+
+[node name="@RigidBody2D@73714" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2520)
+
+[node name="@RigidBody2D@73715" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2520)
+
+[node name="@RigidBody2D@73716" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2520)
+
+[node name="@RigidBody2D@73717" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2590)
+
+[node name="@RigidBody2D@73718" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2590)
+
+[node name="@RigidBody2D@73719" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2590)
+
+[node name="@RigidBody2D@73720" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2590)
+
+[node name="@RigidBody2D@73721" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2590)
+
+[node name="@RigidBody2D@73722" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2660)
+
+[node name="@RigidBody2D@73723" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2660)
+
+[node name="@RigidBody2D@73724" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2660)
+
+[node name="@RigidBody2D@73725" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2660)
+
+[node name="@RigidBody2D@73726" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2660)
+
+[node name="@RigidBody2D@73727" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2730)
+
+[node name="@RigidBody2D@73728" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2730)
+
+[node name="@RigidBody2D@73729" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2730)
+
+[node name="@RigidBody2D@73730" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2730)
+
+[node name="@RigidBody2D@73731" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2730)
+
+[node name="@RigidBody2D@73732" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2800)
+
+[node name="@RigidBody2D@73733" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2800)
+
+[node name="@RigidBody2D@73734" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2800)
+
+[node name="@RigidBody2D@73735" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2800)
+
+[node name="@RigidBody2D@73736" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2800)
+
+[node name="@RigidBody2D@73737" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2870)
+
+[node name="@RigidBody2D@73738" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2870)
+
+[node name="@RigidBody2D@73739" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2870)
+
+[node name="@RigidBody2D@73740" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2870)
+
+[node name="@RigidBody2D@73741" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2870)
+
+[node name="@RigidBody2D@73742" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -2940)
+
+[node name="@RigidBody2D@73743" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -2940)
+
+[node name="@RigidBody2D@73744" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -2940)
+
+[node name="@RigidBody2D@73745" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -2940)
+
+[node name="@RigidBody2D@73746" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -2940)
+
+[node name="@RigidBody2D@73747" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3010)
+
+[node name="@RigidBody2D@73748" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3010)
+
+[node name="@RigidBody2D@73749" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3010)
+
+[node name="@RigidBody2D@73750" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3010)
+
+[node name="@RigidBody2D@73751" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3010)
+
+[node name="@RigidBody2D@73752" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3080)
+
+[node name="@RigidBody2D@73753" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3080)
+
+[node name="@RigidBody2D@73754" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3080)
+
+[node name="@RigidBody2D@73755" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3080)
+
+[node name="@RigidBody2D@73756" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3080)
+
+[node name="@RigidBody2D@73757" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3150)
+
+[node name="@RigidBody2D@73758" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3150)
+
+[node name="@RigidBody2D@73759" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3150)
+
+[node name="@RigidBody2D@73760" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3150)
+
+[node name="@RigidBody2D@73761" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3150)
+
+[node name="@RigidBody2D@73762" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3220)
+
+[node name="@RigidBody2D@73763" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3220)
+
+[node name="@RigidBody2D@73764" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3220)
+
+[node name="@RigidBody2D@73765" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3220)
+
+[node name="@RigidBody2D@73766" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3220)
+
+[node name="@RigidBody2D@73767" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3290)
+
+[node name="@RigidBody2D@73768" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3290)
+
+[node name="@RigidBody2D@73769" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3290)
+
+[node name="@RigidBody2D@73770" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3290)
+
+[node name="@RigidBody2D@73771" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3290)
+
+[node name="@RigidBody2D@73772" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3360)
+
+[node name="@RigidBody2D@73773" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3360)
+
+[node name="@RigidBody2D@73774" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3360)
+
+[node name="@RigidBody2D@73775" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3360)
+
+[node name="@RigidBody2D@73776" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3360)
+
+[node name="@RigidBody2D@73777" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3430)
+
+[node name="@RigidBody2D@73778" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3430)
+
+[node name="@RigidBody2D@73779" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3430)
+
+[node name="@RigidBody2D@73780" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3430)
+
+[node name="@RigidBody2D@73781" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3430)
+
+[node name="@RigidBody2D@73782" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3500)
+
+[node name="@RigidBody2D@73783" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3500)
+
+[node name="@RigidBody2D@73784" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3500)
+
+[node name="@RigidBody2D@73785" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3500)
+
+[node name="@RigidBody2D@73786" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3500)
+
+[node name="@RigidBody2D@73787" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3570)
+
+[node name="@RigidBody2D@73788" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3570)
+
+[node name="@RigidBody2D@73789" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3570)
+
+[node name="@RigidBody2D@73790" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3570)
+
+[node name="@RigidBody2D@73791" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3570)
+
+[node name="@RigidBody2D@73792" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3640)
+
+[node name="@RigidBody2D@73793" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3640)
+
+[node name="@RigidBody2D@73794" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3640)
+
+[node name="@RigidBody2D@73795" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3640)
+
+[node name="@RigidBody2D@73796" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3640)
+
+[node name="@RigidBody2D@73797" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3710)
+
+[node name="@RigidBody2D@73798" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3710)
+
+[node name="@RigidBody2D@73799" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3710)
+
+[node name="@RigidBody2D@73800" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3710)
+
+[node name="@RigidBody2D@73801" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3710)
+
+[node name="@RigidBody2D@73802" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3780)
+
+[node name="@RigidBody2D@73803" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3780)
+
+[node name="@RigidBody2D@73804" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3780)
+
+[node name="@RigidBody2D@73805" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3780)
+
+[node name="@RigidBody2D@73806" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3780)
+
+[node name="@RigidBody2D@73807" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3850)
+
+[node name="@RigidBody2D@73808" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3850)
+
+[node name="@RigidBody2D@73809" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3850)
+
+[node name="@RigidBody2D@73810" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3850)
+
+[node name="@RigidBody2D@73811" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3850)
+
+[node name="@RigidBody2D@73812" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3920)
+
+[node name="@RigidBody2D@73813" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3920)
+
+[node name="@RigidBody2D@73814" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3920)
+
+[node name="@RigidBody2D@73815" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3920)
+
+[node name="@RigidBody2D@73816" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3920)
+
+[node name="@RigidBody2D@73817" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -3990)
+
+[node name="@RigidBody2D@73818" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -3990)
+
+[node name="@RigidBody2D@73819" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -3990)
+
+[node name="@RigidBody2D@73820" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -3990)
+
+[node name="@RigidBody2D@73821" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -3990)
+
+[node name="@RigidBody2D@73822" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4060)
+
+[node name="@RigidBody2D@73823" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4060)
+
+[node name="@RigidBody2D@73824" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4060)
+
+[node name="@RigidBody2D@73825" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4060)
+
+[node name="@RigidBody2D@73826" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4060)
+
+[node name="@RigidBody2D@73827" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4130)
+
+[node name="@RigidBody2D@73828" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4130)
+
+[node name="@RigidBody2D@73829" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4130)
+
+[node name="@RigidBody2D@73830" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4130)
+
+[node name="@RigidBody2D@73831" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4130)
+
+[node name="@RigidBody2D@73832" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4200)
+
+[node name="@RigidBody2D@73833" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4200)
+
+[node name="@RigidBody2D@73834" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4200)
+
+[node name="@RigidBody2D@73835" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4200)
+
+[node name="@RigidBody2D@73836" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4200)
+
+[node name="@RigidBody2D@73837" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4270)
+
+[node name="@RigidBody2D@73838" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4270)
+
+[node name="@RigidBody2D@73839" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4270)
+
+[node name="@RigidBody2D@73840" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4270)
+
+[node name="@RigidBody2D@73841" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4270)
+
+[node name="@RigidBody2D@73842" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4340)
+
+[node name="@RigidBody2D@73843" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4340)
+
+[node name="@RigidBody2D@73844" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4340)
+
+[node name="@RigidBody2D@73845" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4340)
+
+[node name="@RigidBody2D@73846" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4340)
+
+[node name="@RigidBody2D@73847" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4410)
+
+[node name="@RigidBody2D@73848" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4410)
+
+[node name="@RigidBody2D@73849" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4410)
+
+[node name="@RigidBody2D@73850" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4410)
+
+[node name="@RigidBody2D@73851" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4410)
+
+[node name="@RigidBody2D@73852" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4480)
+
+[node name="@RigidBody2D@73853" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4480)
+
+[node name="@RigidBody2D@73854" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4480)
+
+[node name="@RigidBody2D@73855" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4480)
+
+[node name="@RigidBody2D@73856" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4480)
+
+[node name="@RigidBody2D@73857" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4550)
+
+[node name="@RigidBody2D@73858" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4550)
+
+[node name="@RigidBody2D@73859" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4550)
+
+[node name="@RigidBody2D@73860" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4550)
+
+[node name="@RigidBody2D@73861" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4550)
+
+[node name="@RigidBody2D@73862" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4620)
+
+[node name="@RigidBody2D@73863" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4620)
+
+[node name="@RigidBody2D@73864" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4620)
+
+[node name="@RigidBody2D@73865" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4620)
+
+[node name="@RigidBody2D@73866" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4620)
+
+[node name="@RigidBody2D@73867" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4690)
+
+[node name="@RigidBody2D@73868" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4690)
+
+[node name="@RigidBody2D@73869" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4690)
+
+[node name="@RigidBody2D@73870" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4690)
+
+[node name="@RigidBody2D@73871" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4690)
+
+[node name="@RigidBody2D@73872" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4760)
+
+[node name="@RigidBody2D@73873" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4760)
+
+[node name="@RigidBody2D@73874" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4760)
+
+[node name="@RigidBody2D@73875" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4760)
+
+[node name="@RigidBody2D@73876" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4760)
+
+[node name="@RigidBody2D@73877" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4830)
+
+[node name="@RigidBody2D@73878" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4830)
+
+[node name="@RigidBody2D@73879" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4830)
+
+[node name="@RigidBody2D@73880" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4830)
+
+[node name="@RigidBody2D@73881" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4830)
+
+[node name="@RigidBody2D@73882" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4900)
+
+[node name="@RigidBody2D@73883" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4900)
+
+[node name="@RigidBody2D@73884" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4900)
+
+[node name="@RigidBody2D@73885" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4900)
+
+[node name="@RigidBody2D@73886" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4900)
+
+[node name="@RigidBody2D@73887" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -4970)
+
+[node name="@RigidBody2D@73888" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -4970)
+
+[node name="@RigidBody2D@73889" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -4970)
+
+[node name="@RigidBody2D@73890" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -4970)
+
+[node name="@RigidBody2D@73891" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -4970)
+
+[node name="@RigidBody2D@73892" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5040)
+
+[node name="@RigidBody2D@73893" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5040)
+
+[node name="@RigidBody2D@73894" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5040)
+
+[node name="@RigidBody2D@73895" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5040)
+
+[node name="@RigidBody2D@73896" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5040)
+
+[node name="@RigidBody2D@73897" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5110)
+
+[node name="@RigidBody2D@73898" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5110)
+
+[node name="@RigidBody2D@73899" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5110)
+
+[node name="@RigidBody2D@73900" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5110)
+
+[node name="@RigidBody2D@73901" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5110)
+
+[node name="@RigidBody2D@73902" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5180)
+
+[node name="@RigidBody2D@73903" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5180)
+
+[node name="@RigidBody2D@73904" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5180)
+
+[node name="@RigidBody2D@73905" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5180)
+
+[node name="@RigidBody2D@73906" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5180)
+
+[node name="@RigidBody2D@73907" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5250)
+
+[node name="@RigidBody2D@73908" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5250)
+
+[node name="@RigidBody2D@73909" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5250)
+
+[node name="@RigidBody2D@73910" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5250)
+
+[node name="@RigidBody2D@73911" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5250)
+
+[node name="@RigidBody2D@73912" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5320)
+
+[node name="@RigidBody2D@73913" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5320)
+
+[node name="@RigidBody2D@73914" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5320)
+
+[node name="@RigidBody2D@73915" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5320)
+
+[node name="@RigidBody2D@73916" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5320)
+
+[node name="@RigidBody2D@73917" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5390)
+
+[node name="@RigidBody2D@73918" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5390)
+
+[node name="@RigidBody2D@73919" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5390)
+
+[node name="@RigidBody2D@73920" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5390)
+
+[node name="@RigidBody2D@73921" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5390)
+
+[node name="@RigidBody2D@73922" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5460)
+
+[node name="@RigidBody2D@73923" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5460)
+
+[node name="@RigidBody2D@73924" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5460)
+
+[node name="@RigidBody2D@73925" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5460)
+
+[node name="@RigidBody2D@73926" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5460)
+
+[node name="@RigidBody2D@73927" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5530)
+
+[node name="@RigidBody2D@73928" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5530)
+
+[node name="@RigidBody2D@73929" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5530)
+
+[node name="@RigidBody2D@73930" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5530)
+
+[node name="@RigidBody2D@73931" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5530)
+
+[node name="@RigidBody2D@73932" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5600)
+
+[node name="@RigidBody2D@73933" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5600)
+
+[node name="@RigidBody2D@73934" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5600)
+
+[node name="@RigidBody2D@73935" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5600)
+
+[node name="@RigidBody2D@73936" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5600)
+
+[node name="@RigidBody2D@73937" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5670)
+
+[node name="@RigidBody2D@73938" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5670)
+
+[node name="@RigidBody2D@73939" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5670)
+
+[node name="@RigidBody2D@73940" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5670)
+
+[node name="@RigidBody2D@73941" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5670)
+
+[node name="@RigidBody2D@73942" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5740)
+
+[node name="@RigidBody2D@73943" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5740)
+
+[node name="@RigidBody2D@73944" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5740)
+
+[node name="@RigidBody2D@73945" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5740)
+
+[node name="@RigidBody2D@73946" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5740)
+
+[node name="@RigidBody2D@73947" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5810)
+
+[node name="@RigidBody2D@73948" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5810)
+
+[node name="@RigidBody2D@73949" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5810)
+
+[node name="@RigidBody2D@73950" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5810)
+
+[node name="@RigidBody2D@73951" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5810)
+
+[node name="@RigidBody2D@73952" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5880)
+
+[node name="@RigidBody2D@73953" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5880)
+
+[node name="@RigidBody2D@73954" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5880)
+
+[node name="@RigidBody2D@73955" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5880)
+
+[node name="@RigidBody2D@73956" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5880)
+
+[node name="@RigidBody2D@73957" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -5950)
+
+[node name="@RigidBody2D@73958" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -5950)
+
+[node name="@RigidBody2D@73959" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -5950)
+
+[node name="@RigidBody2D@73960" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -5950)
+
+[node name="@RigidBody2D@73961" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -5950)
+
+[node name="@RigidBody2D@73962" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6020)
+
+[node name="@RigidBody2D@73963" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6020)
+
+[node name="@RigidBody2D@73964" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6020)
+
+[node name="@RigidBody2D@73965" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6020)
+
+[node name="@RigidBody2D@73966" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6020)
+
+[node name="@RigidBody2D@73967" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6090)
+
+[node name="@RigidBody2D@73968" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6090)
+
+[node name="@RigidBody2D@73969" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6090)
+
+[node name="@RigidBody2D@73970" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6090)
+
+[node name="@RigidBody2D@73971" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6090)
+
+[node name="@RigidBody2D@73972" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6160)
+
+[node name="@RigidBody2D@73973" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6160)
+
+[node name="@RigidBody2D@73974" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6160)
+
+[node name="@RigidBody2D@73975" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6160)
+
+[node name="@RigidBody2D@73976" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6160)
+
+[node name="@RigidBody2D@73977" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6230)
+
+[node name="@RigidBody2D@73978" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6230)
+
+[node name="@RigidBody2D@73979" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6230)
+
+[node name="@RigidBody2D@73980" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6230)
+
+[node name="@RigidBody2D@73981" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6230)
+
+[node name="@RigidBody2D@73982" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6300)
+
+[node name="@RigidBody2D@73983" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6300)
+
+[node name="@RigidBody2D@73984" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6300)
+
+[node name="@RigidBody2D@73985" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6300)
+
+[node name="@RigidBody2D@73986" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6300)
+
+[node name="@RigidBody2D@73987" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6370)
+
+[node name="@RigidBody2D@73988" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6370)
+
+[node name="@RigidBody2D@73989" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6370)
+
+[node name="@RigidBody2D@73990" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6370)
+
+[node name="@RigidBody2D@73991" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6370)
+
+[node name="@RigidBody2D@73992" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6440)
+
+[node name="@RigidBody2D@73993" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6440)
+
+[node name="@RigidBody2D@73994" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6440)
+
+[node name="@RigidBody2D@73995" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6440)
+
+[node name="@RigidBody2D@73996" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6440)
+
+[node name="@RigidBody2D@73997" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6510)
+
+[node name="@RigidBody2D@73998" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6510)
+
+[node name="@RigidBody2D@73999" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6510)
+
+[node name="@RigidBody2D@74000" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6510)
+
+[node name="@RigidBody2D@74001" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6510)
+
+[node name="@RigidBody2D@74002" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6580)
+
+[node name="@RigidBody2D@74003" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6580)
+
+[node name="@RigidBody2D@74004" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6580)
+
+[node name="@RigidBody2D@74005" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6580)
+
+[node name="@RigidBody2D@74006" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6580)
+
+[node name="@RigidBody2D@74007" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6650)
+
+[node name="@RigidBody2D@74008" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6650)
+
+[node name="@RigidBody2D@74009" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6650)
+
+[node name="@RigidBody2D@74010" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6650)
+
+[node name="@RigidBody2D@74011" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6650)
+
+[node name="@RigidBody2D@74012" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6720)
+
+[node name="@RigidBody2D@74013" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6720)
+
+[node name="@RigidBody2D@74014" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6720)
+
+[node name="@RigidBody2D@74015" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6720)
+
+[node name="@RigidBody2D@74016" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6720)
+
+[node name="@RigidBody2D@74017" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6790)
+
+[node name="@RigidBody2D@74018" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6790)
+
+[node name="@RigidBody2D@74019" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6790)
+
+[node name="@RigidBody2D@74020" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6790)
+
+[node name="@RigidBody2D@74021" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6790)
+
+[node name="@RigidBody2D@74022" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6860)
+
+[node name="@RigidBody2D@74023" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6860)
+
+[node name="@RigidBody2D@74024" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6860)
+
+[node name="@RigidBody2D@74025" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6860)
+
+[node name="@RigidBody2D@74026" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6860)
+
+[node name="@RigidBody2D@74027" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(0, -6930)
+
+[node name="@RigidBody2D@74028" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(70, -6930)
+
+[node name="@RigidBody2D@74029" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(140, -6930)
+
+[node name="@RigidBody2D@74030" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(210, -6930)
+
+[node name="@RigidBody2D@74031" parent="TowerNode2D" instance=ExtResource("2_5woll")]
+position = Vector2(280, -6930)
+
+[node name="TowerNode2D9" type="Node2D" parent="."]
+position = Vector2(795, 386)
+
+[node name="TowerNode2D10" type="Node2D" parent="."]
+position = Vector2(795, 386)
+
+[node name="TowerNode2D11" type="Node2D" parent="."]
+position = Vector2(795, 386)
+
+[node name="GroundRigidBody2D" type="StaticBody2D" parent="."]
+position = Vector2(604, 626)
+scale = Vector2(5.16, 1)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="GroundRigidBody2D"]
+scale = Vector2(1.08872, 0.0608466)
+texture = ExtResource("2_5dlej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundRigidBody2D"]
+shape = SubResource("RectangleShape2D_pwp6s")
+
+[node name="ProjectileRigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(59, 454)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ProjectileRigidBody2D"]
+scale = Vector2(0.454167, 0.454167)
+texture = ExtResource("2_6hbqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileRigidBody2D"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_sblut")

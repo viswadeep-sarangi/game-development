@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhp28ecnemajw"]
+
+[ext_resource type="Texture2D" uid="uid://drn8h7x2p1yvk" path="res://Assets/shiny/2.png" id="1_hi4eq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2hbu"]
+size = Vector2(62, 63)
+
+[node name="BlockNode2D" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2625, 0.2625)
+texture = ExtResource("1_hi4eq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_g2hbu")
