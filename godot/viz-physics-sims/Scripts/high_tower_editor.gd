@@ -3,12 +3,13 @@ extends EditorScript
 
 # Path to the scene you want to replicate
 #const BLOCK_PATH := "res://Prefabs/circle_rigid_body_2d.tscn"
-const BLOCK_PATH := "res://Prefabs/hex_rigid_body_2d.tscn"
+#const BLOCK_PATH := "res://Prefabs/hex_rigid_body_2d.tscn"
+const BLOCK_PATH := "res://Prefabs/block_node_2d.tscn"
 const TOWER_PATH := "TowerNode2D"
 const SPACING := 10
 
 # Number of rows and columns in the grid
-const GRID_ROWS := 100
+const GRID_ROWS := 1000
 const GRID_COLS := 5
 
 #func _run():
@@ -24,8 +25,8 @@ func _run():
 	
 	var block_prefab = load(BLOCK_PATH)
 	var temp_block = block_prefab.instantiate()
-	var block_width = temp_block.get_node('Sprite2D').get_rect().size.x/8
-	var block_height = temp_block.get_node('Sprite2D').get_rect().size.x/8
+	var block_width = temp_block.get_node('Sprite2D').get_rect().size.x/16
+	var block_height = temp_block.get_node('Sprite2D').get_rect().size.x/16
 	temp_block.queue_free()
 	
 	for row in range(GRID_ROWS):

@@ -1,16 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhp28ecnemajw"]
+[gd_scene load_steps=5 format=3 uid="uid://dhp28ecnemajw"]
 
 [ext_resource type="Texture2D" uid="uid://drn8h7x2p1yvk" path="res://Assets/shiny/2.png" id="1_hi4eq"]
+[ext_resource type="Script" path="res://Prefabs/block_node_2d.gd" id="1_uj0xx"]
+[ext_resource type="AudioStream" uid="uid://drw1msxhovgek" path="res://Assets/Audio/glass-clinking-cropped.mp3" id="3_roxg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2hbu"]
-size = Vector2(62, 63)
+size = Vector2(30, 31.5)
 
 [node name="BlockNode2D" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_uj0xx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2625, 0.2625)
+scale = Vector2(0.129167, 0.129167)
 texture = ExtResource("1_hi4eq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.5)
+position = Vector2(0, -0.75)
 shape = SubResource("RectangleShape2D_g2hbu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_roxg2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
