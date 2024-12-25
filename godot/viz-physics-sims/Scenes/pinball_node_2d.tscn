@@ -50,11 +50,6 @@ shape = SubResource("RectangleShape2D_yn0qk")
 position = Vector2(333, 1255)
 shape = SubResource("RectangleShape2D_ef25e")
 
-[node name="RectWoodStaticBody2D" parent="." instance=ExtResource("2_e5gf4")]
-position = Vector2(141, 164)
-rotation = 0.436034
-scale = Vector2(0.656808, 0.201175)
-
 [node name="RectWoodStaticBody2D3" parent="." instance=ExtResource("2_e5gf4")]
 position = Vector2(352, 338)
 rotation = -0.429089
@@ -66,9 +61,9 @@ rotation = -0.261799
 scale = Vector2(0.492172, 0.355551)
 
 [node name="RectWoodStaticBody2D4" parent="." instance=ExtResource("2_e5gf4")]
-position = Vector2(136, 535)
+position = Vector2(176, 554)
 rotation = 0.489734
-scale = Vector2(0.492172, 0.355551)
+scale = Vector2(0.367463, 0.355551)
 
 [node name="OvalWoodStaticBody2D" parent="." instance=ExtResource("3_p000g")]
 position = Vector2(356, 738)
@@ -80,30 +75,192 @@ position = Vector2(538, 934)
 rotation = -0.529521
 scale = Vector2(0.599999, 0.480001)
 
-[node name="AmericanFutRigidBody2D" parent="." instance=ExtResource("4_3uleg")]
+[node name="OvalWoodStaticBody2D3" parent="." instance=ExtResource("3_p000g")]
+position = Vector2(203, 198)
+rotation = -0.397157
+scale = Vector2(0.805846, 0.480001)
+
+[node name="BallsNode2D" type="Node2D" parent="."]
+
+[node name="AmericanFutRigidBody2D" parent="BallsNode2D" instance=ExtResource("4_3uleg")]
 position = Vector2(66, 2)
 rotation = -0.76377
 
-[node name="BasketballRigidBody2D" parent="." instance=ExtResource("5_rre53")]
+[node name="BasketballRigidBody2D" parent="BallsNode2D" instance=ExtResource("5_rre53")]
 position = Vector2(212, -4)
 
-[node name="FootballRigidBody2D" parent="." instance=ExtResource("6_jxvtc")]
+[node name="FootballRigidBody2D" parent="BallsNode2D" instance=ExtResource("6_jxvtc")]
 position = Vector2(406, -9)
 
-[node name="VolleyRigidBody2D" parent="." instance=ExtResource("7_ubwxt")]
+[node name="VolleyRigidBody2D" parent="BallsNode2D" instance=ExtResource("7_ubwxt")]
 position = Vector2(605, -6)
 
-[node name="BaseballRigidBody2D" parent="." instance=ExtResource("9_ikihu")]
+[node name="BaseballRigidBody2D" parent="BallsNode2D" instance=ExtResource("9_ikihu")]
 position = Vector2(479, -6)
 
-[node name="CricketRigidBody2D" parent="." instance=ExtResource("9_6oitp")]
+[node name="CricketRigidBody2D" parent="BallsNode2D" instance=ExtResource("9_6oitp")]
 position = Vector2(544, -7)
 
-[node name="TennisRigidBody2D" parent="." instance=ExtResource("11_kecmk")]
+[node name="TennisRigidBody2D" parent="BallsNode2D" instance=ExtResource("11_kecmk")]
 position = Vector2(345, -7)
 
-[node name="BowlingRigidBody2D" parent="." instance=ExtResource("12_p8i4k")]
+[node name="BowlingRigidBody2D" parent="BallsNode2D" instance=ExtResource("12_p8i4k")]
 position = Vector2(139, -3)
 
-[node name="SnookerRigidBody2D" parent="." instance=ExtResource("13_brs0t")]
+[node name="SnookerRigidBody2D" parent="BallsNode2D" instance=ExtResource("13_brs0t")]
+position = Vector2(277, -5)
+
+[node name="BallsNode2D2" type="Node2D" parent="."]
+position = Vector2(35, -70)
+
+[node name="AmericanFutRigidBody2D" parent="BallsNode2D2" instance=ExtResource("4_3uleg")]
+position = Vector2(66, 2)
+rotation = -0.76377
+
+[node name="BasketballRigidBody2D" parent="BallsNode2D2" instance=ExtResource("5_rre53")]
+position = Vector2(212, -4)
+
+[node name="FootballRigidBody2D" parent="BallsNode2D2" instance=ExtResource("6_jxvtc")]
+position = Vector2(406, -9)
+
+[node name="VolleyRigidBody2D" parent="BallsNode2D2" instance=ExtResource("7_ubwxt")]
+position = Vector2(605, -6)
+
+[node name="BaseballRigidBody2D" parent="BallsNode2D2" instance=ExtResource("9_ikihu")]
+position = Vector2(479, -6)
+
+[node name="CricketRigidBody2D" parent="BallsNode2D2" instance=ExtResource("9_6oitp")]
+position = Vector2(544, -7)
+
+[node name="TennisRigidBody2D" parent="BallsNode2D2" instance=ExtResource("11_kecmk")]
+position = Vector2(345, -7)
+
+[node name="BowlingRigidBody2D" parent="BallsNode2D2" instance=ExtResource("12_p8i4k")]
+position = Vector2(139, -3)
+
+[node name="SnookerRigidBody2D" parent="BallsNode2D2" instance=ExtResource("13_brs0t")]
+position = Vector2(277, -5)
+
+[node name="BallsNode2D3" type="Node2D" parent="."]
+position = Vector2(-6, -137)
+
+[node name="AmericanFutRigidBody2D" parent="BallsNode2D3" instance=ExtResource("4_3uleg")]
+position = Vector2(66, 2)
+rotation = -0.76377
+
+[node name="BasketballRigidBody2D" parent="BallsNode2D3" instance=ExtResource("5_rre53")]
+position = Vector2(212, -4)
+
+[node name="FootballRigidBody2D" parent="BallsNode2D3" instance=ExtResource("6_jxvtc")]
+position = Vector2(406, -9)
+
+[node name="VolleyRigidBody2D" parent="BallsNode2D3" instance=ExtResource("7_ubwxt")]
+position = Vector2(605, -6)
+
+[node name="BaseballRigidBody2D" parent="BallsNode2D3" instance=ExtResource("9_ikihu")]
+position = Vector2(479, -6)
+
+[node name="CricketRigidBody2D" parent="BallsNode2D3" instance=ExtResource("9_6oitp")]
+position = Vector2(544, -7)
+
+[node name="TennisRigidBody2D" parent="BallsNode2D3" instance=ExtResource("11_kecmk")]
+position = Vector2(345, -7)
+
+[node name="BowlingRigidBody2D" parent="BallsNode2D3" instance=ExtResource("12_p8i4k")]
+position = Vector2(139, -3)
+
+[node name="SnookerRigidBody2D" parent="BallsNode2D3" instance=ExtResource("13_brs0t")]
+position = Vector2(277, -5)
+
+[node name="BallsNode2D4" type="Node2D" parent="."]
+position = Vector2(32, -207)
+
+[node name="AmericanFutRigidBody2D" parent="BallsNode2D4" instance=ExtResource("4_3uleg")]
+position = Vector2(66, 2)
+rotation = -0.76377
+
+[node name="BasketballRigidBody2D" parent="BallsNode2D4" instance=ExtResource("5_rre53")]
+position = Vector2(212, -4)
+
+[node name="FootballRigidBody2D" parent="BallsNode2D4" instance=ExtResource("6_jxvtc")]
+position = Vector2(406, -9)
+
+[node name="VolleyRigidBody2D" parent="BallsNode2D4" instance=ExtResource("7_ubwxt")]
+position = Vector2(605, -6)
+
+[node name="BaseballRigidBody2D" parent="BallsNode2D4" instance=ExtResource("9_ikihu")]
+position = Vector2(479, -6)
+
+[node name="CricketRigidBody2D" parent="BallsNode2D4" instance=ExtResource("9_6oitp")]
+position = Vector2(544, -7)
+
+[node name="TennisRigidBody2D" parent="BallsNode2D4" instance=ExtResource("11_kecmk")]
+position = Vector2(345, -7)
+
+[node name="BowlingRigidBody2D" parent="BallsNode2D4" instance=ExtResource("12_p8i4k")]
+position = Vector2(139, -3)
+
+[node name="SnookerRigidBody2D" parent="BallsNode2D4" instance=ExtResource("13_brs0t")]
+position = Vector2(277, -5)
+
+[node name="BallsNode2D5" type="Node2D" parent="."]
+position = Vector2(-15, -286)
+
+[node name="AmericanFutRigidBody2D" parent="BallsNode2D5" instance=ExtResource("4_3uleg")]
+position = Vector2(66, 2)
+rotation = -0.76377
+
+[node name="BasketballRigidBody2D" parent="BallsNode2D5" instance=ExtResource("5_rre53")]
+position = Vector2(212, -4)
+
+[node name="FootballRigidBody2D" parent="BallsNode2D5" instance=ExtResource("6_jxvtc")]
+position = Vector2(406, -9)
+
+[node name="VolleyRigidBody2D" parent="BallsNode2D5" instance=ExtResource("7_ubwxt")]
+position = Vector2(605, -6)
+
+[node name="BaseballRigidBody2D" parent="BallsNode2D5" instance=ExtResource("9_ikihu")]
+position = Vector2(479, -6)
+
+[node name="CricketRigidBody2D" parent="BallsNode2D5" instance=ExtResource("9_6oitp")]
+position = Vector2(544, -7)
+
+[node name="TennisRigidBody2D" parent="BallsNode2D5" instance=ExtResource("11_kecmk")]
+position = Vector2(345, -7)
+
+[node name="BowlingRigidBody2D" parent="BallsNode2D5" instance=ExtResource("12_p8i4k")]
+position = Vector2(139, -3)
+
+[node name="SnookerRigidBody2D" parent="BallsNode2D5" instance=ExtResource("13_brs0t")]
+position = Vector2(277, -5)
+
+[node name="BallsNode2D6" type="Node2D" parent="."]
+position = Vector2(23, -350)
+
+[node name="AmericanFutRigidBody2D" parent="BallsNode2D6" instance=ExtResource("4_3uleg")]
+position = Vector2(66, 2)
+rotation = -0.76377
+
+[node name="BasketballRigidBody2D" parent="BallsNode2D6" instance=ExtResource("5_rre53")]
+position = Vector2(212, -4)
+
+[node name="FootballRigidBody2D" parent="BallsNode2D6" instance=ExtResource("6_jxvtc")]
+position = Vector2(406, -9)
+
+[node name="VolleyRigidBody2D" parent="BallsNode2D6" instance=ExtResource("7_ubwxt")]
+position = Vector2(605, -6)
+
+[node name="BaseballRigidBody2D" parent="BallsNode2D6" instance=ExtResource("9_ikihu")]
+position = Vector2(479, -6)
+
+[node name="CricketRigidBody2D" parent="BallsNode2D6" instance=ExtResource("9_6oitp")]
+position = Vector2(544, -7)
+
+[node name="TennisRigidBody2D" parent="BallsNode2D6" instance=ExtResource("11_kecmk")]
+position = Vector2(345, -7)
+
+[node name="BowlingRigidBody2D" parent="BallsNode2D6" instance=ExtResource("12_p8i4k")]
+position = Vector2(139, -3)
+
+[node name="SnookerRigidBody2D" parent="BallsNode2D6" instance=ExtResource("13_brs0t")]
 position = Vector2(277, -5)
