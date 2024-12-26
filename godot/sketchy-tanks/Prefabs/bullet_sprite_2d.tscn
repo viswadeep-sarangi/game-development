@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdcixrhk06bsk"]
+
+[ext_resource type="Texture2D" uid="uid://cfmouxbd8ikf8" path="res://Assets/normal-bullet.png" id="1_yp6tn"]
+
+[node name="BulletSprite2D" type="Sprite2D"]
+texture = ExtResource("1_yp6tn")
