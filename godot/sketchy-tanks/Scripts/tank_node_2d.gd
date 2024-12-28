@@ -21,13 +21,12 @@ func fire_normal_bullet():
 		
 func check_firing_controls():
 	if Input.is_action_just_pressed('normal_fire'):
-		print("Normal Fire")
 		fire_normal_bullet()
 	elif Input.is_action_just_pressed('special_fire'):
 		print("Special Fire")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	check_firing_controls()
 
 func _physics_process(delta):
