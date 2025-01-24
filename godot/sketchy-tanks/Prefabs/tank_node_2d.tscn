@@ -38,8 +38,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_o8gcn"]
-radius = 98.1033
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_km8qw"]
+size = Vector2(218, 212)
 
 [node name="TankNode2D" type="CharacterBody2D"]
 collision_layer = 3
@@ -84,8 +84,8 @@ rotation = -1.5708
 texture = ExtResource("4_nobjc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16.5)
-shape = SubResource("CircleShape2D_o8gcn")
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_km8qw")
 
 [node name="_animation_helper" type="Node2D" parent="."]
 script = ExtResource("7_vy1mv")
