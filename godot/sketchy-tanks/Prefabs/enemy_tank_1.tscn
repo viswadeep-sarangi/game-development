@@ -1,24 +1,24 @@
-[gd_scene load_steps=14 format=3 uid="uid://cs5456k650dr5"]
+[gd_scene load_steps=14 format=3 uid="uid://b06waph2r4e81"]
 
-[ext_resource type="Texture2D" uid="uid://dj3spt4pqfcj5" path="res://Assets/tank-wheel-trackers-2.png" id="1_7eds5"]
-[ext_resource type="Script" path="res://Scripts/tank_node_2d.gd" id="1_cnph8"]
-[ext_resource type="PackedScene" uid="uid://bdcixrhk06bsk" path="res://Prefabs/bullet_sprite_2d.tscn" id="2_7a3vc"]
-[ext_resource type="Texture2D" uid="uid://ci1k0l5fe35do" path="res://Assets/player-tank-base.png" id="2_gl2yx"]
-[ext_resource type="Texture2D" uid="uid://6mjwyobb2t00" path="res://Assets/tank-rod.png" id="3_8ybvx"]
-[ext_resource type="Texture2D" uid="uid://btthiek8puqmm" path="res://Assets/tank-fire-front-thing.png" id="4_iweqe"]
-[ext_resource type="Texture2D" uid="uid://tbwoo6egfe14" path="res://Assets/tank-top-hatch.png" id="4_nobjc"]
-[ext_resource type="Script" path="res://Scripts/tank_node_2d_animation.gd" id="7_vy1mv"]
+[ext_resource type="Script" path="res://Scripts/enemy_tank_node_2d.gd" id="1_dcrqq"]
+[ext_resource type="PackedScene" uid="uid://bdcixrhk06bsk" path="res://Prefabs/bullet_sprite_2d.tscn" id="2_7mc77"]
+[ext_resource type="Texture2D" uid="uid://dj3spt4pqfcj5" path="res://Assets/tank-wheel-trackers-2.png" id="3_mt61v"]
+[ext_resource type="Texture2D" uid="uid://bl18ei2khku37" path="res://Assets/enemy-1-base.png" id="4_yg1dn"]
+[ext_resource type="Texture2D" uid="uid://6mjwyobb2t00" path="res://Assets/tank-rod.png" id="5_sk8eg"]
+[ext_resource type="Texture2D" uid="uid://btthiek8puqmm" path="res://Assets/tank-fire-front-thing.png" id="6_27nj3"]
+[ext_resource type="Texture2D" uid="uid://tbwoo6egfe14" path="res://Assets/tank-top-hatch.png" id="7_iyoxc"]
+[ext_resource type="Script" path="res://Scripts/tank_node_2d_animation.gd" id="8_5j2ik"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24bo1"]
-atlas = ExtResource("1_7eds5")
+atlas = ExtResource("3_mt61v")
 region = Rect2(18, 0, 77, 262)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rink1"]
-atlas = ExtResource("1_7eds5")
+atlas = ExtResource("3_mt61v")
 region = Rect2(147, 0, 77, 262)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0knk"]
-atlas = ExtResource("1_7eds5")
+atlas = ExtResource("3_mt61v")
 region = Rect2(274, 0, 85, 262)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nm2tl"]
@@ -41,12 +41,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km8qw"]
 size = Vector2(218, 212)
 
-[node name="TankNode2D" type="CharacterBody2D"]
+[node name="EnemyTankNode2D" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_cnph8")
-move_speed = 5.0
-bullet_scene = ExtResource("2_7a3vc")
+script = ExtResource("1_dcrqq")
+move_speed = 1.0
+bullet_scene = ExtResource("2_7mc77")
 
 [node name="track_left" type="AnimatedSprite2D" parent="."]
 position = Vector2(-70, -20)
@@ -63,7 +63,7 @@ frame = 1
 frame_progress = 0.33887
 
 [node name="tank_base" type="Sprite2D" parent="."]
-texture = ExtResource("2_gl2yx")
+texture = ExtResource("4_yg1dn")
 
 [node name="tank_moving_parts" type="Node2D" parent="."]
 
@@ -71,27 +71,32 @@ texture = ExtResource("2_gl2yx")
 position = Vector2(-2, 32)
 rotation = -1.5708
 scale = Vector2(0.75814, 1)
-texture = ExtResource("3_8ybvx")
+texture = ExtResource("5_sk8eg")
 offset = Vector2(100, 0)
 
 [node name="tank_firing_thing" type="Sprite2D" parent="tank_moving_parts/tank_rod"]
 position = Vector2(218.957, -0.999993)
-texture = ExtResource("4_iweqe")
+texture = ExtResource("6_27nj3")
 offset = Vector2(-50, 0)
 
 [node name="tank_hatch" type="Sprite2D" parent="tank_moving_parts"]
 rotation = -1.5708
-texture = ExtResource("4_nobjc")
+texture = ExtResource("7_iyoxc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -21)
 shape = SubResource("RectangleShape2D_km8qw")
 
 [node name="_animation_helper" type="Node2D" parent="."]
-script = ExtResource("7_vy1mv")
+script = ExtResource("8_5j2ik")
 
-[node name="Node2D" type="Node2D" parent="." groups=["player"]]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 64.0
+debug_enabled = true
 
 [node name="fire_cooldown_timer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 2.0
 one_shot = true

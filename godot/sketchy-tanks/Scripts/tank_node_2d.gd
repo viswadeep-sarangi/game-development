@@ -6,8 +6,10 @@ extends CharacterBody2D
 @export var bullet_scene: PackedScene
 @onready var fire_point = $tank_moving_parts/tank_rod/tank_firing_thing
 @onready var animation_helper = $_animation_helper
+@onready var fire_cooldown_timer: Timer = $fire_cooldown_timer
 var tank_velocity: Vector2 = Vector2.ZERO
 var is_turning_direction:int = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,10 +22,13 @@ func fire_normal_bullet():
 	get_tree().current_scene.add_child(bullet)
 		
 func check_firing_controls():
-	if Input.is_action_just_pressed('normal_fire'):
-		fire_normal_bullet()
-	elif Input.is_action_just_pressed('special_fire'):
-		print("Special Fire")
+	if fire_cooldown_timer.is_stopped():
+		if Input.is_action_just_pressed('normal_fire'):
+			fire_normal_bullet()
+			fire_cooldown_timer.start()
+		elif Input.is_action_just_pressed('special_fire'):
+			print("Special Fire")
+			fire_cooldown_timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

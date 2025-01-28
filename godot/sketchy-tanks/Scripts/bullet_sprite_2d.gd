@@ -10,3 +10,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if not get_viewport_rect().has_point(global_position):
 		queue_free()
+		
+func modulate_bullet_color(c:Color):
+	var sprite = $BulletSprite2D
+	sprite.modulate = c

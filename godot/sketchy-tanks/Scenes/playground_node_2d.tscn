@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlon2t5m0mk0h"]
+[gd_scene load_steps=9 format=3 uid="uid://dlon2t5m0mk0h"]
 
 [ext_resource type="Texture2D" uid="uid://bavuhni65277c" path="res://Assets/BG/BG.png" id="1_clqv1"]
 [ext_resource type="PackedScene" uid="uid://cs5456k650dr5" path="res://Prefabs/tank_node_2d.tscn" id="2_agjdt"]
 [ext_resource type="PackedScene" uid="uid://dmbk1lcrdsolv" path="res://Prefabs/brick.tscn" id="3_2pac8"]
 [ext_resource type="PackedScene" uid="uid://ds3vl6dfvvvik" path="res://Prefabs/water_anim.tscn" id="4_i2kwx"]
 [ext_resource type="PackedScene" uid="uid://b0f056buuawj8" path="res://Prefabs/grass.tscn" id="5_qdthv"]
+[ext_resource type="PackedScene" uid="uid://b06waph2r4e81" path="res://Prefabs/enemy_tank_1.tscn" id="6_q5ysy"]
+[ext_resource type="Script" path="res://Scripts/navigation_master.gd" id="7_5fonn"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_x01af"]
+vertices = PackedVector2Array(1288, 731.102, -8.25781, 733.891, -4.59375, 484, 415, 484, 415, 316, -2.13281, 316, 2.25781, 16.8203, 565, 14.7891, 565, 248.5, 1188, 12.5391, 1288, 12.1797, 1188, 248.5)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 0, 11), PackedInt32Array(8, 11, 0, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-47, -33, 1338, -38, 1338, 781, -59, 784)])
+agent_radius = 50.0
 
 [node name="PlaygroundNode2D" type="Node2D"]
 
@@ -14,131 +22,145 @@ scale = Vector2(1.02331, 1.04101)
 texture = ExtResource("1_clqv1")
 metadata/_edit_lock_ = true
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_x01af")
+
+[node name="Level" type="Node" parent="NavigationRegion2D"]
+
+[node name="Brick" type="Node2D" parent="NavigationRegion2D/Level"]
+
+[node name="brick" parent="NavigationRegion2D/Level/Brick" instance=ExtResource("3_2pac8")]
+position = Vector2(50, 400)
+
+[node name="brick2" parent="NavigationRegion2D/Level/Brick" instance=ExtResource("3_2pac8")]
+position = Vector2(120, 400)
+
+[node name="brick3" parent="NavigationRegion2D/Level/Brick" instance=ExtResource("3_2pac8")]
+position = Vector2(190, 400)
+
+[node name="brick4" parent="NavigationRegion2D/Level/Brick" instance=ExtResource("3_2pac8")]
+position = Vector2(260, 400)
+
+[node name="brick5" parent="NavigationRegion2D/Level/Brick" instance=ExtResource("3_2pac8")]
+position = Vector2(330, 400)
+
+[node name="Water" type="Node2D" parent="NavigationRegion2D/Level"]
+
+[node name="water_node" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(650, 110)
+
+[node name="water_node2" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(715, 110)
+
+[node name="water_node3" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(780, 110)
+
+[node name="water_node4" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(845, 110)
+
+[node name="water_node5" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(650, 75)
+
+[node name="water_node6" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(715, 75)
+
+[node name="water_node7" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(780, 75)
+
+[node name="water_node8" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(845, 75)
+
+[node name="water_node9" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(650, 180)
+
+[node name="water_node10" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(715, 180)
+
+[node name="water_node11" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(780, 180)
+
+[node name="water_node12" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(845, 180)
+
+[node name="water_node13" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(650, 145)
+
+[node name="water_node14" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(715, 145)
+
+[node name="water_node15" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(780, 145)
+
+[node name="water_node16" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(845, 145)
+
+[node name="water_node17" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(910, 110)
+
+[node name="water_node18" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(975, 110)
+
+[node name="water_node19" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(1040, 110)
+
+[node name="water_node20" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(1105, 110)
+
+[node name="water_node21" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(910, 75)
+
+[node name="water_node22" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(975, 75)
+
+[node name="water_node23" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(1040, 75)
+
+[node name="water_node24" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(1105, 75)
+
+[node name="water_node25" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(910, 180)
+
+[node name="water_node26" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(975, 180)
+
+[node name="water_node27" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(1040, 180)
+
+[node name="water_node28" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(1105, 180)
+
+[node name="water_node29" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(910, 145)
+
+[node name="water_node30" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(975, 145)
+
+[node name="water_node31" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(1040, 145)
+
+[node name="water_node32" parent="NavigationRegion2D/Level/Water" instance=ExtResource("4_i2kwx")]
+position = Vector2(1105, 145)
+
+[node name="Grass" type="Node2D" parent="NavigationRegion2D/Level"]
+
+[node name="grass" parent="NavigationRegion2D/Level/Grass" instance=ExtResource("5_qdthv")]
+position = Vector2(650, 250)
+
+[node name="grass2" parent="NavigationRegion2D/Level/Grass" instance=ExtResource("5_qdthv")]
+position = Vector2(715, 250)
+
 [node name="TankNode2D" parent="." instance=ExtResource("2_agjdt")]
 position = Vector2(288, 672)
 scale = Vector2(0.5, 0.5)
 
-[node name="Level" type="Node" parent="."]
+[node name="EnemyTankNode2D" parent="." instance=ExtResource("6_q5ysy")]
+position = Vector2(336, 121)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
 
-[node name="Brick" type="Node2D" parent="Level"]
-
-[node name="brick" parent="Level/Brick" instance=ExtResource("3_2pac8")]
-position = Vector2(50, 400)
-
-[node name="brick2" parent="Level/Brick" instance=ExtResource("3_2pac8")]
-position = Vector2(120, 400)
-
-[node name="brick3" parent="Level/Brick" instance=ExtResource("3_2pac8")]
-position = Vector2(190, 400)
-
-[node name="brick4" parent="Level/Brick" instance=ExtResource("3_2pac8")]
-position = Vector2(260, 400)
-
-[node name="brick5" parent="Level/Brick" instance=ExtResource("3_2pac8")]
-position = Vector2(330, 400)
-
-[node name="Water" type="Node2D" parent="Level"]
-
-[node name="water_node" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(650, 110)
-
-[node name="water_node2" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(715, 110)
-
-[node name="water_node3" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(780, 110)
-
-[node name="water_node4" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(845, 110)
-
-[node name="water_node5" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(650, 75)
-
-[node name="water_node6" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(715, 75)
-
-[node name="water_node7" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(780, 75)
-
-[node name="water_node8" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(845, 75)
-
-[node name="water_node9" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(650, 180)
-
-[node name="water_node10" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(715, 180)
-
-[node name="water_node11" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(780, 180)
-
-[node name="water_node12" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(845, 180)
-
-[node name="water_node13" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(650, 145)
-
-[node name="water_node14" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(715, 145)
-
-[node name="water_node15" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(780, 145)
-
-[node name="water_node16" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(845, 145)
-
-[node name="water_node17" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(910, 110)
-
-[node name="water_node18" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(975, 110)
-
-[node name="water_node19" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(1040, 110)
-
-[node name="water_node20" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(1105, 110)
-
-[node name="water_node21" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(910, 75)
-
-[node name="water_node22" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(975, 75)
-
-[node name="water_node23" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(1040, 75)
-
-[node name="water_node24" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(1105, 75)
-
-[node name="water_node25" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(910, 180)
-
-[node name="water_node26" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(975, 180)
-
-[node name="water_node27" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(1040, 180)
-
-[node name="water_node28" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(1105, 180)
-
-[node name="water_node29" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(910, 145)
-
-[node name="water_node30" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(975, 145)
-
-[node name="water_node31" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(1040, 145)
-
-[node name="water_node32" parent="Level/Water" instance=ExtResource("4_i2kwx")]
-position = Vector2(1105, 145)
-
-[node name="Grass" type="Node2D" parent="Level"]
-
-[node name="grass" parent="Level/Grass" instance=ExtResource("5_qdthv")]
-position = Vector2(650, 250)
-
-[node name="grass2" parent="Level/Grass" instance=ExtResource("5_qdthv")]
-position = Vector2(715, 250)
+[node name="NavigationMaster" type="Node2D" parent="."]
+position = Vector2(336, 121)
+rotation = -3.14159
+scale = Vector2(0.5, 0.5)
+script = ExtResource("7_5fonn")
