@@ -45,8 +45,9 @@ size = Vector2(218, 212)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_dcrqq")
-move_speed = 1.0
 bullet_scene = ExtResource("2_7mc77")
+move_speed = 1.0
+tank_color = Color(1, 0.755247, 0.638844, 1)
 
 [node name="track_left" type="AnimatedSprite2D" parent="."]
 position = Vector2(-70, -20)
@@ -95,8 +96,11 @@ script = ExtResource("8_5j2ik")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
 radius = 64.0
-debug_enabled = true
 
 [node name="fire_cooldown_timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
+
+[node name="direction_cooldown_timer" type="Timer" parent="."]
+wait_time = 0.25
 one_shot = true

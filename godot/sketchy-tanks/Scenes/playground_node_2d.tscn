@@ -164,3 +164,8 @@ position = Vector2(336, 121)
 rotation = -3.14159
 scale = Vector2(0.5, 0.5)
 script = ExtResource("7_5fonn")
+
+[node name="EnemyTankNode2D2" parent="." instance=ExtResource("6_q5ysy")]
+position = Vector2(1124, 325)
+rotation = 4.71239
+scale = Vector2(0.5, 0.5)

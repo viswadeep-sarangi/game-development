@@ -1,14 +1,17 @@
 extends CharacterBody2D
 
 # Tank movement speed (pixels per second)
-@export var move_speed: float = 2.0
 @export var bullet_scene: PackedScene
+@export var move_speed: float = 2.0
 @export var tank_color:Color =  Color(1,0.6,0.4)
+@export var tank_bullet_speed:int = 250
+@onready var direction_cooldown_timer:Timer = $direction_cooldown_timer
 @onready var fire_point = $tank_moving_parts/tank_rod/tank_firing_thing
 @onready var navigation_agent:NavigationAgent2D = $NavigationAgent2D
 @onready var animation_helper = $_animation_helper
 @onready var fire_cooldown_timer = $fire_cooldown_timer
 var tank_velocity: Vector2 = Vector2.ZERO
+var current_tank_move:String = ''
 var is_turning_direction:int = 0
 
 func modulate_canvas_item(color:Color =tank_color):
@@ -27,6 +30,7 @@ func fire_normal_bullet():
 	var bullet = bullet_scene.instantiate()
 	bullet.position = fire_point.global_position
 	bullet.rotation = fire_point.global_rotation
+	bullet.bullet_speed = tank_bullet_speed
 	bullet.modulate_bullet_color(tank_color)
 	get_tree().current_scene.add_child(bullet)
 		
@@ -40,12 +44,17 @@ func _process(_delta: float) -> void:
 	check_firing_controls()
 	
 func move_tank(direction: Vector2):
-	var s = null
+	var s:String = ''
 	if abs(direction.x) > abs(direction.y):
 		s = 'move_right' if direction.x>0 else 'move_left'
 	else:
 		s = 'move_down' if direction.y>0 else 'move_up'
-	
+		
+	if s!=current_tank_move:
+		if not direction_cooldown_timer.is_stopped():
+			s = current_tank_move
+		else:
+			direction_cooldown_timer.start()
 	if s=="move_left":
 		rotation_degrees = -90
 		velocity.x = -move_speed
@@ -58,6 +67,7 @@ func move_tank(direction: Vector2):
 	elif s=="move_down":
 		rotation_degrees = 180
 		velocity.y = move_speed
+	current_tank_move = s
 
 func _physics_process(delta):	
 	# Reset velocity
