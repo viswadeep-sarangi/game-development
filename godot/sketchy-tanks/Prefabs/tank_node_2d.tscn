@@ -39,11 +39,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km8qw"]
-size = Vector2(218, 212)
+size = Vector2(218, 203)
 
 [node name="TankNode2D" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
+safe_margin = 2.0
 script = ExtResource("1_cnph8")
 move_speed = 5.0
 bullet_scene = ExtResource("2_7a3vc")
@@ -75,7 +76,7 @@ texture = ExtResource("3_8ybvx")
 offset = Vector2(100, 0)
 
 [node name="tank_firing_thing" type="Sprite2D" parent="tank_moving_parts/tank_rod"]
-position = Vector2(218.957, -0.999993)
+position = Vector2(236.104, -0.999946)
 texture = ExtResource("4_iweqe")
 offset = Vector2(-50, 0)
 
@@ -84,7 +85,7 @@ rotation = -1.5708
 texture = ExtResource("4_nobjc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -21)
+position = Vector2(0, -16.5)
 shape = SubResource("RectangleShape2D_km8qw")
 
 [node name="_animation_helper" type="Node2D" parent="."]

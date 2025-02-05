@@ -67,6 +67,11 @@ special_fire={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="bullet affect"
+2d_physics/layer_2="water layer and mask"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

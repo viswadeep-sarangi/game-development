@@ -44,6 +44,7 @@ size = Vector2(218, 212)
 [node name="EnemyTankNode2D" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 3
 collision_mask = 3
+safe_margin = 2.0
 script = ExtResource("1_dcrqq")
 bullet_scene = ExtResource("2_7mc77")
 move_speed = 1.0
@@ -76,7 +77,7 @@ texture = ExtResource("5_sk8eg")
 offset = Vector2(100, 0)
 
 [node name="tank_firing_thing" type="Sprite2D" parent="tank_moving_parts/tank_rod"]
-position = Vector2(218.957, -0.999993)
+position = Vector2(244.018, -0.999924)
 texture = ExtResource("6_27nj3")
 offset = Vector2(-50, 0)
 
