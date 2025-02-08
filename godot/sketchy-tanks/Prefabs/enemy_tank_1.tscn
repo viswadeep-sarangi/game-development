@@ -1,13 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://b06waph2r4e81"]
+[gd_scene load_steps=15 format=3 uid="uid://b06waph2r4e81"]
 
-[ext_resource type="Script" path="res://Scripts/enemy_tank_node_2d.gd" id="1_dcrqq"]
+[ext_resource type="Script" path="res://Scripts/s_enemy_tank_1.gd" id="1_dcrqq"]
 [ext_resource type="PackedScene" uid="uid://bdcixrhk06bsk" path="res://Prefabs/bullet_sprite_2d.tscn" id="2_7mc77"]
+[ext_resource type="PackedScene" uid="uid://cibd5bvec3dkj" path="res://Prefabs/explosion_anim.tscn" id="3_l6qav"]
 [ext_resource type="Texture2D" uid="uid://dj3spt4pqfcj5" path="res://Assets/tank-wheel-trackers-2.png" id="3_mt61v"]
 [ext_resource type="Texture2D" uid="uid://bl18ei2khku37" path="res://Assets/enemy-1-base.png" id="4_yg1dn"]
 [ext_resource type="Texture2D" uid="uid://6mjwyobb2t00" path="res://Assets/tank-rod.png" id="5_sk8eg"]
 [ext_resource type="Texture2D" uid="uid://btthiek8puqmm" path="res://Assets/tank-fire-front-thing.png" id="6_27nj3"]
 [ext_resource type="Texture2D" uid="uid://tbwoo6egfe14" path="res://Assets/tank-top-hatch.png" id="7_iyoxc"]
-[ext_resource type="Script" path="res://Scripts/tank_node_2d_animation.gd" id="8_5j2ik"]
+[ext_resource type="Script" path="res://Scripts/s_tank_animation.gd" id="8_5j2ik"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24bo1"]
 atlas = ExtResource("3_mt61v")
@@ -41,12 +42,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km8qw"]
 size = Vector2(218, 212)
 
-[node name="EnemyTankNode2D" type="CharacterBody2D" groups=["enemies"]]
+[node name="EnemyTankNode2D" type="CharacterBody2D" groups=["destructible", "enemies"]]
 collision_layer = 3
 collision_mask = 3
 safe_margin = 2.0
 script = ExtResource("1_dcrqq")
 bullet_scene = ExtResource("2_7mc77")
+explosion_anim = ExtResource("3_l6qav")
 move_speed = 1.0
 tank_color = Color(1, 0.755247, 0.638844, 1)
 
@@ -97,6 +99,8 @@ script = ExtResource("8_5j2ik")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
 radius = 64.0
+debug_enabled = true
+debug_path_custom_color = Color(0.904815, 0.0196219, 0.522871, 1)
 
 [node name="fire_cooldown_timer" type="Timer" parent="."]
 wait_time = 2.0

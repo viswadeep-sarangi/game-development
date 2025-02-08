@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cl8fqeulix1n2"]
 
-[ext_resource type="Script" path="res://Scripts/implosion_anim.gd" id="1_1784e"]
+[ext_resource type="Script" path="res://Scripts/s_implosion_anim.gd" id="1_1784e"]
 [ext_resource type="Texture2D" uid="uid://cndli7ns4fesl" path="res://Assets/implosion-sheet.png" id="1_hxaqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ilqgs"]

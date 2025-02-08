@@ -34,7 +34,7 @@ func check_firing_controls():
 func _process(_delta: float) -> void:
 	check_firing_controls()
 
-func _physics_process(delta):	
+func _physics_process(_delta):	
 	# Reset velocity
 	velocity = Vector2.ZERO
 	is_turning_direction = 0

@@ -24,6 +24,8 @@ window/size/viewport_height=720
 enemies=""
 player=""
 bullets=""
+destructible="all descructible nodes, to be hit by bullet"
+diamond="the key diamond to save in the game"
 
 [input]
 

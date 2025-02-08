@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyvd72tkgdhy6"]
+
+[ext_resource type="Script" path="res://Scripts/s_diamond.gd" id="1_87my3"]
+[ext_resource type="Texture2D" uid="uid://dcxo16k33hkjn" path="res://Assets/diamond_sprite.png" id="1_cen34"]
+[ext_resource type="PackedScene" uid="uid://cibd5bvec3dkj" path="res://Prefabs/explosion_anim.tscn" id="2_1v2yd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deddn"]
+atlas = ExtResource("1_cen34")
+region = Rect2(14, 42, 202, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6847i"]
+atlas = ExtResource("1_cen34")
+region = Rect2(275, 42, 202, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fkc1"]
+atlas = ExtResource("1_cen34")
+region = Rect2(14, 42, 202, 143)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3efd8"]
+atlas = ExtResource("1_cen34")
+region = Rect2(555, 42, 202, 143)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_txias"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deddn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6847i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fkc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3efd8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3q0yx"]
+size = Vector2(220, 160)
+
+[node name="DiamondNode" type="StaticBody2D" groups=["destructible", "diamond"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_87my3")
+explosion_anim = ExtResource("2_1v2yd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.595522, 1, 0.9991, 1)
+sprite_frames = SubResource("SpriteFrames_txias")
+frame_progress = 0.520601
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3q0yx")

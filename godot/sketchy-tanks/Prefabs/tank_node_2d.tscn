@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://cs5456k650dr5"]
 
 [ext_resource type="Texture2D" uid="uid://dj3spt4pqfcj5" path="res://Assets/tank-wheel-trackers-2.png" id="1_7eds5"]
-[ext_resource type="Script" path="res://Scripts/tank_node_2d.gd" id="1_cnph8"]
+[ext_resource type="Script" path="res://Scripts/s_tank.gd" id="1_cnph8"]
 [ext_resource type="PackedScene" uid="uid://bdcixrhk06bsk" path="res://Prefabs/bullet_sprite_2d.tscn" id="2_7a3vc"]
 [ext_resource type="Texture2D" uid="uid://ci1k0l5fe35do" path="res://Assets/player-tank-base.png" id="2_gl2yx"]
 [ext_resource type="Texture2D" uid="uid://6mjwyobb2t00" path="res://Assets/tank-rod.png" id="3_8ybvx"]
 [ext_resource type="Texture2D" uid="uid://btthiek8puqmm" path="res://Assets/tank-fire-front-thing.png" id="4_iweqe"]
 [ext_resource type="Texture2D" uid="uid://tbwoo6egfe14" path="res://Assets/tank-top-hatch.png" id="4_nobjc"]
-[ext_resource type="Script" path="res://Scripts/tank_node_2d_animation.gd" id="7_vy1mv"]
+[ext_resource type="Script" path="res://Scripts/s_tank_animation.gd" id="7_vy1mv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24bo1"]
 atlas = ExtResource("1_7eds5")

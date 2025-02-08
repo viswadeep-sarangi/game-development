@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 # Tank movement speed (pixels per second)
 @export var bullet_scene: PackedScene
+@export var explosion_anim:PackedScene
 @export var move_speed: float = 2.0
 @export var tank_color:Color =  Color(1,0.6,0.4)
 @export var tank_bullet_speed:int = 250
+@export var health:int = 2
 @onready var direction_cooldown_timer:Timer = $direction_cooldown_timer
 @onready var fire_point = $tank_moving_parts/tank_rod/tank_firing_thing
 @onready var navigation_agent:NavigationAgent2D = $NavigationAgent2D
@@ -69,7 +71,7 @@ func move_tank(direction: Vector2):
 		velocity.y = move_speed
 	current_tank_move = s
 
-func _physics_process(delta):	
+func _physics_process(_delta):	
 	# Reset velocity
 	velocity = Vector2.ZERO
 	# Check if Nav target has been set
@@ -80,3 +82,12 @@ func _physics_process(delta):
 	# Apply movement
 	move_and_collide(velocity)
 	animation_helper.update_velocity(velocity, is_turning_direction)
+	
+func hit(hit_point:int):
+	health-=hit_point
+	if health<=0:
+		print(name+' has been hit and is now dead')
+		var boom:Node2D = explosion_anim.instantiate()
+		boom.global_position = global_position
+		get_parent().add_child(boom)
+		queue_free()

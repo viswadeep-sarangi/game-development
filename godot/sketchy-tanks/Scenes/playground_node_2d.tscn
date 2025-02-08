@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlon2t5m0mk0h"]
+[gd_scene load_steps=11 format=3 uid="uid://dlon2t5m0mk0h"]
 
 [ext_resource type="Texture2D" uid="uid://bavuhni65277c" path="res://Assets/BG/BG.png" id="1_clqv1"]
 [ext_resource type="PackedScene" uid="uid://cs5456k650dr5" path="res://Prefabs/tank_node_2d.tscn" id="2_agjdt"]
@@ -6,11 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://ds3vl6dfvvvik" path="res://Prefabs/water_anim.tscn" id="4_i2kwx"]
 [ext_resource type="PackedScene" uid="uid://b0f056buuawj8" path="res://Prefabs/grass.tscn" id="5_qdthv"]
 [ext_resource type="PackedScene" uid="uid://b06waph2r4e81" path="res://Prefabs/enemy_tank_1.tscn" id="6_q5ysy"]
-[ext_resource type="Script" path="res://Scripts/navigation_master.gd" id="7_5fonn"]
+[ext_resource type="PackedScene" uid="uid://w5nr7c5ovwrb" path="res://Prefabs/navigation_master.tscn" id="7_fr51f"]
+[ext_resource type="PackedScene" uid="uid://bq7eftkenpglv" path="res://Prefabs/level_master.tscn" id="8_1nymr"]
+[ext_resource type="PackedScene" uid="uid://cyvd72tkgdhy6" path="res://Prefabs/diamond_node.tscn" id="9_ynnbg"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_x01af"]
-vertices = PackedVector2Array(1288, 731.102, -8.25781, 733.891, -4.59375, 484, 415, 484, 415, 316, -2.13281, 316, 2.25781, 16.8203, 565, 14.7891, 565, 248.5, 1188, 12.5391, 1288, 12.1797, 1188, 248.5)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 10, 0, 11), PackedInt32Array(8, 11, 0, 3, 4)])
+vertices = PackedVector2Array(625, 732.531, -8.25781, 733.891, -4.59375, 484, 415, 484, 625, 600, 415, 316, -2.13281, 316, 2.25781, 16.8203, 565, 14.7891, 565, 248.5, 1188, 12.5391, 1288, 12.1797, 1288, 731.102, 1188, 248.5, 835, 732.07, 835, 600)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(13, 12, 14, 15), PackedInt32Array(9, 13, 15, 4, 3, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-47, -33, 1338, -38, 1338, 781, -59, 784)])
 agent_radius = 50.0
 
@@ -150,6 +152,9 @@ position = Vector2(650, 250)
 [node name="grass2" parent="NavigationRegion2D/Level/Grass" instance=ExtResource("5_qdthv")]
 position = Vector2(715, 250)
 
+[node name="DiamondNode" parent="NavigationRegion2D" instance=ExtResource("9_ynnbg")]
+position = Vector2(730, 690)
+
 [node name="TankNode2D" parent="." instance=ExtResource("2_agjdt")]
 position = Vector2(288, 672)
 scale = Vector2(0.5, 0.5)
@@ -159,13 +164,11 @@ position = Vector2(336, 121)
 rotation = 3.14159
 scale = Vector2(0.5, 0.5)
 
-[node name="NavigationMaster" type="Node2D" parent="."]
-position = Vector2(336, 121)
-rotation = -3.14159
-scale = Vector2(0.5, 0.5)
-script = ExtResource("7_5fonn")
+[node name="NavigationMaster" parent="." instance=ExtResource("7_fr51f")]
 
 [node name="EnemyTankNode2D2" parent="." instance=ExtResource("6_q5ysy")]
 position = Vector2(1124, 325)
 rotation = 4.71239
 scale = Vector2(0.5, 0.5)
+
+[node name="LevelMaster" parent="." instance=ExtResource("8_1nymr")]
