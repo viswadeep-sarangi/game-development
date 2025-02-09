@@ -3,6 +3,8 @@ extends Node2D
 var enemies = null
 var player = null
 var diamond = null
+@onready var nav_region:NavigationRegion2D = $NavigationRegion2D
+@onready var mesh_update_timer:Timer = $NavigationRegion2D/MeshUpdateTimer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	enemies = get_tree().get_nodes_in_group('enemies')
@@ -29,3 +31,8 @@ func _process(_delta):
 				enemy.navigation_agent.target_position = player.global_position
 			else:
 				enemy.navigation_agent.target_position = diamond.global_position
+
+
+func _on_mesh_update_timer_timeout():
+	print("Updating Nav Mesh")
+	nav_region.bake_navigation_polygon()

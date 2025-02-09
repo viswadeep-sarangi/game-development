@@ -1,18 +1,30 @@
 extends Node2D
 
 var enemies = null
-var diamonds = null
-# Called when the node enters the scene tree for the first time.
+@export var num_enemies:int
+var diamonds
+@export var num_diamonds:int
+
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	diamonds = get_tree().get_nodes_in_group('diamond')
-	if len(diamonds)==0:
-		print("YOU LOST")
-	
 	enemies = get_tree().get_nodes_in_group('enemies')
-	if len(enemies)==0:
-		print("ALL ENEMIES DEFEATED. YOU'VE WON")
+	num_enemies = len(enemies)
+	diamonds = get_tree().get_nodes_in_group('diamond')
+	num_diamonds = len(diamonds)
+
+var receive_signal_in_progress = false
+func receive_signal(value):
+	if receive_signal_in_progress:
+		return
+	receive_signal_in_progress = true
+	if value=='enemy_hit':
+		num_enemies-=1
+	if value=='diamond_hit':
+		num_diamonds-=1
+	
+	if num_diamonds==0:
+		get_tree().call_group("signal_emitters", "receive_signal", "level_lost")
+		print("LEVEL LOST")
+	elif num_enemies==0:
+		get_tree().call_group("signal_emitters", "receive_signal", "level_won")
+		print("LEVEL WON!!")
+	receive_signal_in_progress = false

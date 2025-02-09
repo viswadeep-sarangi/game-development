@@ -90,4 +90,5 @@ func hit(hit_point:int):
 		var boom:Node2D = explosion_anim.instantiate()
 		boom.global_position = global_position
 		get_parent().add_child(boom)
+		get_tree().call_group("signal_emitters", "receive_signal", "enemy_died")
 		queue_free()

@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var move_speed: float = 10.0
 @export var rotation_speed: float = 100.0
 @export var bullet_scene: PackedScene
+@export var health:int = 2
+
 @onready var fire_point = $tank_moving_parts/tank_rod/tank_firing_thing
 @onready var animation_helper = $_animation_helper
 @onready var fire_cooldown_timer: Timer = $fire_cooldown_timer
@@ -56,3 +58,8 @@ func _physics_process(_delta):
 	# Apply movement
 	move_and_collide(velocity)
 	animation_helper.update_velocity(velocity, is_turning_direction)
+	
+func hit(hit_point:int):
+	health-=hit_point
+	print('PLAYER has been hit')
+	get_tree().call_group("signal_emitters", "receive_signal", "player_hit")

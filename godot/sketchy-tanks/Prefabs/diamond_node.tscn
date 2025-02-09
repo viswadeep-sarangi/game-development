@@ -37,7 +37,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 2.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3q0yx"]
@@ -51,7 +51,8 @@ explosion_anim = ExtResource("2_1v2yd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.595522, 1, 0.9991, 1)
 sprite_frames = SubResource("SpriteFrames_txias")
-frame_progress = 0.520601
+autoplay = "default"
+frame_progress = 0.377564
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3q0yx")

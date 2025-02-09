@@ -36,11 +36,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"move",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km8qw"]
-size = Vector2(218, 212)
+size = Vector2(209, 197)
 
 [node name="EnemyTankNode2D" type="CharacterBody2D" groups=["destructible", "enemies"]]
 collision_layer = 3
@@ -63,8 +63,6 @@ frame_progress = 0.778616
 position = Vector2(70, -20)
 sprite_frames = SubResource("SpriteFrames_nm2tl")
 animation = &"move"
-frame = 1
-frame_progress = 0.33887
 
 [node name="tank_base" type="Sprite2D" parent="."]
 texture = ExtResource("4_yg1dn")
@@ -87,8 +85,8 @@ offset = Vector2(-50, 0)
 rotation = -1.5708
 texture = ExtResource("7_iyoxc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -21)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["signal_emitters"]]
+position = Vector2(-1.5, -13.5)
 shape = SubResource("RectangleShape2D_km8qw")
 
 [node name="_animation_helper" type="Node2D" parent="."]

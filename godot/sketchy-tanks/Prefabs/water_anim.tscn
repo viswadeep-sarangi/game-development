@@ -46,6 +46,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.508606, 1, 0.972666, 1)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_7efl0")
 autoplay = "default"
