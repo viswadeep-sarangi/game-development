@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var cam_control:CameraRegionController2D = $CameraRegionController2D
 @onready var post_process_config:PostProcessingConfiguration = $PostProcess.configuration
 
 @export var shake_time = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dug4got27lybb"]
+[gd_scene load_steps=13 format=3 uid="uid://dug4got27lybb"]
 
 [ext_resource type="PackedScene" uid="uid://bq7eftkenpglv" path="res://Prefabs/level_master.tscn" id="1_2c0xe"]
 [ext_resource type="Texture2D" uid="uid://bavuhni65277c" path="res://Assets/BG/BG.png" id="1_cl1fo"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cs5456k650dr5" path="res://Prefabs/tank_node_2d.tscn" id="5_m2mgu"]
 [ext_resource type="PackedScene" uid="uid://b06waph2r4e81" path="res://Prefabs/enemy_tank_1.tscn" id="6_1u8ws"]
 [ext_resource type="Script" path="res://Scripts/s_camera_master.gd" id="6_81gjs"]
-[ext_resource type="Script" path="res://addons/cameraregion2d/CameraRegionController2D.gd" id="8_n1ng6"]
-[ext_resource type="Script" path="res://addons/cameraregion2d/CameraRegion2D.gd" id="9_43rfw"]
 [ext_resource type="Script" path="res://addons/post_processing/node/post_process.gd" id="9_68qek"]
 [ext_resource type="Script" path="res://addons/post_processing/resource/post_processing_configuration.gd" id="10_6lfol"]
 
@@ -109,17 +107,6 @@ script = ExtResource("6_81gjs")
 
 [node name="Camera2D" type="Camera2D" parent="CameraMaster"]
 position = Vector2(640, 360)
-
-[node name="CameraRegionController2D" type="Node2D" parent="CameraMaster" node_paths=PackedStringArray("camera", "target_node")]
-position = Vector2(637.75, 375)
-script = ExtResource("8_n1ng6")
-camera = NodePath("../Camera2D")
-target_node = NodePath("../../TankNode2D")
-
-[node name="CameraRegion2D" type="Node2D" parent="CameraMaster/CameraRegionController2D"]
-position = Vector2(1.265, -14.945)
-script = ExtResource("9_43rfw")
-size = Vector2(1280, 720)
 
 [node name="PostProcess" type="CanvasLayer" parent="CameraMaster"]
 script = ExtResource("9_68qek")
