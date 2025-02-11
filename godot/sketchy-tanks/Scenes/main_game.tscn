@@ -5,5 +5,9 @@
 [node name="MainGame" type="Node"]
 
 [node name="MainScreenUI" parent="." instance=ExtResource("1_g5guu")]
+offset_left = 87.0
+offset_top = -31.0
+offset_right = 87.0
+offset_bottom = -31.0
 
 [node name="GameLevel" type="Node2D" parent="."]

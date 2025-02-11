@@ -34,6 +34,10 @@ diamond="the key diamond to save in the game"
 nav_mesh=""
 signal_emitters=""
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [input]
 
 move_left={

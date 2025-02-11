@@ -14,11 +14,11 @@ func hide_first_levels_vis_main_menu(firsts=false,main_menu=true):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hide_first_levels_vis_main_menu()
 	await get_tree().process_frame  # waiting for UI to be drawn
 	var panel_global_rect = anim_panel.get_global_rect()
 	var panel_center = panel_global_rect.get_center()
 	tank_anim.global_position = panel_center
-	hide_first_levels_vis_main_menu()
 
 func _on_start_game_button_pressed() -> void:
 	hide_first_levels_vis_main_menu(false,false)
