@@ -59,5 +59,7 @@ script = ExtResource("1_5tk2w")
 
 [node name="ExplosionAnimSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vh2bc")
+frame = 5
+frame_progress = 1.0
 
 [connection signal="animation_finished" from="ExplosionAnimSprite2D" to="." method="_on_boom_anim_animation_finished"]

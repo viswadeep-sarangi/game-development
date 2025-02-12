@@ -26,7 +26,7 @@ func screen_shake():
 	#post_process_config.set('ScreenShake',true)
 	#post_process_config.set('ScreenShakePower',2)
 	var tween = get_tree().create_tween()
-	tween.tween_property(post_process_config, "ScreenShakePower", 0.5, 0.01)
+	tween.tween_property(post_process_config, "ScreenShakePower", 0.75, 0.01)
 	tween.tween_property(post_process_config, "ScreenShakePower", 0, 0.25)
 	#post_process_config.set('ScreenShake',false)
 	

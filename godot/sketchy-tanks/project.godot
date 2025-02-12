@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 
+[editor]
+
+movie_writer/mjpeg_quality=0.1
+movie_writer/movie_file="C:/Users/Deepun/Videos/SketchyTanks.avi"
+movie_writer/fps=25
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/post_processing/plugin.cfg")
@@ -33,6 +39,8 @@ destructible="all descructible nodes, to be hit by bullet"
 diamond="the key diamond to save in the game"
 nav_mesh=""
 signal_emitters=""
+ui_signal_emitters="a way that UI emits signals and receives them"
+main_game_signal_emitters=""
 
 [gui]
 

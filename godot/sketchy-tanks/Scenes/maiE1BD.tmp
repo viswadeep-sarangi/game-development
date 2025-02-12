@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg3tq855xfpre"]
+[gd_scene load_steps=4 format=3 uid="uid://bg3tq855xfpre"]
 
 [ext_resource type="Theme" uid="uid://bpw84t04e4r2r" path="res://Assets/theme.tres" id="1_6hbom"]
 [ext_resource type="Script" path="res://Scripts/s_main_screen_ui.gd" id="1_sbnxp"]
+[ext_resource type="PackedScene" uid="uid://cs5456k650dr5" path="res://Prefabs/tank_node_2d.tscn" id="1_vy44l"]
 
 [node name="MainScreenUI" type="Control" groups=["ui_signal_emitters"]]
 layout_mode = 3
@@ -63,6 +64,7 @@ autowrap_mode = 0
 shortcut_keys_enabled = false
 
 [node name="GameMenuMargin" type="MarginContainer" parent="MainLayout"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -105,8 +107,12 @@ clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="TankNode2D" parent="MainLayout/GameMenuMargin/GameMenu/Animation" instance=ExtResource("1_vy44l")]
+position = Vector2(493, 313)
+scale = Vector2(0.5, 0.5)
+move_speed = 0.001
+
 [node name="LevelMenuMargin" type="MarginContainer" parent="MainLayout"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
@@ -193,7 +199,7 @@ size_flags_vertical = 3
 
 [node name="Level10Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level2,5,8,10Panel/Level2,5,8,10VBoxContainer/Level10PanelContainer"]
 layout_mode = 2
-text = "LEVEL 10"
+text = "LEVEL 7"
 
 [node name="Level3,6,9Panel" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer"]
 layout_mode = 2

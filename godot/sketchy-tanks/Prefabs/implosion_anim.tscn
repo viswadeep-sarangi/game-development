@@ -54,7 +54,7 @@ animations = [{
 }]
 
 [node name="ImplosionAnimNode" type="Node2D"]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_1784e")
 
 [node name="BoomAnim" type="AnimatedSprite2D" parent="."]

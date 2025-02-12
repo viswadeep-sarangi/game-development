@@ -1,13 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://boliybpa1cs1g"]
+[gd_scene load_steps=4 format=3 uid="uid://boliybpa1cs1g"]
 
 [ext_resource type="PackedScene" uid="uid://bg3tq855xfpre" path="res://Scenes/main_screen_ui.tscn" id="1_g5guu"]
+[ext_resource type="Script" path="res://Scripts/s_main_game.gd" id="1_u68us"]
+[ext_resource type="Script" path="res://Scripts/s_game_level.gd" id="2_h4p3u"]
 
-[node name="MainGame" type="Node"]
+[node name="MainGame" type="Node" groups=["main_game_signal_emitters"]]
+script = ExtResource("1_u68us")
 
 [node name="MainScreenUI" parent="." instance=ExtResource("1_g5guu")]
-offset_left = 87.0
-offset_top = -31.0
-offset_right = 87.0
-offset_bottom = -31.0
 
-[node name="GameLevel" type="Node2D" parent="."]
+[node name="GameLevel" type="Node2D" parent="." groups=["main_game_signal_emitters", "signal_emitters", "ui_signal_emitters"]]
+script = ExtResource("2_h4p3u")
