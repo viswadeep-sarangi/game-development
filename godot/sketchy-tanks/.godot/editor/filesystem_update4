@@ -1,0 +1,11 @@
+res://Scenes/level_1.tscn
+res://Assets/theme.tres
+res://Prefabs/tank_node_2d.tscn
+res://Prefabs/enemy_tank_1.tscn
+res://Scenes/main_game.tscn
+res://Prefabs/explosion_anim.tscn
+res://Prefabs/explosion_tank_anim.tscn
+res://Prefabs/brick.tscn
+res://Prefabs/implosion_anim.tscn
+res://Scripts/s_camera_master.gd
+res://Assets/level_ui_theme.tres

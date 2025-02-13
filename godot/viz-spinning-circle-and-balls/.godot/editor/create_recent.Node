@@ -1,0 +1,14 @@
+Sprite2D
+AudioStreamPlayer2D
+CollisionPolygon2D
+StaticBody2D
+Label
+Timer
+CollisionShape2D
+RigidBody2D
+Node2D
+CanvasGroup
+Camera2D
+TextureRect
+CSGSphere3D
+Area2D
