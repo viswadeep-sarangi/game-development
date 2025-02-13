@@ -6,7 +6,6 @@ extends StaticBody2D
 func hit(hit_point:int):
 	health-=hit_point
 	if health<=0:
-		print(name+' has been hit and is now dead')
 		var boom:Node2D = explosion_anim.instantiate()
 		boom.global_position = global_position
 		get_parent().add_child(boom)

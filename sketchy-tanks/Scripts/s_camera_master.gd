@@ -20,7 +20,7 @@ func vignette_pulse():
 	
 func blur_fade_in():
 	var tween = get_tree().create_tween()
-	tween.tween_property(post_process_config, "L_O_D", 3, 1)
+	tween.tween_property(post_process_config, "L_O_D", 3.0, 1.0)
 	
 func screen_shake():
 	#post_process_config.set('ScreenShake',true)

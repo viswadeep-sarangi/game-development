@@ -19,7 +19,6 @@ func modulate_bullet_color(c:Color):
 	sprite.modulate = c
 
 func _on_body_entered(body: Node) -> void:
-	print('Bullet hit '+body.name)
 	if body.is_in_group('destructible'):
 		body.hit(hit_point)
 	var boom:Node = implosion_anim.instantiate()

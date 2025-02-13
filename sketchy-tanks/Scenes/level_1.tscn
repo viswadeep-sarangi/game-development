@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b61wqq0olm3xd" path="res://Assets/UI/back-icon.png" id="11_8r6fr"]
 [ext_resource type="Theme" uid="uid://cs2jxr5hbu1lk" path="res://Assets/level_ui_theme.tres" id="11_ubqed"]
 
-[sub_resource type="Resource" id="Resource_rguf6"]
+[sub_resource type="Resource" id="Resource_kfkeg"]
 script = ExtResource("10_6lfol")
 reload = false
 ASCII = false
@@ -32,7 +32,7 @@ FishEyeCropColor = Color(0, 0, 0, 1)
 Vignette = true
 VignetteIntensity = 0.0
 VignetteOpacity = 1.0
-VignetteR_G_B = Color(0.952106, 4.11518e-06, 9.62615e-07, 1)
+VignetteR_G_B = Color(1, 0, 0, 1)
 Glitch = false
 GlitchRange = 0.05
 GlitchNoiseQuality = 250.0
@@ -112,9 +112,10 @@ position = Vector2(640, 360)
 
 [node name="PostProcess" type="CanvasLayer" parent="CameraMaster"]
 script = ExtResource("9_68qek")
-configuration = SubResource("Resource_rguf6")
+configuration = SubResource("Resource_kfkeg")
 
-[node name="NavigationMaster" parent="." instance=ExtResource("2_8ck4m")]
+[node name="NavigationMaster" parent="." node_paths=PackedStringArray("mesh_update_timer") instance=ExtResource("2_8ck4m")]
+mesh_update_timer = NodePath("NavigationRegion2D/MeshUpdateTimer")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="NavigationMaster"]
 position = Vector2(1320, 513.997)
@@ -165,6 +166,30 @@ position = Vector2(975, 450)
 [node name="brick10" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
 position = Vector2(975, 375)
 
+[node name="brick63" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(900, 600)
+
+[node name="brick64" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(900, 525)
+
+[node name="brick65" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(900, 450)
+
+[node name="brick66" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(900, 375)
+
+[node name="brick67" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(825, 600)
+
+[node name="brick68" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(825, 525)
+
+[node name="brick69" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(825, 450)
+
+[node name="brick70" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(825, 375)
+
 [node name="brick21" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
 position = Vector2(300, 600)
 
@@ -176,6 +201,36 @@ position = Vector2(300, 450)
 
 [node name="brick24" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
 position = Vector2(300, 375)
+
+[node name="brick45" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(375, 600)
+
+[node name="brick46" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(375, 525)
+
+[node name="brick47" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(375, 450)
+
+[node name="brick48" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(375, 375)
+
+[node name="brick49" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(450, 375)
+
+[node name="brick50" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(525, 375)
+
+[node name="brick51" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(450, 450)
+
+[node name="brick52" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(525, 450)
+
+[node name="brick53" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(450, 525)
+
+[node name="brick54" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(525, 525)
 
 [node name="brick29" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
 position = Vector2(600, 375)
@@ -195,11 +250,29 @@ position = Vector2(750, 300)
 [node name="brick34" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
 position = Vector2(750, 225)
 
+[node name="brick71" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(825, 300)
+
+[node name="brick72" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(825, 225)
+
 [node name="brick35" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
 position = Vector2(675, 300)
 
 [node name="brick36" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
 position = Vector2(675, 225)
+
+[node name="brick55" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(450, 300)
+
+[node name="brick56" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(450, 225)
+
+[node name="brick57" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(525, 300)
+
+[node name="brick58" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(525, 225)
 
 [node name="brick37" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
 position = Vector2(675, 150)
@@ -243,6 +316,18 @@ position = Vector2(1125, 225)
 [node name="brick18" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
 position = Vector2(1050, 225)
 
+[node name="brick59" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(1125, 300)
+
+[node name="brick61" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(1200, 225)
+
+[node name="brick62" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(1200, 300)
+
+[node name="brick60" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
+position = Vector2(1050, 300)
+
 [node name="brick19" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("2_bi1c8")]
 position = Vector2(1050, 150)
 
@@ -283,7 +368,7 @@ rotation = 3.14159
 scale = Vector2(0.355, 0.355)
 
 [node name="EnemyTankNode2D3" parent="Enemies" instance=ExtResource("6_1u8ws")]
-position = Vector2(629, 416)
+position = Vector2(624, 436)
 rotation = 1.5708
 scale = Vector2(0.355, 0.355)
 
@@ -317,3 +402,4 @@ scale = Vector2(0.5, 0.5)
 icon = ExtResource("11_8r6fr")
 
 [connection signal="timeout" from="NavigationMaster/NavigationRegion2D/MeshUpdateTimer" to="NavigationMaster" method="_on_mesh_update_timer_timeout"]
+[connection signal="pressed" from="LevelUICanvasLayer/LevelUIControl/BackButton" to="LevelMaster" method="_on_back_button_pressed"]

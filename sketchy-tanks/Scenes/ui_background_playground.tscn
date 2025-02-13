@@ -1,0 +1,221 @@
+[gd_scene load_steps=9 format=3 uid="uid://cf1ly3g17ke5m"]
+
+[ext_resource type="Texture2D" uid="uid://bavuhni65277c" path="res://Assets/BG/BG.png" id="1_146rb"]
+[ext_resource type="PackedScene" uid="uid://b06waph2r4e81" path="res://Prefabs/enemy_tank_1.tscn" id="3_jlwor"]
+[ext_resource type="PackedScene" uid="uid://w5nr7c5ovwrb" path="res://Prefabs/navigation_master.tscn" id="4_dtyms"]
+[ext_resource type="PackedScene" uid="uid://dmbk1lcrdsolv" path="res://Prefabs/brick.tscn" id="5_633b1"]
+[ext_resource type="PackedScene" uid="uid://cda8hip0epv1m" path="res://Prefabs/marble.tscn" id="6_kxrnr"]
+[ext_resource type="PackedScene" uid="uid://cyvd72tkgdhy6" path="res://Prefabs/diamond_node.tscn" id="7_44xwv"]
+[ext_resource type="PackedScene" uid="uid://bq7eftkenpglv" path="res://Prefabs/level_master.tscn" id="8_xvg5a"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_x01af"]
+vertices = PackedVector2Array(1309, 243, 1309, 125, 1313, -12.8984, 1313, 756.047, 1121, 125, 1107.23, 106.711, 1107.23, -4.71094, -22.3594, -8.07813, 972.773, -4.71094, 1121, 126, 771, 126, 972.773, 106.711, 771, 196, 770, 196, 770, 406, 769, 406, 769, 476, 768, 476, 768, 594, 838, 594, 838, 618, 837, 618, 837, 736, 908, 736, 908, 739, -33.6172, 758.938, 1025, 739, 1025, 735.398, 1052, 735.398, 1052, 739, 1169, 739, 1169, 738, 1238, 738, 1238, 667, 1239, 667, 1239, 594, 1307, 594, 1307, 453, 1308, 453, 1308, 243)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 1, 4, 5, 6), PackedInt32Array(7, 2, 6, 8), PackedInt32Array(5, 4, 9, 10, 11), PackedInt32Array(10, 12, 13, 7), PackedInt32Array(13, 14, 15, 7), PackedInt32Array(15, 16, 17, 7), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(30, 31, 32), PackedInt32Array(32, 33, 34, 3), PackedInt32Array(34, 35, 36, 3), PackedInt32Array(36, 37, 38, 3), PackedInt32Array(38, 39, 0, 3), PackedInt32Array(32, 3, 25, 30), PackedInt32Array(29, 30, 25), PackedInt32Array(26, 29, 25), PackedInt32Array(24, 26, 25), PackedInt32Array(22, 25, 7, 18), PackedInt32Array(7, 8, 11, 10), PackedInt32Array(18, 21, 22), PackedInt32Array(17, 18, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-47, -33, 1338, -38, 1338, 781, -59, 784)])
+agent_radius = 25.0
+
+[node name="PlaygroundNode2D" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(644.5, 378.5)
+scale = Vector2(1.02331, 1.04101)
+texture = ExtResource("1_146rb")
+metadata/_edit_lock_ = true
+
+[node name="NavigationMaster" parent="." instance=ExtResource("4_dtyms")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="NavigationMaster"]
+position = Vector2(672.001, 241.998)
+rotation = 3.14159
+scale = Vector2(2, 2)
+navigation_polygon = SubResource("NavigationPolygon_x01af")
+
+[node name="Level" type="Node2D" parent="NavigationMaster/NavigationRegion2D"]
+
+[node name="Brick" type="Node2D" parent="NavigationMaster/NavigationRegion2D/Level"]
+position = Vector2(67, 2)
+
+[node name="brick" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(762, 463)
+
+[node name="brick2" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(832, 463)
+
+[node name="brick3" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(902, 463)
+
+[node name="brick4" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(972, 463)
+
+[node name="brick11" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(763, 393)
+
+[node name="brick12" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(833, 393)
+
+[node name="brick13" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(903, 393)
+
+[node name="brick5" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1042, 463)
+
+[node name="brick6" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(832, 533)
+
+[node name="brick7" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(902, 533)
+
+[node name="brick8" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(972, 533)
+
+[node name="brick9" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1042, 533)
+
+[node name="brick10" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1112, 533)
+
+[node name="brick15" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1183, 533)
+
+[node name="brick17" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1112, 462)
+
+[node name="brick18" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1183, 462)
+
+[node name="brick19" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(973, 393)
+
+[node name="brick20" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1043, 393)
+
+[node name="brick21" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1113, 392)
+
+[node name="brick22" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1184, 392)
+
+[node name="brick14" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(763, 323)
+
+[node name="brick23" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(833, 323)
+
+[node name="brick24" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(903, 323)
+
+[node name="brick25" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(973, 323)
+
+[node name="brick26" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1043, 323)
+
+[node name="brick27" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1113, 322)
+
+[node name="brick28" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1184, 322)
+
+[node name="brick29" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(763, 253)
+
+[node name="brick30" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(833, 253)
+
+[node name="brick31" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(903, 253)
+
+[node name="brick32" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(973, 253)
+
+[node name="brick33" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1043, 253)
+
+[node name="brick34" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1113, 252)
+
+[node name="brick35" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1184, 252)
+
+[node name="brick36" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(764, 183)
+
+[node name="brick37" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(834, 183)
+
+[node name="brick38" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(904, 183)
+
+[node name="brick39" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(974, 183)
+
+[node name="brick40" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1044, 183)
+
+[node name="brick41" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1114, 182)
+
+[node name="brick42" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1185, 182)
+
+[node name="brick16" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(761, 533)
+
+[node name="brick43" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(831, 604)
+
+[node name="brick44" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(830, 675)
+
+[node name="brick45" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1115, 606)
+
+[node name="brick46" parent="NavigationMaster/NavigationRegion2D/Level/Brick" instance=ExtResource("5_633b1")]
+position = Vector2(1114, 677)
+
+[node name="Marble" type="Node2D" parent="NavigationMaster/NavigationRegion2D/Level"]
+
+[node name="marble" parent="NavigationMaster/NavigationRegion2D/Level/Marble" instance=ExtResource("6_kxrnr")]
+position = Vector2(968, 680)
+
+[node name="marble2" parent="NavigationMaster/NavigationRegion2D/Level/Marble" instance=ExtResource("6_kxrnr")]
+position = Vector2(968, 608)
+
+[node name="marble5" parent="NavigationMaster/NavigationRegion2D/Level/Marble" instance=ExtResource("6_kxrnr")]
+position = Vector2(1040, 608)
+
+[node name="marble6" parent="NavigationMaster/NavigationRegion2D/Level/Marble" instance=ExtResource("6_kxrnr")]
+position = Vector2(1112, 608)
+
+[node name="marble4" parent="NavigationMaster/NavigationRegion2D/Level/Marble" instance=ExtResource("6_kxrnr")]
+position = Vector2(1112, 680)
+
+[node name="DiamondNode" parent="NavigationMaster/NavigationRegion2D" instance=ExtResource("7_44xwv")]
+position = Vector2(1040, 680)
+scale = Vector2(0.380002, 0.380002)
+
+[node name="EnemyDiamondNode" parent="NavigationMaster/NavigationRegion2D" instance=ExtResource("7_44xwv")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(1040, 50.9999)
+scale = Vector2(0.383885, 0.383885)
+diamond_type = "enemy_"
+
+[node name="MeshUpdateTimer" type="Timer" parent="NavigationMaster"]
+autostart = true
+
+[node name="EnemyTankNode2D" parent="." instance=ExtResource("3_jlwor")]
+position = Vector2(1208, 56)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="EnemyTankNode2D2" parent="." instance=ExtResource("3_jlwor")]
+position = Vector2(866, 65)
+rotation = 4.71239
+scale = Vector2(0.5, 0.5)
+
+[node name="EnemyTankNode2D3" parent="." instance=ExtResource("3_jlwor")]
+position = Vector2(759, 656)
+rotation = 4.71239
+scale = Vector2(0.5, 0.5)
+
+[node name="LevelMaster" parent="." instance=ExtResource("8_xvg5a")]

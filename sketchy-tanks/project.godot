@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sketchy-tanks"
-run/main_scene="res://Scenes/playground_node_2d.tscn"
+run/main_scene="res://Scenes/main_game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -41,6 +41,7 @@ nav_mesh=""
 signal_emitters=""
 ui_signal_emitters="a way that UI emits signals and receives them"
 main_game_signal_emitters=""
+level_signals=""
 
 [gui]
 

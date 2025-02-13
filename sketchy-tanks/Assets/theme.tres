@@ -44,7 +44,7 @@ corner_radius_bottom_left = 100
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdwg4"]
 content_margin_top = 5.0
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lr0h"]
 bg_color = Color(1, 1, 1, 1)
@@ -82,6 +82,7 @@ Button/styles/normal = SubResource("StyleBoxFlat_pjl6e")
 Button/styles/pressed = SubResource("StyleBoxFlat_piixi")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_sdwg4")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
 RichTextLabel/font_sizes/normal_font_size = 60
 RichTextLabel/styles/fill = SubResource("StyleBoxFlat_4lr0h")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_vcsi6")
