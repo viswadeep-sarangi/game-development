@@ -64,15 +64,20 @@ func _on_visibility_changed():
 		
 func dialog_box_signal_received(label:String, option:String):
 	print("MainScreenUI > dialog_box_signal_received : ",label,' : ',option)
-	if label=='Exit Level':
-		if option=='Yes':
-			get_tree().call_group(
-				"main_game_signal_emitters", 
-				"main_game_signal_received", 
-				"exit_level", 
-				""
-			)
-		destroy_dialog_box()
+	if (
+		label=='Exit Level' and  option=='Yes'
+	) or (
+		label=="Level Lost" and option=="Home"
+	) or (
+		label=="Level Won" and option=="Home"
+	):
+		get_tree().call_group(
+			"main_game_signal_emitters", 
+			"main_game_signal_received", 
+			"exit_level", 
+			""
+		)
+	destroy_dialog_box()
 
 func create_dialog_box(label:String, button1:String, button2:String):
 	dialog_box = dialog_box_scene.instantiate()
@@ -90,4 +95,8 @@ func receive_level_signal(type:String, value:String):
 	print("MainScreenUI > Received Signal ",type,' : ',value)
 	if type=='back_button':
 		create_dialog_box("Exit Level", "Yes", "No")
+	elif type=='level_lost':
+		create_dialog_box("Level Lost", "Retry", "Home")
+	elif type=='level_won':
+		create_dialog_box("Level Won", "Next", "Home")
 		

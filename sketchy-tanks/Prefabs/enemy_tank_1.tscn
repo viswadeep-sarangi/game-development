@@ -51,7 +51,7 @@ bullet_scene = ExtResource("2_7mc77")
 explosion_anim = ExtResource("3_pu735")
 move_speed = 1.0
 tank_color = Color(1, 0.755247, 0.638844, 1)
-max_health = 5
+max_health = 3
 
 [node name="track_left" type="AnimatedSprite2D" parent="."]
 position = Vector2(-70, -20)
@@ -114,6 +114,7 @@ anchors_preset = 0
 
 [node name="health_bar" type="ColorRect" parent="canvas_layer"]
 custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
 offset_left = -108.0
 offset_top = 111.0
 offset_right = 108.0

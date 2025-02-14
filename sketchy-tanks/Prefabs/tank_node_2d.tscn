@@ -48,6 +48,7 @@ safe_margin = 2.0
 script = ExtResource("1_cnph8")
 move_speed = 5.0
 bullet_scene = ExtResource("2_7a3vc")
+max_health = 10
 
 [node name="canvas_layer" type="Control" parent="."]
 layout_mode = 3
@@ -55,6 +56,7 @@ anchors_preset = 0
 
 [node name="health_bar" type="ColorRect" parent="canvas_layer"]
 custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
 offset_left = -108.0
 offset_top = 111.0
 offset_right = 108.0

@@ -34,7 +34,7 @@ func _ready() -> void:
 
 func set_health_bar():
 	health_bar.color = Color(
-		1-round(health/max_health), round(health/max_health), 0
+		1-(health/max_health), (health/max_health), 0
 	)
 	health_bar.scale.x = health/max_health
 

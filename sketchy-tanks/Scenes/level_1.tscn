@@ -92,7 +92,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(213.644, 95.6428, 1054.37, 95.6428, 1054.37, 623.085, 213.644, 623.085)])
 agent_radius = 35.0
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" groups=["signal_emitters"]]
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(644.5, 363.285)
@@ -111,6 +111,7 @@ script = ExtResource("6_81gjs")
 position = Vector2(640, 360)
 
 [node name="PostProcess" type="CanvasLayer" parent="CameraMaster"]
+visible = false
 script = ExtResource("9_68qek")
 configuration = SubResource("Resource_kfkeg")
 
