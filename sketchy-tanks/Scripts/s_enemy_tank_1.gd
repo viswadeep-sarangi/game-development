@@ -6,15 +6,17 @@ extends CharacterBody2D
 @export var move_speed: float = 2.0
 @export var tank_color:Color =  Color(1,0.6,0.4)
 @export var tank_bullet_speed:int = 250
-@export var health:int = 2
+@export var max_health:int = 2
 @onready var direction_cooldown_timer:Timer = $direction_cooldown_timer
 @onready var fire_point = $tank_moving_parts/tank_rod/tank_firing_thing
 @onready var navigation_agent:NavigationAgent2D = $NavigationAgent2D
 @onready var animation_helper = $_animation_helper
 @onready var fire_cooldown_timer = $fire_cooldown_timer
+@onready var health_bar:ColorRect = $canvas_layer/health_bar
 var tank_velocity: Vector2 = Vector2.ZERO
 var current_tank_move:String = ''
 var is_turning_direction:int = 0
+var health:float
 
 func modulate_canvas_item(color:Color =tank_color):
 	var items = [
@@ -27,7 +29,15 @@ func modulate_canvas_item(color:Color =tank_color):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	modulate_canvas_item()
-	
+	health = max_health*0.99  # accounting for rounding
+	set_health_bar()
+
+func set_health_bar():
+	health_bar.color = Color(
+		1-round(health/max_health), round(health/max_health), 0
+	)
+	health_bar.scale.x = health/max_health
+
 func fire_normal_bullet():
 	var bullet = bullet_scene.instantiate()
 	bullet.position = fire_point.global_position
@@ -85,6 +95,7 @@ func _physics_process(_delta):
 	
 func hit(hit_point:int):
 	health-=hit_point
+	set_health_bar()
 	if health<=0:
 		print(name+' has been hit and is now dead')
 		var boom:Node2D = explosion_anim.instantiate()

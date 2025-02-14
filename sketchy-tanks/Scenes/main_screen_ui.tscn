@@ -22,6 +22,14 @@ game_menu_margin = NodePath("OverallHBoxContainer/MainLayout/GameMenuMargin")
 level_ui = NodePath("OverallHBoxContainer/MainLayout/LevelMenuMargin")
 first_level_uis = [NodePath("OverallHBoxContainer/MainLayout/LevelMenuMargin")]
 
+[node name="WhiteBGColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="OverallHBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -234,11 +242,11 @@ text = "LEVEL 9"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ColorRect" type="ColorRect" parent="OverallHBoxContainer"]
+[node name="HalfDarkBGColorRect" type="ColorRect" parent="OverallHBoxContainer"]
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0, 0, 0, 0.552941)
+color = Color(0, 0, 0, 0.901961)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="OverallHBoxContainer/MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/StartGameMargin/StartGameButton" to="." method="_on_start_game_button_pressed"]

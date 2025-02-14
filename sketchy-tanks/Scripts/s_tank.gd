@@ -4,18 +4,21 @@ extends CharacterBody2D
 @export var move_speed: float = 10.0
 @export var rotation_speed: float = 100.0
 @export var bullet_scene: PackedScene
-@export var health:int = 2
+@export var max_health:int = 2
+var health:float
 
 @onready var fire_point = $tank_moving_parts/tank_rod/tank_firing_thing
 @onready var animation_helper = $_animation_helper
 @onready var fire_cooldown_timer: Timer = $fire_cooldown_timer
+@onready var health_bar:ColorRect = $canvas_layer/health_bar
 var tank_velocity: Vector2 = Vector2.ZERO
 var is_turning_direction:int = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	health = max_health*0.99
+	set_health_bar()
 
 func fire_normal_bullet():
 	var bullet = bullet_scene.instantiate()
@@ -63,3 +66,10 @@ func hit(hit_point:int):
 	health-=hit_point
 	print('PLAYER has been hit')
 	get_tree().call_group("signal_emitters", "receive_signal", "player_hit")
+	set_health_bar()
+	
+func set_health_bar():
+	health_bar.color = Color(
+		1-round(health/max_health), round(health/max_health), 0
+	)
+	health_bar.scale.x = health/max_health
