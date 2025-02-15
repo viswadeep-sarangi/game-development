@@ -3,13 +3,15 @@
 [ext_resource type="Theme" uid="uid://bpw84t04e4r2r" path="res://Assets/theme.tres" id="1_d748q"]
 [ext_resource type="Script" path="res://Scripts/s_dialog_box_control.gd" id="2_8eroa"]
 
-[node name="DialogBoxControl" type="CanvasLayer" node_paths=PackedStringArray("label", "button_1", "button_2", "dialog_panel")]
+[node name="DialogBoxControl" type="CanvasLayer" node_paths=PackedStringArray("label", "button_1", "button_2", "dialog_panel", "button_container", "button_countdown_timer")]
 physics_interpolation_mode = 1
 script = ExtResource("2_8eroa")
 label = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/LabelMarginContainer/RichTextLabel")
-button_1 = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Option1")
-button_2 = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Option2")
+button_1 = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/Option1")
+button_2 = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/Option2")
 dialog_panel = NodePath("DialogPanelContainer")
+button_container = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/ButtonMarginContainer")
+button_countdown_timer = NodePath("ButtonCountdownTimer")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -20,6 +22,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.458824)
 
 [node name="DialogPanelContainer" type="PanelContainer" parent="."]
+clip_contents = true
 anchors_preset = -1
 anchor_left = 0.3
 anchor_top = 0.3
@@ -57,7 +60,7 @@ text = "
 [center]ARE YOU SURE?"
 fit_content = true
 
-[node name="MarginContainer" type="MarginContainer" parent="DialogPanelContainer/MarginContainer/VBoxContainer"]
+[node name="ButtonMarginContainer" type="MarginContainer" parent="DialogPanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 20
@@ -65,20 +68,25 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogPanelContainer/MarginContainer/VBoxContainer/ButtonMarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 40
 
-[node name="Option1" type="Button" parent="DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Option1" type="Button" parent="DialogPanelContainer/MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "YES"
 
-[node name="Option2" type="Button" parent="DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Option2" type="Button" parent="DialogPanelContainer/MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "NO"
 
-[connection signal="pressed" from="DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
-[connection signal="pressed" from="DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Option2" to="." method="_on_option_2_pressed"]
+[node name="ButtonCountdownTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="pressed" from="DialogPanelContainer/MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="DialogPanelContainer/MarginContainer/VBoxContainer/ButtonMarginContainer/HBoxContainer/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="timeout" from="ButtonCountdownTimer" to="." method="_on_button_countdown_timer_timeout"]
