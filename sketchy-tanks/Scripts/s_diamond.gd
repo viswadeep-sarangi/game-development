@@ -14,6 +14,6 @@ func hit(hit_point:int):
 		get_tree().call_group(
 			"signal_emitters", 
 			"receive_signal", 
-			"%sdiamond_hit"%[diamond_type]
+			"diamond_hit"
 		)
 		queue_free()

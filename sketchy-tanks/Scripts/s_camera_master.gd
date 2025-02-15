@@ -19,8 +19,10 @@ func vignette_pulse():
 	tween.tween_property(post_process_config, "VignetteIntensity", 0.0, 0.12)
 	
 func blur_fade_in():
+	print("Blurring In")
 	var tween = get_tree().create_tween()
-	tween.tween_property(post_process_config, "L_O_D", 3.0, 1.0)
+	await tween.tween_property(post_process_config, "L_O_D", 3.0, 2.0)
+	await tween.tween_property(post_process_config, "L_O_D", 0.0, 0.001)
 	
 func screen_shake():
 	#post_process_config.set('ScreenShake',true)
@@ -40,7 +42,7 @@ func receive_signal(value):
 		#cam_control.shake(shake_time,shake_speed,shake_deviation,shake_decay)
 	if value=='player_hit':
 		vignette_pulse()
-	if value=='level_lost':
-		print("CameraMaster>Level Lost")
-		blur_fade_in()
+	if value=='diamond_hit':
+		pass
+		#blur_fade_in()
 	receive_signal_in_progress=false

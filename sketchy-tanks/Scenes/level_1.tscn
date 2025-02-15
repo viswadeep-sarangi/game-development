@@ -112,13 +112,13 @@ scale = Vector2(0.758271, 0.710979)
 nav_master = NodePath("../NavigationMaster")
 
 [node name="CameraMaster" type="Node2D" parent="." groups=["signal_emitters"]]
+process_mode = 3
 script = ExtResource("6_81gjs")
 
 [node name="Camera2D" type="Camera2D" parent="CameraMaster"]
 position = Vector2(640, 360)
 
 [node name="PostProcess" type="CanvasLayer" parent="CameraMaster"]
-visible = false
 script = ExtResource("9_68qek")
 configuration = SubResource("Resource_kfkeg")
 
