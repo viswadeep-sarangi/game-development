@@ -79,11 +79,11 @@ func dialog_box_signal_received(label:String, option:String):
 		)
 	destroy_dialog_box()
 
-func create_dialog_box(label:String, button1:String, button2:String, timeout:float=0.0):
+func create_dialog_box(label:String, button1:String, button2:String, mod_c:Color=Color(1,1,1)):
 	dialog_box = dialog_box_scene.instantiate()
 	add_child(dialog_box)
 	get_tree().paused=true
-	dialog_box.set_dialog(label, button1, button2, timeout)	
+	dialog_box.set_dialog(label, button1, button2, mod_c)	
 	
 func destroy_dialog_box():
 	if dialog_box:
@@ -96,7 +96,7 @@ func receive_level_signal(type:String, value:String):
 	if type=='back_button':
 		create_dialog_box("Exit Level", "Yes", "No")
 	elif type=='level_lost':
-		create_dialog_box("Level Lost", "", "Home",1)
+		create_dialog_box("Level Lost", "", "Home",Color(1,0.5,0.5))
 	elif type=='level_won':
-		create_dialog_box("Level Won", "", "Home",1)
+		create_dialog_box("Level Won", "", "Home",Color(0.5,1,0.5))
 		

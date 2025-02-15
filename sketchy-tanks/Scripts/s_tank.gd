@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var move_speed: float = 10.0
 @export var rotation_speed: float = 100.0
 @export var bullet_scene: PackedScene
+@export var explosion_anim:PackedScene
 @export var max_health:int = 2
 var health:float
 
@@ -24,7 +25,9 @@ func fire_normal_bullet():
 	var bullet = bullet_scene.instantiate()
 	bullet.position = fire_point.global_position
 	bullet.rotation = fire_point.global_rotation
+	bullet.modulate_bullet_color(Color(0,0,0))
 	get_tree().current_scene.add_child(bullet)
+	#get_tree().call_group("signal_emitters", "receive_signal", "player_fired_bullet")
 		
 func check_firing_controls():
 	if fire_cooldown_timer.is_stopped():
@@ -66,6 +69,16 @@ func hit(hit_point:int):
 	health-=hit_point
 	print('PLAYER has been hit')
 	get_tree().call_group("signal_emitters", "receive_signal", "player_hit")
+	if health<=0:
+		var boom:Node2D = explosion_anim.instantiate()
+		get_parent().add_child(boom)
+		boom.global_position = global_position
+		get_tree().call_group(
+			"level_signals", 
+			"receive_level_signal", 
+			"level_lost",
+			"Player Tank Destroyed"
+		)
 	set_health_bar()
 	
 func set_health_bar():

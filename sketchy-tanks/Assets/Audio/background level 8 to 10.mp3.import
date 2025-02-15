@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fjmvgqhtxudt"
+path="res://.godot/imported/background level 8 to 10.mp3-df7b11131fb22e61d6a51dad431b8018.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/background level 8 to 10.mp3"
+dest_files=["res://.godot/imported/background level 8 to 10.mp3-df7b11131fb22e61d6a51dad431b8018.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

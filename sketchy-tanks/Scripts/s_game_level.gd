@@ -13,6 +13,8 @@ func main_game_signal_received(task:String, value:String):
 	print("GameLevel>main_game_signal_received: ",task,' : ',value)
 	if task=='exit_level':
 		level.queue_free()
+		for n in get_tree().get_nodes_in_group('bullets'):
+			n.queue_free()
 		level=null
 		get_tree().call_group(
 			"level_signals", 

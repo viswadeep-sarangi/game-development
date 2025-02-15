@@ -9,12 +9,12 @@ func set_dialog(
 	label_text:String, 
 	button_1_text:String, 
 	button_2_text:String,
-	timeout:float=0.0,
-	mod_c:Color = Color(1,1,1,1)
+	mod_c:Color = Color(1,1,1)
 ):
 	#dialog_panel.modulate=Color(mod_c.r, mod_c.g, mod_c.b, 0.25)
 	#var tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	#tween.tween_property(dialog_panel,'modulate:a',1,timeout)
+	dialog_panel.modulate = mod_c
 	label.text = "[center]%s"%[label_text]
 	if len(button_1_text)==0:
 		button_1.visible=false

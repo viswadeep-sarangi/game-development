@@ -21,8 +21,8 @@ func vignette_pulse():
 func blur_fade_in():
 	print("Blurring In")
 	var tween = get_tree().create_tween()
-	await tween.tween_property(post_process_config, "L_O_D", 3.0, 2.0)
-	await tween.tween_property(post_process_config, "L_O_D", 0.0, 0.001)
+	tween.tween_property(post_process_config, "L_O_D", 3.0, 2.0)
+	tween.tween_property(post_process_config, "L_O_D", 0.0, 0.001)
 	
 func screen_shake():
 	#post_process_config.set('ScreenShake',true)

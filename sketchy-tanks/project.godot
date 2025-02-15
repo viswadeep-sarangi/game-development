@@ -42,6 +42,7 @@ signal_emitters=""
 ui_signal_emitters="a way that UI emits signals and receives them"
 main_game_signal_emitters=""
 level_signals=""
+enemy_bullets=""
 
 [gui]
 

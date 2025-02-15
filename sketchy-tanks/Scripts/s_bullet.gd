@@ -20,7 +20,7 @@ func modulate_bullet_color(c:Color):
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group('destructible'):
-		if is_in_group('enemies') and body.is_in_group('enemies'):
+		if body.is_in_group('enemies') and is_in_group('enemy_bullets'):
 			pass
 		else:
 			body.hit(hit_point)
