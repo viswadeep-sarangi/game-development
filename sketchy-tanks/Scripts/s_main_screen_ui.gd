@@ -96,7 +96,7 @@ func receive_level_signal(type:String, value:String):
 	if type=='back_button':
 		create_dialog_box("Exit Level", "Yes", "No")
 	elif type=='level_lost':
-		create_dialog_box("Level Lost", "Retry", "Home")
+		create_dialog_box("Level Lost", "", "Home")
 	elif type=='level_won':
-		create_dialog_box("Level Won", "Next", "Home")
+		create_dialog_box("Level Won", "", "Home")
 		

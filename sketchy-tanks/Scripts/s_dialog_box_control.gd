@@ -6,8 +6,16 @@ extends CanvasLayer
 
 func set_dialog(label_text:String, button_1_text:String, button_2_text:String):
 	label.text = label_text
-	button_1.text = button_1_text
-	button_2.text=button_2_text
+	if len(button_1_text)==0:
+		button_1.visible=false
+	else:
+		button_1.visible=true
+		button_1.text = button_1_text
+	if len(button_2_text)==0:
+		button_2.visible=false
+	else:
+		button_2.visible=true
+		button_2.text=button_2_text
 
 
 func _on_option_1_pressed():

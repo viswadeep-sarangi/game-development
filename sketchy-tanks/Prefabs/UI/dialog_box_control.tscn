@@ -5,9 +5,9 @@
 
 [node name="DialogBoxControl" type="CanvasLayer" node_paths=PackedStringArray("label", "button_1", "button_2")]
 script = ExtResource("2_8eroa")
-label = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/RichTextLabel")
-button_1 = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Option1")
-button_2 = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Option2")
+label = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/LabelMarginContainer/RichTextLabel")
+button_1 = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Option1")
+button_2 = NodePath("DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Option2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -40,7 +40,14 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="DialogPanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogPanelContainer/MarginContainer/VBoxContainer"]
+[node name="LabelMarginContainer" type="MarginContainer" parent="DialogPanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogPanelContainer/MarginContainer/VBoxContainer/LabelMarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
@@ -48,20 +55,28 @@ text = "
 [center]ARE YOU SURE?"
 fit_content = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DialogPanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="DialogPanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 20
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="Option1" type="Button" parent="DialogPanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="Option1" type="Button" parent="DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "YES"
 
-[node name="Option2" type="Button" parent="DialogPanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Option2" type="Button" parent="DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "NO"
 
-[connection signal="pressed" from="DialogPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
-[connection signal="pressed" from="DialogPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="DialogPanelContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Option2" to="." method="_on_option_2_pressed"]

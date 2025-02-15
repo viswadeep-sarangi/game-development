@@ -63,6 +63,7 @@ offset_right = 108.0
 offset_bottom = 130.0
 
 [node name="track_left" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.723009, 1, 0.734155, 1)
 position = Vector2(-70, -20)
 sprite_frames = SubResource("SpriteFrames_nm2tl")
 animation = &"move"
@@ -70,6 +71,7 @@ frame = 1
 frame_progress = 0.778616
 
 [node name="track_right" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.723009, 1, 0.734155, 1)
 position = Vector2(70, -20)
 sprite_frames = SubResource("SpriteFrames_nm2tl")
 animation = &"move"
@@ -77,11 +79,14 @@ frame = 1
 frame_progress = 0.33887
 
 [node name="tank_base" type="Sprite2D" parent="."]
+modulate = Color(0.723009, 1, 0.734155, 1)
 texture = ExtResource("2_gl2yx")
 
 [node name="tank_moving_parts" type="Node2D" parent="."]
+modulate = Color(0.723009, 1, 0.734155, 1)
 
 [node name="tank_rod" type="Sprite2D" parent="tank_moving_parts"]
+modulate = Color(0.723009, 1, 0.734155, 1)
 position = Vector2(-2, 32)
 rotation = -1.5708
 scale = Vector2(0.75814, 1)
@@ -89,11 +94,13 @@ texture = ExtResource("3_8ybvx")
 offset = Vector2(100, 0)
 
 [node name="tank_firing_thing" type="Sprite2D" parent="tank_moving_parts/tank_rod"]
+modulate = Color(0.723009, 1, 0.734155, 1)
 position = Vector2(236.104, -0.999946)
 texture = ExtResource("4_iweqe")
 offset = Vector2(-50, 0)
 
 [node name="tank_hatch" type="Sprite2D" parent="tank_moving_parts"]
+modulate = Color(0.723009, 1, 0.734155, 1)
 rotation = -1.5708
 texture = ExtResource("4_nobjc")
 

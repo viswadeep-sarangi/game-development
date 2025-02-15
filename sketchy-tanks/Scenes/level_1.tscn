@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dug4got27lybb"]
+[gd_scene load_steps=17 format=3 uid="uid://dug4got27lybb"]
 
 [ext_resource type="PackedScene" uid="uid://bq7eftkenpglv" path="res://Prefabs/level_master.tscn" id="1_2c0xe"]
 [ext_resource type="Texture2D" uid="uid://bavuhni65277c" path="res://Assets/BG/BG.png" id="1_cl1fo"]
@@ -87,10 +87,16 @@ ScreenShake = true
 ScreenShakePower = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mu7l1"]
-vertices = PackedVector2Array(254.477, 588.094, 248.641, 588.094, 248.641, 418.273, 254.477, 418.273, 1019.38, 130.641, 1019.38, 300.453, 1011.56, 300.453, 1011.56, 142.219, 248.641, 130.641, 749.023, 142.219, 749.023, 194.961, 714.844, 194.961, 714.844, 142.219, 600.656, 142.219, 600.656, 194.961, 551.203, 194.961, 517.023, 142.219, 764.289, 260.039, 847.93, 260.039, 847.93, 300.453, 798.477, 300.453, 764.289, 418.273, 798.477, 576.508, 897.383, 576.508, 897.383, 588.094, 764.289, 588.094, 764.289, 458.688, 551.203, 418.273, 551.203, 458.688, 551.203, 588.094, 368.656, 588.094, 368.656, 576.508, 467.563, 576.508, 467.563, 300.453, 517.023, 260.039, 418.109, 300.453, 418.109, 260.039, 254.477, 142.219, 254.477, 300.453, 248.641, 300.453, 1019.38, 588.094, 1011.56, 588.094, 1011.56, 418.273, 1019.38, 418.273)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 4, 7, 9), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(8, 9, 12), PackedInt32Array(8, 12, 13), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 17, 20, 22), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(22, 25, 26), PackedInt32Array(21, 22, 26), PackedInt32Array(27, 21, 26, 28), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(28, 29, 32, 33), PackedInt32Array(27, 28, 33, 34), PackedInt32Array(33, 35, 36, 34), PackedInt32Array(37, 38, 39, 8), PackedInt32Array(15, 27, 34, 16), PackedInt32Array(8, 13, 16), PackedInt32Array(8, 16, 37), PackedInt32Array(40, 41, 42, 43)])
+vertices = PackedVector2Array(547.453, 571.953, 339.352, 571.953, 339.352, 568.797, 496.852, 568.797, 547.453, 516.297, 496.852, 516.297, 914.953, 571.953, 759.352, 571.953, 759.352, 568.797, 914.953, 568.797, 1024.37, 571.953, 1021.85, 571.953, 1021.85, 411.297, 1024.37, 411.297, 704.953, 461.203, 601.852, 461.203, 601.852, 411.297, 704.953, 411.297, 442.453, 303.703, 391.852, 303.703, 391.852, 253.797, 442.453, 253.797, 862.453, 303.703, 811.852, 303.703, 811.852, 253.797, 862.453, 253.797, 1024.37, 125.641, 1024.37, 198.703, 1021.85, 198.703, 1021.85, 146.203, 250.227, 125.641, 757.453, 146.203, 757.453, 198.703, 706.852, 198.703, 706.852, 146.203, 599.953, 146.203, 599.953, 198.703, 496.852, 198.703, 496.852, 146.203, 250.227, 146.203)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(30, 26, 29, 31), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(30, 31, 34), PackedInt32Array(30, 34, 35), PackedInt32Array(35, 36, 37, 38), PackedInt32Array(30, 35, 38), PackedInt32Array(30, 38, 39)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(213.644, 95.6428, 1054.37, 95.6428, 1054.37, 623.085, 213.644, 623.085)])
-agent_radius = 35.0
+agent_radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufkc3"]
+size = Vector2(85, 900)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra8ha"]
+size = Vector2(1875, 75)
 
 [node name="Level1" type="Node2D" groups=["signal_emitters"]]
 
@@ -100,9 +106,10 @@ scale = Vector2(1.085, 1.085)
 texture = ExtResource("1_cl1fo")
 metadata/_edit_lock_ = true
 
-[node name="LevelMaster" parent="." groups=["signal_emitters"] instance=ExtResource("1_2c0xe")]
+[node name="LevelMaster" parent="." node_paths=PackedStringArray("nav_master") groups=["signal_emitters"] instance=ExtResource("1_2c0xe")]
 position = Vector2(628, 660)
 scale = Vector2(0.758271, 0.710979)
+nav_master = NodePath("../NavigationMaster")
 
 [node name="CameraMaster" type="Node2D" parent="." groups=["signal_emitters"]]
 script = ExtResource("6_81gjs")
@@ -124,7 +131,50 @@ rotation = 3.14159
 scale = Vector2(3.03308, 2.84392)
 navigation_polygon = SubResource("NavigationPolygon_mu7l1")
 
-[node name="Level" type="Node" parent="NavigationMaster/NavigationRegion2D"]
+[node name="Walls" type="Node2D" parent="NavigationMaster/NavigationRegion2D"]
+position = Vector2(213.644, 95.6428)
+scale = Vector2(0.659396, 0.703255)
+
+[node name="Left" type="Node2D" parent="NavigationMaster/NavigationRegion2D/Walls"]
+
+[node name="RigidBody2D" type="StaticBody2D" parent="NavigationMaster/NavigationRegion2D/Walls/Left"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationMaster/NavigationRegion2D/Walls/Left/RigidBody2D"]
+position = Vector2(-32.5, 375)
+shape = SubResource("RectangleShape2D_ufkc3")
+
+[node name="Right" type="Node2D" parent="NavigationMaster/NavigationRegion2D/Walls"]
+position = Vector2(1289.39, 0)
+scale = Vector2(-1, 1)
+
+[node name="RigidBody2D" type="StaticBody2D" parent="NavigationMaster/NavigationRegion2D/Walls/Right"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationMaster/NavigationRegion2D/Walls/Right/RigidBody2D"]
+position = Vector2(-41.4796, 375)
+shape = SubResource("RectangleShape2D_ufkc3")
+
+[node name="Top" type="Node2D" parent="NavigationMaster/NavigationRegion2D/Walls"]
+position = Vector2(675, -2.24493)
+
+[node name="RigidBody2D" type="StaticBody2D" parent="NavigationMaster/NavigationRegion2D/Walls/Top"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationMaster/NavigationRegion2D/Walls/Top/RigidBody2D"]
+position = Vector2(-75, -38.1637)
+shape = SubResource("RectangleShape2D_ra8ha")
+
+[node name="Bottom" type="Node2D" parent="NavigationMaster/NavigationRegion2D/Walls"]
+position = Vector2(675, 720.621)
+
+[node name="RigidBody2D" type="StaticBody2D" parent="NavigationMaster/NavigationRegion2D/Walls/Bottom"]
+position = Vector2(0, -6.10352e-05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationMaster/NavigationRegion2D/Walls/Bottom/RigidBody2D"]
+position = Vector2(1.32739, 36.8364)
+shape = SubResource("RectangleShape2D_ra8ha")
+
+[node name="Level" type="Node2D" parent="NavigationMaster/NavigationRegion2D"]
+position = Vector2(181.953, 94.9975)
+scale = Vector2(0.7, 0.7)
 
 [node name="Brick" type="Node2D" parent="NavigationMaster/NavigationRegion2D/Level"]
 
@@ -345,7 +395,7 @@ position = Vector2(150, 225)
 position = Vector2(150, 150)
 
 [node name="DiamondNode" parent="NavigationMaster/NavigationRegion2D" instance=ExtResource("3_cvqi3")]
-position = Vector2(658.736, 570.341)
+position = Vector2(654.379, 569.013)
 scale = Vector2(0.25, 0.25)
 
 [node name="MeshUpdateTimer" type="Timer" parent="NavigationMaster/NavigationRegion2D"]
@@ -359,22 +409,22 @@ scale = Vector2(0.355, 0.355)
 position = Vector2(-324, -136)
 
 [node name="EnemyTankNode2D" parent="Enemies" instance=ExtResource("6_1u8ws")]
-position = Vector2(379, 276)
+position = Vector2(513.695, 188.448)
 rotation = 3.14159
 scale = Vector2(0.355, 0.355)
 
 [node name="EnemyTankNode2D2" parent="Enemies" instance=ExtResource("6_1u8ws")]
-position = Vector2(1524, 211)
+position = Vector2(1532.98, 197.53)
 rotation = 3.14159
 scale = Vector2(0.355, 0.355)
 
 [node name="EnemyTankNode2D3" parent="Enemies" instance=ExtResource("6_1u8ws")]
-position = Vector2(624, 436)
+position = Vector2(590.326, 431.51)
 rotation = 1.5708
 scale = Vector2(0.355, 0.355)
 
 [node name="EnemyTankNode2D4" parent="Enemies" instance=ExtResource("6_1u8ws")]
-position = Vector2(1284, 396)
+position = Vector2(1304.2, 355.591)
 rotation = 3.14159
 scale = Vector2(0.355, 0.355)
 

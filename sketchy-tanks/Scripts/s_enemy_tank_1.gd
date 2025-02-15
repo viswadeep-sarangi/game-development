@@ -44,6 +44,7 @@ func fire_normal_bullet():
 	bullet.rotation = fire_point.global_rotation
 	bullet.bullet_speed = tank_bullet_speed
 	bullet.modulate_bullet_color(tank_color)
+	bullet.add_to_group('enemies')
 	get_tree().current_scene.add_child(bullet)
 		
 func check_firing_controls():

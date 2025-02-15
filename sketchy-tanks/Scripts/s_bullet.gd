@@ -20,7 +20,10 @@ func modulate_bullet_color(c:Color):
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group('destructible'):
-		body.hit(hit_point)
+		if is_in_group('enemies') and body.is_in_group('enemies'):
+			pass
+		else:
+			body.hit(hit_point)
 	var boom:Node = implosion_anim.instantiate()
 	boom.global_position = global_position
 	get_parent().add_child(boom)

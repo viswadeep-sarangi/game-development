@@ -5,12 +5,28 @@ var enemies = null
 var diamonds
 @export var num_diamonds:int
 @export var level_num:int = 1
+@export var nav_master:Node2D
+
+func set_wall_positions():
+	for w in ['Left','Right','Top','Bottom']:
+		var wall:Node2D = nav_master.get_node('NavigationRegion2D/Walls/%s'%[w])
+		if w=='Left':
+			wall.global_position = Vector2(0,wall.global_position.y)
+		elif w=='Right':
+			wall.global_position = Vector2(get_viewport_rect().size.x,wall.global_position.y)
+		elif w=='Top':
+			wall.global_position = Vector2(wall.global_position.x,0)
+		elif w=='Bottom':
+			wall.global_position = Vector2(wall.global_position.x,get_viewport_rect().size.y)
+		
 
 func _ready() -> void:
+	await get_tree().process_frame
 	enemies = get_tree().get_nodes_in_group('enemies')
 	num_enemies = len(enemies)
 	diamonds = get_tree().get_nodes_in_group('diamond')
 	num_diamonds = len(diamonds)
+	set_wall_positions()
 
 var receive_signal_in_progress = false
 func receive_signal(value):

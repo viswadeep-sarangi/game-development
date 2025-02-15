@@ -1,37 +1,37 @@
 [gd_scene load_steps=8 format=3 uid="uid://ds3vl6dfvvvik"]
 
-[ext_resource type="Texture2D" uid="uid://bujoqmx5mg7j1" path="res://Assets/water.png" id="1_cgxhf"]
+[ext_resource type="Texture2D" uid="uid://cjl2e0i2w7tth" path="res://Assets/water-filled.png" id="1_dqvmb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uinsr"]
-atlas = ExtResource("1_cgxhf")
-region = Rect2(0, 5, 144, 78)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3as56"]
+atlas = ExtResource("1_dqvmb")
+region = Rect2(0, 0, 136, 122)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxmqb"]
-atlas = ExtResource("1_cgxhf")
-region = Rect2(194, 5, 144, 78)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q652k"]
+atlas = ExtResource("1_dqvmb")
+region = Rect2(192, 0, 136, 122)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mm148"]
-atlas = ExtResource("1_cgxhf")
-region = Rect2(388, 5, 144, 78)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2edb8"]
+atlas = ExtResource("1_dqvmb")
+region = Rect2(384, 0, 136, 122)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fwhdr"]
-atlas = ExtResource("1_cgxhf")
-region = Rect2(582, 5, 144, 78)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t506"]
+atlas = ExtResource("1_dqvmb")
+region = Rect2(576, 0, 136, 122)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7efl0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uinsr")
+"texture": SubResource("AtlasTexture_3as56")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mxmqb")
+"texture": SubResource("AtlasTexture_q652k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mm148")
+"texture": SubResource("AtlasTexture_2edb8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fwhdr")
+"texture": SubResource("AtlasTexture_6t506")
 }],
 "loop": true,
 "name": &"default",
@@ -39,20 +39,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjwea"]
-size = Vector2(136, 75)
+size = Vector2(144, 124)
 
 [node name="water_node" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(0.508606, 1, 0.972666, 1)
-scale = Vector2(0.5, 0.5)
+modulate = Color(0.294739, 0.99985, 1, 1)
+scale = Vector2(0.529412, 0.508197)
 sprite_frames = SubResource("SpriteFrames_7efl0")
 autoplay = "default"
-frame_progress = 0.352971
+frame_progress = 0.0727338
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -0.25)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_mjwea")
