@@ -14,13 +14,11 @@ func _ready() -> void:
 
 func receive_main_signal(type:String, value:String):
 	if type=='loaded_level':
-		ProjectSettings.set_setting('current/level',value)
+		Utils.set_config('current','level',value)
 		main_screen_ui.en_dis_able_levels_ui(false)
 		main_screen_ui.en_dis_able_game_menu_ui(false)
 		main_screen_ui.visible=false
 		Utils.en_dis_able_node(game_level, true)
-		#main_screen_ui.visible = false
-		#game_level.visible = true
 		
 func receive_game_level_signal(task:String, value:String):
 	print("MainScreenUI>receive_game_level_signal:",task,':',value)

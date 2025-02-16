@@ -6,7 +6,7 @@ var diamonds
 @export var num_diamonds:int
 @export var level_num:int = 1
 @export var nav_master:Node2D
-
+@onready var touch_controls_scene=preload("res://Prefabs/touch_screen_control.tscn")
 func set_wall_positions():
 	for w in ['Left','Right','Top','Bottom']:
 		var wall:Node2D = nav_master.get_node('NavigationRegion2D/Walls/%s'%[w])
@@ -27,6 +27,10 @@ func _ready() -> void:
 	diamonds = get_tree().get_nodes_in_group('diamond')
 	num_diamonds = len(diamonds)
 	set_wall_positions()
+	if DisplayServer.is_touchscreen_available():
+		print("Touchscreen detected. Instantiating touch controls.")
+		var touch_controls = touch_controls_scene.instantiate()
+		get_parent().add_child(touch_controls)
 
 var receive_signal_in_progress = false
 func receive_signal(value):

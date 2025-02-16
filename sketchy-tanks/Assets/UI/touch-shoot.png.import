@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c84nuw4gkhnoy"
-path="res://.godot/imported/Sketchy Tanks Tutorial Screen-2.png-48ca4e975e134a5c2d32953c75c91217.ctex"
+uid="uid://2xc28y4kp0f4"
+path="res://.godot/imported/touch-shoot.png-25f3ace3d78cf75c2e4c6a9923613fe0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tutorial/Sketchy Tanks Tutorial Screen-2.png"
-dest_files=["res://.godot/imported/Sketchy Tanks Tutorial Screen-2.png-48ca4e975e134a5c2d32953c75c91217.ctex"]
+source_file="res://Assets/UI/touch-shoot.png"
+dest_files=["res://.godot/imported/touch-shoot.png-25f3ace3d78cf75c2e4c6a9923613fe0.ctex"]
 
 [params]
 
