@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://btthiek8puqmm" path="res://Assets/tank-fire-front-thing.png" id="4_iweqe"]
 [ext_resource type="Texture2D" uid="uid://tbwoo6egfe14" path="res://Assets/tank-top-hatch.png" id="4_nobjc"]
 [ext_resource type="Script" path="res://Scripts/s_tank_animation.gd" id="7_vy1mv"]
+[ext_resource type="Shape2D" uid="uid://bsb2kvortf1dm" path="res://Prefabs/Collision Shapes/tank_node_2d.tres" id="9_kee0t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24bo1"]
 atlas = ExtResource("1_7eds5")
@@ -39,13 +40,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_km8qw"]
-size = Vector2(212, 198)
-
 [node name="TankNode2D" type="CharacterBody2D" groups=["destructible"]]
 collision_layer = 3
 collision_mask = 3
-safe_margin = 2.0
+safe_margin = 10.0
 script = ExtResource("1_cnph8")
 move_speed = 5.0
 bullet_scene = ExtResource("2_7a3vc")
@@ -108,7 +106,7 @@ texture = ExtResource("4_nobjc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["signal_emitters"]]
 position = Vector2(0, -14)
-shape = SubResource("RectangleShape2D_km8qw")
+shape = ExtResource("9_kee0t")
 
 [node name="_animation_helper" type="Node2D" parent="."]
 script = ExtResource("7_vy1mv")

@@ -48,7 +48,7 @@ func receive_signal(value:String):
 		level_sounds.stream = player_hit
 	level_sounds.play()
 
-func receive_level_signal(a:String, b:String):
+func receive_level_signal(_a:String, b:String):
 	if b=="Player Tank Destroyed":
 		level_sounds.stream = player_tank_boom
 	level_sounds.play()
@@ -67,7 +67,7 @@ func receive_main_signal(a:String, b:String):
 	background_player.volume_db = level_background_music_db
 	background_player.play()
 
-func receive_game_level_signal(a:String, b:String):
+func receive_game_level_signal(a:String, _b:String):
 	if a=='main_menu':
 		background_player.stream = ui_background_music
 		print("AudioMaster>Playing main menu background music")

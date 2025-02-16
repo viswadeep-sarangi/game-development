@@ -2,6 +2,24 @@ extends Node
 
 class_name Utils
 
+static var CONFIG_PATH = "user://game_settings.cfg"
+
+static func get_config(section:String, key:String, default:Variant):
+	var config = ConfigFile.new()
+	var err = config.load(CONFIG_PATH)
+	if err!=OK:
+		print("ConfigFile doesn't exist. Returning default %s"%[default])
+		return default
+	else:
+		return config.get_value(section, key, default)
+		
+static func set_config(section:String, key:String, value:Variant):
+	var config = ConfigFile.new()
+	config.set_value(section, key, value)
+	config.save(CONFIG_PATH)
+	print("Saved ConfigFile with section:",section,', key:',key,', value:',value)
+	return true
+
 static func get_all_children(node: Node) -> Array:
 	var children = []
 	for child in node.get_children():

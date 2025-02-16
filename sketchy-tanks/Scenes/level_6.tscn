@@ -112,6 +112,7 @@ metadata/_edit_lock_ = true
 [node name="LevelMaster" parent="." node_paths=PackedStringArray("nav_master") groups=["signal_emitters"] instance=ExtResource("2_dhuq6")]
 position = Vector2(628, 660)
 scale = Vector2(0.758271, 0.710979)
+level_num = 6
 nav_master = NodePath("../NavigationMaster")
 
 [node name="CameraMaster" type="Node2D" parent="." groups=["signal_emitters"]]

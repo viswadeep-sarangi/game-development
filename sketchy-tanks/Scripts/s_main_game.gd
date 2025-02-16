@@ -29,3 +29,8 @@ func receive_game_level_signal(task:String, value:String):
 		main_screen_ui.en_dis_able_levels_ui(false)
 		#main_screen_ui.hide_first_levels_vis_main_menu(false,true)
 		Utils.en_dis_able_node(game_level, false)
+		
+func receive_level_signal(type:String, value:String):
+	if type=='level_won':
+		print("MainGame> Level ",value," won. Updating config")
+		Utils.set_config('completed_levels',value,true)
