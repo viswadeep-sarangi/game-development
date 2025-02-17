@@ -4,14 +4,14 @@ class_name Utils
 
 static var CONFIG_PATH = "user://game_settings.cfg"
 
-static func get_config(section:String, key:String, default:Variant):
+static func get_config(section:String, key:String, default:String):
 	var config = ConfigFile.new()
 	var err = config.load(CONFIG_PATH)
 	if err!=OK:
 		print("ConfigFile doesn't exist. Returning default %s"%[default])
 		return default
 	else:
-		return config.get_value(section, key, default)
+		return config.get_value(section, key, str(default))
 		
 static func set_config(section:String, key:String, value:Variant):
 	var config = ConfigFile.new()

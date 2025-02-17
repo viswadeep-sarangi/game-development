@@ -28,7 +28,7 @@ func en_dis_able_button_on_completed_levels():
 		var x=find_child("Level%dButton"%[i],true,true)
 		if i==1:
 			x.disabled=false
-		elif not Utils.get_config('completed_levels',str(i-1),false):
+		elif not Utils.get_config('completed_levels',str(i-1),'false')=='false':
 			x.disabled=true
 		else:
 			x.disabled=false
@@ -49,10 +49,10 @@ func _on_start_game_button_pressed() -> void:
 		"start_button_pressed", 
 		""
 	)
-	if Utils.get_config('game','first_time',true):
+	if Utils.get_config('game','first_time','true')=='true':
 		var tut = tutorial_ui.instantiate()
 		add_child(tut)
-		Utils.set_config('game','first_time',false)
+		Utils.set_config('game','first_time','false')
 		
 	#$MainLayout/LevelMenuMargin.visible = true
 
