@@ -3,22 +3,38 @@ extends Node
 class_name Utils
 
 static var CONFIG_PATH = "user://game_settings.cfg"
+static var config:=ConfigFile.new()
+static var is_config_loaded:=false
+
+static func ensure_loaded():
+	if not is_config_loaded:
+		var err = config.load(CONFIG_PATH)
+		if err != OK:
+			return false
+		else:
+			is_config_loaded = true
+	return true
 
 static func get_config(section:String, key:String, default:Variant):
-	var config = ConfigFile.new()
-	var err = config.load(CONFIG_PATH)
-	if err!=OK:
+	if ensure_loaded():
+		return config.get_value(section, key, default)
+	else:
 		print("ConfigFile doesn't exist. Returning default %s"%[default])
 		return default
-	else:
-		return config.get_value(section, key, default)
 		
 static func set_config(section:String, key:String, value:Variant):
-	var config = ConfigFile.new()
-	config.set_value(section, key, value)
-	config.save(CONFIG_PATH)
-	print("Saved ConfigFile with section:",section,', key:',key,', value:',value)
-	return true
+	if ensure_loaded():
+		config.set_value(section, key, value)
+		var err = config.save(CONFIG_PATH)
+		if err!=OK:
+			push_error("Couldn't save config")
+			return false
+		else:
+			print("Saved ConfigFile with section:",section,', key:',key,', value:',value)
+			return true
+	else:
+		print("Couldn't load config file")
+		return false
 
 static func get_all_children(node: Node) -> Array:
 	var children = []
