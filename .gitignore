@@ -3,6 +3,11 @@ _executables/
 **/.import/
 **/.godot/
 
+# Godot imports
+**/*.import
+**/export_presets.cfg
+**/*.swp
+
 # Godot editor settings (user-specific)
 **/*.godot
 **/*.godot-sessions
@@ -40,5 +45,12 @@ _executables/
 **/*~
 
 # OS files
-.DS_Store
-Thumbs.db
+**/.DS_Store
+**/Thumbs.db
+
+# Godot script metadata
+**/*.tscn.converted
+**/*.scn.converted
+
+# Compiled files
+**/*.pck
