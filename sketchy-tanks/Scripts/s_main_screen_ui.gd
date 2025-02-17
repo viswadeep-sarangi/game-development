@@ -51,7 +51,7 @@ func _on_start_game_button_pressed() -> void:
 	)
 	var first_time = Utils.get_config('game','first_time',true)
 	print("Got first time config: ",first_time)
-	if first_time:		
+	if first_time:
 		var tut = tutorial_ui.instantiate()
 		add_child(tut)
 		Utils.set_config('game','first_time',false)
