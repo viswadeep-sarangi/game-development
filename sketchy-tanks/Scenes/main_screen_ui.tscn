@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bg3tq855xfpre"]
+[gd_scene load_steps=15 format=3 uid="uid://bg3tq855xfpre"]
 
 [ext_resource type="Theme" uid="uid://bpw84t04e4r2r" path="res://Assets/theme.tres" id="1_6hbom"]
 [ext_resource type="Script" path="res://Scripts/s_main_screen_ui.gd" id="1_sbnxp"]
@@ -6,6 +6,23 @@
 [ext_resource type="Texture2D" uid="uid://d3v0o1l77g7kx" path="res://Assets/back-icon-filled.png" id="4_8rnr3"]
 [ext_resource type="PackedScene" uid="uid://cusu3huqm5hkh" path="res://Prefabs/UI/dialog_box_control.tscn" id="4_tkqs2"]
 [ext_resource type="PackedScene" uid="uid://dab1iot1elxkm" path="res://Prefabs/UI/tutorial.tscn" id="5_t3noa"]
+[ext_resource type="Texture2D" uid="uid://ben4dqqih4fkm" path="res://Assets/sketchy-tanks-banner.png" id="6_4k4sy"]
+[ext_resource type="PackedScene" uid="uid://dv34a0k0m1g07" path="res://Prefabs/UI/credits.tscn" id="6_am4ge"]
+[ext_resource type="Shader" path="res://Prefabs/UI/animated_diagonal_lines.gdshader" id="7_tjf21"]
+[ext_resource type="Texture2D" uid="uid://flxosqds0fg6" path="res://Assets/tank-bg.png" id="8_og7rf"]
+[ext_resource type="Shader" path="res://Prefabs/UI/green_to_red_fade.gdshader" id="9_novew"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_12dps"]
+shader = ExtResource("9_novew")
+shader_parameter/time = 0.7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ao7dy"]
+shader = ExtResource("7_tjf21")
+shader_parameter/speed = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dg5w4"]
+shader = ExtResource("9_novew")
+shader_parameter/time = 0.732
 
 [node name="MainScreenUI" type="Control" node_paths=PackedStringArray("game_menu_margin", "level_ui", "first_level_uis") groups=["level_signals", "main_game_signal_emitters", "ui_signal_emitters"]]
 process_mode = 3
@@ -23,6 +40,7 @@ game_menu_margin = NodePath("OverallHBoxContainer/MainLayout/GameMenuMargin")
 level_ui = NodePath("OverallHBoxContainer/MainLayout/LevelMenuMargin")
 first_level_uis = [NodePath("OverallHBoxContainer/MainLayout/LevelMenuMargin")]
 tutorial_ui = ExtResource("5_t3noa")
+credits = ExtResource("6_am4ge")
 
 [node name="WhiteBGColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -55,6 +73,7 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="GameTitle" type="RichTextLabel" parent="OverallHBoxContainer/MainLayout/GameTitleMargin"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -64,6 +83,13 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 shortcut_keys_enabled = false
+
+[node name="TextureRect" type="TextureRect" parent="OverallHBoxContainer/MainLayout/GameTitleMargin"]
+material = SubResource("ShaderMaterial_12dps")
+layout_mode = 2
+texture = ExtResource("6_4k4sy")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="GameMenuMargin" type="MarginContainer" parent="OverallHBoxContainer/MainLayout"]
 layout_mode = 2
@@ -102,6 +128,14 @@ size_flags_vertical = 3
 [node name="TutorialButton" type="Button" parent="OverallHBoxContainer/MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/TutorialMargin"]
 layout_mode = 2
 text = "TUTORIAL"
+
+[node name="CreditMargin" type="MarginContainer" parent="OverallHBoxContainer/MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CreditlButton" type="Button" parent="OverallHBoxContainer/MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/CreditMargin"]
+layout_mode = 2
+text = "CREDITS"
 
 [node name="ExitGameMargin" type="MarginContainer" parent="OverallHBoxContainer/MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox"]
 layout_mode = 2
@@ -252,14 +286,29 @@ text = "LEVEL 9"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HalfDarkBGColorRect" type="ColorRect" parent="OverallHBoxContainer"]
+[node name="AnimatedBGColorRect" type="ColorRect" parent="OverallHBoxContainer"]
 z_index = 1
+material = SubResource("ShaderMaterial_ao7dy")
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0, 0, 0, 0.901961)
 
+[node name="TextureRect" type="TextureRect" parent="OverallHBoxContainer/AnimatedBGColorRect"]
+material = SubResource("ShaderMaterial_dg5w4")
+layout_mode = 2
+offset_left = -93.0
+offset_top = 397.0
+offset_right = 627.0
+offset_bottom = 798.0
+rotation = -0.490438
+size_flags_horizontal = 3
+texture = ExtResource("8_og7rf")
+expand_mode = 2
+stretch_mode = 5
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="OverallHBoxContainer/MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/StartGameMargin/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="OverallHBoxContainer/MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/TutorialMargin/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="OverallHBoxContainer/MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/CreditMargin/CreditlButton" to="." method="_on_creditl_button_pressed"]
 [connection signal="pressed" from="OverallHBoxContainer/MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/ExitGameMargin/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
 [connection signal="pressed" from="OverallHBoxContainer/MainLayout/LevelMenuMargin/LevelsGridContainer/Level1,4,7,BackPanel/Level1,4,7VBox/BackPanelContainer/BackButton" to="." method="_on_back_button_pressed"]

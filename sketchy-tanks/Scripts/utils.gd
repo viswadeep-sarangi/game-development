@@ -17,6 +17,7 @@ static func ensure_loaded():
 			if err2!=OK:
 				push_error("Couldn't create empty config file")
 			else:
+				print("Empty config file successfully created")
 				is_config_loaded=true
 		else:
 			is_config_loaded = true

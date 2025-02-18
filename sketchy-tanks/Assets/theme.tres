@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bpw84t04e4r2r"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bpw84t04e4r2r"]
 
 [ext_resource type="FontFile" uid="uid://dejmh6pmbia53" path="res://Assets/Font/PermanentMarker-Regular.ttf" id="1_f33rj"]
 
@@ -48,6 +48,9 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv0c8"]
+bg_color = Color(0.830335, 0.830335, 0.830335, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdwg4"]
 content_margin_top = 5.0
 bg_color = Color(1, 1, 1, 0)
@@ -91,6 +94,7 @@ Button/styles/focus = SubResource("StyleBoxFlat_eesrn")
 Button/styles/hover = SubResource("StyleBoxFlat_vucxn")
 Button/styles/normal = SubResource("StyleBoxFlat_pjl6e")
 Button/styles/pressed = SubResource("StyleBoxFlat_piixi")
+Panel/styles/panel = SubResource("StyleBoxFlat_cv0c8")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_sdwg4")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)

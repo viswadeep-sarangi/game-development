@@ -6,6 +6,7 @@ extends Control
 @export var level_ui:CanvasItem
 @export var first_level_uis:Array[MarginContainer]  # level menu margin
 @export var tutorial_ui:PackedScene
+@export var credits:PackedScene
 var playground_child = null
 var dialog_box:CanvasLayer = null
 
@@ -132,3 +133,8 @@ func receive_level_signal(type:String, value:String):
 func _on_tutorial_button_pressed():
 	var tut = tutorial_ui.instantiate()
 	add_child(tut)
+
+
+func _on_creditl_button_pressed():
+	var cre = credits.instantiate()
+	add_child(cre)

@@ -2,6 +2,7 @@ _executables/
 # Godot import and cache directories
 **/.import/
 **/.godot/
+**/*.import
 
 # Godot editor settings (user-specific)
 **/*.godot
