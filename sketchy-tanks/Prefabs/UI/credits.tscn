@@ -4,8 +4,10 @@
 [ext_resource type="Script" path="res://Scripts/s_credits.gd" id="2_wiqoc"]
 
 [sub_resource type="SystemFont" id="SystemFont_bhyrc"]
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_l8msc"]
+subpixel_positioning = 0
 
 [node name="Credits" type="Control"]
 z_index = 4
