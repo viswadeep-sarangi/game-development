@@ -5,15 +5,23 @@ class_name Utils
 static var CONFIG_PATH = "user://game_settings.cfg"
 static var config:=ConfigFile.new()
 static var is_config_loaded:=false
+static var is_config_file_open=true
 
 static func ensure_loaded():
-	if not is_config_loaded:
+	if not is_config_loaded and not is_config_file_open:
+		is_config_file_open=true
 		var err = config.load(CONFIG_PATH)
 		if err != OK:
-			return false
+			is_config_loaded=false
+			var err2 = config.save(CONFIG_PATH)
+			if err2!=OK:
+				push_error("Couldn't create empty config file")
+			else:
+				is_config_loaded=true
 		else:
 			is_config_loaded = true
-	return true
+	is_config_file_open=false
+	return is_config_loaded
 
 static func get_config(section:String, key:String, default:Variant):
 	if ensure_loaded():
