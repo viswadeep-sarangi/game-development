@@ -3,3 +3,5 @@ This repo contains all my experiments with game development AND visual simulatio
 
 # Sketchy Tanks
 Completed on **18th Feb 2025**. Very proud of it! It's in the folder `sketchy-tanks`. Made completely in Godot 4.3. All assets are hand-drawn. Took **4 months** of almost continuous effort. **Wow!**
+
+[sketchy-tanks-gif](.github_assets/SketchyTanksLevel4and5.gif)
