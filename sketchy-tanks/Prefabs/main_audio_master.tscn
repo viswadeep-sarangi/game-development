@@ -1,0 +1,44 @@
+[gd_scene load_steps=14 format=3 uid="uid://wwkjyuilvf8u"]
+
+[ext_resource type="Script" path="res://Scripts/s_audio_master.gd" id="1_sisfe"]
+[ext_resource type="AudioStream" uid="uid://bf8tiutpumc77" path="res://Assets/Audio/bullet hit.mp3" id="2_ec6xh"]
+[ext_resource type="AudioStream" uid="uid://cfwkqewwwfi8l" path="res://Assets/Audio/ui background music.mp3" id="2_hmobv"]
+[ext_resource type="AudioStream" uid="uid://c6on0li8cjl4w" path="res://Assets/Audio/bullet fire.mp3" id="2_qaqq7"]
+[ext_resource type="AudioStream" uid="uid://cvf06s52guj8o" path="res://Assets/Audio/enemy boom.mp3" id="3_03qyf"]
+[ext_resource type="AudioStream" uid="uid://f6mg0vhrc6vw" path="res://Assets/Audio/background level 1 to 3.wav" id="3_ff464"]
+[ext_resource type="AudioStream" uid="uid://ds37gs0lan3cg" path="res://Assets/Audio/background level 4 to 7.wav" id="4_ibp6t"]
+[ext_resource type="AudioStream" uid="uid://c8ujuici3u7rm" path="res://Assets/Audio/brick boom.mp3" id="4_jcmng"]
+[ext_resource type="AudioStream" uid="uid://dsw0134vblnph" path="res://Assets/Audio/player tank boom.mp3" id="5_2wlfx"]
+[ext_resource type="AudioStream" uid="uid://fjmvgqhtxudt" path="res://Assets/Audio/background level 8 to 10.mp3" id="5_bgg3w"]
+[ext_resource type="AudioStream" uid="uid://bu0hwlxpohob3" path="res://Assets/Audio/button click.mp3" id="6_bxib4"]
+[ext_resource type="AudioStream" uid="uid://dtaflr3kbvtki" path="res://Assets/Audio/player hit.mp3" id="6_ir4uf"]
+[ext_resource type="AudioStream" uid="uid://c874n4642mavi" path="res://Assets/Audio/diamond hit.mp3" id="7_5y8jb"]
+
+[node name="MainAudioMaster" type="Node2D" node_paths=PackedStringArray("background_player", "level_sounds", "ui_sounds") groups=["level_signals", "main_game_signal_emitters", "signal_emitters"]]
+position = Vector2(675, 375)
+script = ExtResource("1_sisfe")
+background_player = NodePath("background_music")
+level_sounds = NodePath("level_sound_effects")
+ui_sounds = NodePath("ui_sound_effects")
+ui_background_music = ExtResource("2_hmobv")
+level_1_3_background = ExtResource("3_ff464")
+level_4_7_background = ExtResource("4_ibp6t")
+level_8_10_background = ExtResource("5_bgg3w")
+bullet_fire = ExtResource("2_qaqq7")
+bullet_hit = ExtResource("2_ec6xh")
+enemy_tank_boom = ExtResource("3_03qyf")
+brick_boom = ExtResource("4_jcmng")
+player_hit = ExtResource("6_ir4uf")
+player_tank_boom = ExtResource("5_2wlfx")
+diamond_hit = ExtResource("7_5y8jb")
+button_click = ExtResource("6_bxib4")
+
+[node name="background_music" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+
+[node name="level_sound_effects" type="AudioStreamPlayer2D" parent="."]
+volume_db = -15.0
+
+[node name="ui_sound_effects" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="finished" from="background_music" to="." method="_on_background_music_finished"]

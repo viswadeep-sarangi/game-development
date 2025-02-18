@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch3idhj36fp6u"]
+
+[ext_resource type="Texture2D" uid="uid://cqbkbft0r7lda" path="res://Assets/balls/tennis ball.png" id="1_3q178"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_15piu"]
+radius = 227.266
+
+[node name="TennisRigidBody2D" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_3q178")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CircleShape2D_15piu")

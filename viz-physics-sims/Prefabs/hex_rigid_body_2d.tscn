@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://8hmxs31rklwo"]
+
+[ext_resource type="Texture2D" uid="uid://l47yimiur7uw" path="res://Assets/shiny/12.png" id="1_mvd8u"]
+
+[node name="HexRigidBody2D" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2625, 0.2625)
+texture = ExtResource("1_mvd8u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -0.604103)
+scale = Vector2(0.260417, 0.263152)
+build_mode = 1
+polygon = PackedVector2Array(-120, -55, -51, -125, 49.92, -123.107, 49.92, -123.107, 119.04, -54.7057, 119.04, 44.0966, 50, 113, -49, 113, -120, 43)

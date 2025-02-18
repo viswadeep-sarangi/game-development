@@ -1,0 +1,164 @@
+[gd_scene load_steps=6 format=3 uid="uid://c72y5a0b6suvo"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_e3rco"]
+[ext_resource type="Texture2D" uid="uid://dxntm063hosau" path="res://art/Large_Trees_in_the_Park_Background-219.jpg" id="1_lrds5"]
+[ext_resource type="Texture2D" uid="uid://ctp0myvd1y5jn" path="res://icon.svg" id="3_br3ur"]
+[ext_resource type="FontFile" uid="uid://cfidy6tlqybqp" path="res://fonts/Xolonium-Regular.ttf" id="3_c2ea8"]
+
+[sub_resource type="Curve2D" id="Curve2D_kdwjc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43, 1215, 0, 0, 0, 0, 287, 414, 0, 0, 0, 0, 774, 672, 0, 0, 0, 0, 979, 1063, 0, 0, 0, 0, 947, 201, 0, 0, 0, 0, 1416, 1116, 0, 0, 0, 0, 1547, 254, 0, 0, 0, 0, 1859, 1206, 0, 0, 0, 0, 1904, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1902, 13)
+}
+point_count = 14
+
+[node name="MainNode2D" type="Node2D"]
+script = ExtResource("1_e3rco")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_lrds5")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Background"]
+position = Vector2(762.365, 665.51)
+scale = Vector2(2.7, 2.7)
+
+[node name="Slides" type="Node2D" parent="Background"]
+
+[node name="Slide 0" type="Label" parent="Background/Slides"]
+offset_left = 1751.0
+offset_top = -18.0
+offset_right = 2026.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_c2ea8")
+theme_override_font_sizes/font_size = 64
+text = "SLIDE 9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide 1" type="Label" parent="Background/Slides"]
+offset_left = -71.0
+offset_top = 1155.0
+offset_right = 204.0
+offset_bottom = 1233.0
+theme_override_fonts/font = ExtResource("3_c2ea8")
+theme_override_font_sizes/font_size = 64
+text = "SLIDE 1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide 2" type="Label" parent="Background/Slides"]
+offset_left = 164.0
+offset_top = 380.0
+offset_right = 439.0
+offset_bottom = 458.0
+theme_override_fonts/font = ExtResource("3_c2ea8")
+theme_override_font_sizes/font_size = 64
+text = "SLIDE 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide 3" type="Label" parent="Background/Slides"]
+offset_left = 618.0
+offset_top = 626.0
+offset_right = 893.0
+offset_bottom = 704.0
+theme_override_fonts/font = ExtResource("3_c2ea8")
+theme_override_font_sizes/font_size = 64
+text = "SLIDE 3
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide 4" type="Label" parent="Background/Slides"]
+offset_left = 851.0
+offset_top = 1036.0
+offset_right = 1126.0
+offset_bottom = 1114.0
+theme_override_fonts/font = ExtResource("3_c2ea8")
+theme_override_font_sizes/font_size = 64
+text = "SLIDE 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide 5" type="Label" parent="Background/Slides"]
+offset_left = 815.0
+offset_top = 175.0
+offset_right = 1090.0
+offset_bottom = 253.0
+theme_override_fonts/font = ExtResource("3_c2ea8")
+theme_override_font_sizes/font_size = 64
+text = "SLIDE 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide 6" type="Label" parent="Background/Slides"]
+offset_left = 1280.0
+offset_top = 1066.0
+offset_right = 1555.0
+offset_bottom = 1144.0
+theme_override_fonts/font = ExtResource("3_c2ea8")
+theme_override_font_sizes/font_size = 64
+text = "SLIDE 6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide 7" type="Label" parent="Background/Slides"]
+offset_left = 1405.0
+offset_top = 211.0
+offset_right = 1680.0
+offset_bottom = 289.0
+theme_override_fonts/font = ExtResource("3_c2ea8")
+theme_override_font_sizes/font_size = 64
+text = "SLIDE 7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide 8" type="Label" parent="Background/Slides"]
+offset_left = 1722.0
+offset_top = 1171.0
+offset_right = 1997.0
+offset_bottom = 1249.0
+theme_override_fonts/font = ExtResource("3_c2ea8")
+theme_override_font_sizes/font_size = 64
+text = "SLIDE 8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide 9" type="Label" parent="Background/Slides"]
+offset_left = -139.0
+offset_top = -34.0
+offset_right = 136.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("3_c2ea8")
+theme_override_font_sizes/font_size = 64
+text = "SLIDE 0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_kdwjc")
+metadata/_edit_lock_ = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotation = -1.60745
+rotates = false
+
+[node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
+rotation = -1.53542
+zoom = Vector2(2.5, 2.5)
+
+[node name="TextureRect" type="TextureRect" parent="Path2D/PathFollow2D/Camera2D"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_br3ur")
+expand_mode = 1
+stretch_mode = 3
+flip_h = true
+flip_v = true
+
+[connection signal="screen_entered" from="Background/VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
+[connection signal="screen_exited" from="Background/VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

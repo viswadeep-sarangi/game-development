@@ -1,0 +1,27 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Lbs Presentation"
+run/main_scene="res://Main.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/image="res://art/asda-Logo.png"
+config/icon="res://icon.svg"
+boot_splash/minimum_display_time=500
+
+[display]
+
+window/size/mode=2
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

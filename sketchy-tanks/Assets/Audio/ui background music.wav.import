@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cs1aqghbgrmog"
+path="res://.godot/imported/ui background music.wav-93b0deef599b75421c4b8dff09d12c1d.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/ui background music.wav"
+dest_files=["res://.godot/imported/ui background music.wav-93b0deef599b75421c4b8dff09d12c1d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

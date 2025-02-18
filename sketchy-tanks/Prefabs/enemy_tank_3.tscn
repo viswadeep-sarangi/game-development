@@ -1,0 +1,122 @@
+[gd_scene load_steps=15 format=3 uid="uid://pydp56pu5e2h"]
+
+[ext_resource type="Script" path="res://Scripts/s_enemy_tank_1.gd" id="1_mhxus"]
+[ext_resource type="PackedScene" uid="uid://bdcixrhk06bsk" path="res://Prefabs/bullet_sprite_2d.tscn" id="2_s83ii"]
+[ext_resource type="PackedScene" uid="uid://b1nrgkspeowia" path="res://Prefabs/explosion_tank_anim.tscn" id="3_qs8re"]
+[ext_resource type="Texture2D" uid="uid://dj3spt4pqfcj5" path="res://Assets/tank-wheel-trackers-2.png" id="4_apima"]
+[ext_resource type="Texture2D" uid="uid://cbcedg3cvwbha" path="res://Assets/enemy-3-base.png" id="5_4vcl4"]
+[ext_resource type="Texture2D" uid="uid://6mjwyobb2t00" path="res://Assets/tank-rod.png" id="6_7olbc"]
+[ext_resource type="Texture2D" uid="uid://btthiek8puqmm" path="res://Assets/tank-fire-front-thing.png" id="7_8trwq"]
+[ext_resource type="Texture2D" uid="uid://tbwoo6egfe14" path="res://Assets/tank-top-hatch.png" id="8_ut65h"]
+[ext_resource type="Script" path="res://Scripts/s_tank_animation.gd" id="9_hqrb1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24bo1"]
+atlas = ExtResource("4_apima")
+region = Rect2(18, 0, 77, 262)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rink1"]
+atlas = ExtResource("4_apima")
+region = Rect2(147, 0, 77, 262)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0knk"]
+atlas = ExtResource("4_apima")
+region = Rect2(274, 0, 85, 262)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nm2tl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24bo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rink1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0knk")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_km8qw"]
+size = Vector2(209, 197)
+
+[node name="EnemyTank3_" type="CharacterBody2D" groups=["destructible", "enemies"]]
+collision_layer = 3
+collision_mask = 3
+safe_margin = 2.0
+script = ExtResource("1_mhxus")
+bullet_scene = ExtResource("2_s83ii")
+explosion_anim = ExtResource("3_qs8re")
+move_speed = 4.0
+tank_color = Color(0.999999, 0.496861, 0.47778, 1)
+tank_bullet_speed = 400
+max_health = 6
+
+[node name="track_left" type="AnimatedSprite2D" parent="."]
+position = Vector2(-70, -20)
+sprite_frames = SubResource("SpriteFrames_nm2tl")
+animation = &"move"
+frame = 1
+frame_progress = 0.778616
+
+[node name="track_right" type="AnimatedSprite2D" parent="."]
+position = Vector2(70, -20)
+sprite_frames = SubResource("SpriteFrames_nm2tl")
+animation = &"move"
+
+[node name="tank_base" type="Sprite2D" parent="."]
+texture = ExtResource("5_4vcl4")
+
+[node name="tank_moving_parts" type="Node2D" parent="."]
+
+[node name="tank_rod" type="Sprite2D" parent="tank_moving_parts"]
+position = Vector2(-2, 32)
+rotation = -1.5708
+scale = Vector2(0.75814, 1)
+texture = ExtResource("6_7olbc")
+offset = Vector2(100, 0)
+
+[node name="tank_firing_thing" type="Sprite2D" parent="tank_moving_parts/tank_rod"]
+position = Vector2(244.018, -0.999924)
+texture = ExtResource("7_8trwq")
+offset = Vector2(-50, 0)
+
+[node name="tank_hatch" type="Sprite2D" parent="tank_moving_parts"]
+rotation = -1.5708
+texture = ExtResource("8_ut65h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["signal_emitters"]]
+position = Vector2(-1.5, -13.5)
+shape = SubResource("RectangleShape2D_km8qw")
+
+[node name="_animation_helper" type="Node2D" parent="."]
+script = ExtResource("9_hqrb1")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 64.0
+debug_path_custom_color = Color(0.904815, 0.0196219, 0.522871, 1)
+
+[node name="fire_cooldown_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="direction_cooldown_timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="canvas_layer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="health_bar" type="ColorRect" parent="canvas_layer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = -108.0
+offset_top = 111.0
+offset_right = 108.0
+offset_bottom = 130.0

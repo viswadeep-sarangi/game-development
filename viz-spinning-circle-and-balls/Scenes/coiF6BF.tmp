@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bulkiwxq670e8"]
+
+[ext_resource type="Script" path="res://Scripts/coin_emitter.gd" id="1_d0nb1"]
+[ext_resource type="Texture2D" uid="uid://c85bvqgee5feu" path="res://Assets/shiny/16.png" id="2_pklcg"]
+
+[node name="CoinEmitterNode2D" type="Node2D" node_paths=PackedStringArray("coin_emitter")]
+script = ExtResource("1_d0nb1")
+coin_emitter = NodePath("")
+
+[node name="EmitterNode2D" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="EmitterNode2D"]
+scale = Vector2(0.405, 0.405)
+texture = ExtResource("2_pklcg")

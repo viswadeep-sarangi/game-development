@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdvswxw14hr5s"]
+
+[ext_resource type="Texture2D" uid="uid://b1nihpj2hpavb" path="res://Assets/wood collection/oval wood.png" id="1_f7g7s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a5i26"]
+radius = 118.0
+
+[node name="OvalWoodStaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -1)
+scale = Vector2(0.626728, 1)
+texture = ExtResource("1_f7g7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 7)
+shape = SubResource("CircleShape2D_a5i26")

@@ -1,0 +1,242 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg3tq855xfpre"]
+
+[ext_resource type="Theme" uid="uid://bpw84t04e4r2r" path="res://Assets/theme.tres" id="1_6hbom"]
+[ext_resource type="Script" path="res://Scripts/s_main_screen_ui.gd" id="1_sbnxp"]
+[ext_resource type="PackedScene" uid="uid://cs5456k650dr5" path="res://Prefabs/tank_node_2d.tscn" id="1_vy44l"]
+
+[node name="MainScreenUI" type="Control" groups=["ui_signal_emitters"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6hbom")
+script = ExtResource("1_sbnxp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainLayout" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameTitleMargin" type="MarginContainer" parent="MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GameTitleBackHBoxContainer" type="HBoxContainer" parent="MainLayout/GameTitleMargin"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MainLayout/GameTitleMargin/GameTitleBackHBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BACK"
+
+[node name="GameTitlePanelContainer" type="PanelContainer" parent="MainLayout/GameTitleMargin/GameTitleBackHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.0
+
+[node name="GameTitle" type="RichTextLabel" parent="MainLayout/GameTitleMargin/GameTitleBackHBoxContainer/GameTitlePanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[center]SKETCHY TANKS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="GameMenuMargin" type="MarginContainer" parent="MainLayout"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GameMenu" type="HBoxContainer" parent="MainLayout/GameMenuMargin"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+alignment = 1
+
+[node name="GameButtons" type="PanelContainer" parent="MainLayout/GameMenuMargin/GameMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GameMenuVBox" type="VBoxContainer" parent="MainLayout/GameMenuMargin/GameMenu/GameButtons"]
+layout_mode = 2
+
+[node name="StartGameMargin" type="MarginContainer" parent="MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StartGameButton" type="Button" parent="MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/StartGameMargin"]
+layout_mode = 2
+text = "START GAME"
+
+[node name="ExitGameMargin" type="MarginContainer" parent="MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitGameButton" type="Button" parent="MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/ExitGameMargin"]
+layout_mode = 2
+text = "EXIT GAME"
+
+[node name="Animation" type="PanelContainer" parent="MainLayout/GameMenuMargin/GameMenu"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TankNode2D" parent="MainLayout/GameMenuMargin/GameMenu/Animation" instance=ExtResource("1_vy44l")]
+position = Vector2(493, 313)
+scale = Vector2(0.5, 0.5)
+move_speed = 0.001
+
+[node name="LevelMenuMargin" type="MarginContainer" parent="MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LevelsGridContainer" type="GridContainer" parent="MainLayout/LevelMenuMargin"]
+layout_mode = 2
+columns = 3
+
+[node name="Level1,4,7Panel" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level1,4,7VBox" type="VBoxContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level1,4,7Panel"]
+layout_mode = 2
+
+[node name="Level1PanelContainer" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level1,4,7Panel/Level1,4,7VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level1Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level1,4,7Panel/Level1,4,7VBox/Level1PanelContainer"]
+layout_mode = 2
+text = "LEVEL 1"
+
+[node name="Level4PanelContainer" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level1,4,7Panel/Level1,4,7VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level4Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level1,4,7Panel/Level1,4,7VBox/Level4PanelContainer"]
+layout_mode = 2
+text = "LEVEL 4"
+
+[node name="Level7PanelContainer" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level1,4,7Panel/Level1,4,7VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level7Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level1,4,7Panel/Level1,4,7VBox/Level7PanelContainer"]
+layout_mode = 2
+text = "LEVEL 7"
+
+[node name="EmptyPanel" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level1,4,7Panel/Level1,4,7VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level2,5,8,10Panel" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level2,5,8,10VBoxContainer" type="VBoxContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level2,5,8,10Panel"]
+layout_mode = 2
+
+[node name="Level2PanelContainer" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level2,5,8,10Panel/Level2,5,8,10VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level2Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level2,5,8,10Panel/Level2,5,8,10VBoxContainer/Level2PanelContainer"]
+layout_mode = 2
+text = "LEVEL 2"
+
+[node name="Level5PanelContainer" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level2,5,8,10Panel/Level2,5,8,10VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level5Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level2,5,8,10Panel/Level2,5,8,10VBoxContainer/Level5PanelContainer"]
+layout_mode = 2
+text = "LEVEL 5"
+
+[node name="Level8PanelContainer" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level2,5,8,10Panel/Level2,5,8,10VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level8Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level2,5,8,10Panel/Level2,5,8,10VBoxContainer/Level8PanelContainer"]
+layout_mode = 2
+text = "LEVEL 8"
+
+[node name="Level10PanelContainer" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level2,5,8,10Panel/Level2,5,8,10VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level10Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level2,5,8,10Panel/Level2,5,8,10VBoxContainer/Level10PanelContainer"]
+layout_mode = 2
+text = "LEVEL 7"
+
+[node name="Level3,6,9Panel" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level3,6,9VBoxContainer" type="VBoxContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level3,6,9Panel"]
+layout_mode = 2
+
+[node name="Level3PanelContainer" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level3,6,9Panel/Level3,6,9VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level3Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level3,6,9Panel/Level3,6,9VBoxContainer/Level3PanelContainer"]
+layout_mode = 2
+text = "LEVEL 3"
+
+[node name="Level6PanelContainer" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level3,6,9Panel/Level3,6,9VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level6Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level3,6,9Panel/Level3,6,9VBoxContainer/Level6PanelContainer"]
+layout_mode = 2
+text = "LEVEL 6"
+
+[node name="Level9PanelContainer" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level3,6,9Panel/Level3,6,9VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Level9Button" type="Button" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level3,6,9Panel/Level3,6,9VBoxContainer/Level9PanelContainer"]
+layout_mode = 2
+text = "LEVEL 9"
+
+[node name="EmptyPanel" type="PanelContainer" parent="MainLayout/LevelMenuMargin/LevelsGridContainer/Level3,6,9Panel/Level3,6,9VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="MainLayout/GameTitleMargin/GameTitleBackHBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/StartGameMargin/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MainLayout/GameMenuMargin/GameMenu/GameButtons/GameMenuVBox/ExitGameMargin/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
