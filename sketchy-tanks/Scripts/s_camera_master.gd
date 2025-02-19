@@ -7,11 +7,23 @@ extends Node2D
 @export var shake_deviation = 5
 @export var shake_decay = true
 
+var cam:Camera2D
+var bg:Sprite2D
+
+func fit_to_contents(padding:int=0):
+	var viewport_size = get_viewport_rect().size
+	var _width = bg.get_rect().size.x
+	var _height = bg.get_rect().size.y
+	var zoom_x = viewport_size.x / _width
+	var zoom_y = viewport_size.y / _height
+	cam.zoom = Vector2(min(zoom_x, zoom_y), min(zoom_x, zoom_y))  # Maintain aspect ratio
+	cam.global_position = Vector2(_width / 2, _height / 2)  # Center camera
+
 func _ready():
-	pass
-	#post_process_config.set('ScreenShakePower',0)
-	#post_process_config.VignetteIntensity = 0
-	#post_process_config.L_O_D = 0
+	await get_tree().process_frame
+	bg = get_parent().get_node("BG")
+	cam = get_node("Camera2D")
+	fit_to_contents()
 
 func vignette_pulse():
 	var tween = get_tree().create_tween()	

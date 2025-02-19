@@ -429,28 +429,43 @@ rotation = 3.14159
 scale = Vector2(0.355, 0.355)
 
 [node name="LevelUICanvasLayer" type="CanvasLayer" parent="."]
+process_priority = 6
 
 [node name="LevelUIControl" type="Control" parent="LevelUICanvasLayer"]
+z_index = 6
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("11_ubqed")
 metadata/_edit_lock_ = true
 
 [node name="BackButton" type="Button" parent="LevelUICanvasLayer/LevelUIControl"]
-custom_minimum_size = Vector2(5, 5)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = -1
-anchor_bottom = 0.005
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 192.0
-offset_bottom = 164.4
+anchor_right = 0.15
+anchor_bottom = 0.15
+offset_right = 91.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-icon = ExtResource("11_8r6fr")
+
+[node name="TextureRect" type="TextureRect" parent="LevelUICanvasLayer/LevelUIControl/BackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_8r6fr")
+expand_mode = 3
+stretch_mode = 5
 
 [connection signal="timeout" from="NavigationMaster/NavigationRegion2D/MeshUpdateTimer" to="NavigationMaster" method="_on_mesh_update_timer_timeout"]
 [connection signal="pressed" from="LevelUICanvasLayer/LevelUIControl/BackButton" to="LevelMaster" method="_on_back_button_pressed"]

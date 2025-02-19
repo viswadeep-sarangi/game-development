@@ -57,6 +57,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 
 [node name="Page1MarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin"]
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PageMargin/Page1MarginContainer"]
@@ -183,7 +184,6 @@ expand_mode = 4
 stretch_mode = 5
 
 [node name="Page3MarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin"]
-visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PageMargin/Page3MarginContainer"]
@@ -204,6 +204,7 @@ theme_override_constants/margin_left = 20
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer/TextMarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 40
 text = "Objective"
 fit_content = true
 
@@ -229,7 +230,7 @@ theme_override_constants/margin_left = 10
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 40
 text = "Protect your Gem at all costs
 Destroy ALL enemy tanks"
 fit_content = true
@@ -243,13 +244,6 @@ size_flags_horizontal = 3
 modulate = Color(0.721569, 1, 0.705882, 1)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("3_7lbav")
-expand_mode = 4
-stretch_mode = 5
-
-[node name="TankTextureRect" type="TextureRect" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer/MarginContainer"]
-modulate = Color(0.717647, 1, 0.72549, 1)
-layout_mode = 2
 texture = ExtResource("5_kmrga")
 expand_mode = 4
 stretch_mode = 5
