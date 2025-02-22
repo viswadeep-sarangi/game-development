@@ -10,7 +10,7 @@ extends Node2D
 var cam:Camera2D
 var bg:Sprite2D
 
-func fit_to_contents(padding:int=0):
+func fit_to_contents(_padding:int=0):
 	var viewport_size = get_viewport_rect().size
 	var _width = bg.get_rect().size.x
 	var _height = bg.get_rect().size.y

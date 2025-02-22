@@ -26,21 +26,21 @@ func fire_normal_bullet():
 	bullet.position = fire_point.global_position
 	bullet.rotation = fire_point.global_rotation
 	bullet.modulate_bullet_color(Color(0,0,0))
-	get_tree().current_scene.add_child(bullet)
-	#get_tree().call_group("signal_emitters", "receive_signal", "player_fired_bullet")
-		
-func check_firing_controls():
+	get_tree().current_scene.add_child(bullet)	
+
+func fire_bullet():
 	if fire_cooldown_timer.is_stopped():
-		if Input.is_action_just_pressed('normal_fire'):
 			fire_normal_bullet()
 			fire_cooldown_timer.start()
-		elif Input.is_action_just_pressed('special_fire'):
-			print("Special Fire")
-			fire_cooldown_timer.start()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	check_firing_controls()
+func _process(delta):
+	if Input.is_action_just_pressed("normal_fire"):
+		fire_bullet()
+		
+func _input(event):
+	if not DisplayServer.is_touchscreen_available():
+		if event is InputEventMouseButton and event.pressed:
+			fire_bullet()
 
 func _physics_process(_delta):	
 	# Reset velocity
@@ -60,8 +60,6 @@ func _physics_process(_delta):
 		rotation_degrees = 180
 		velocity.y = move_speed
 		
-	#velocity = velocity.normalized()
-	# Apply movement
 	move_and_collide(velocity)
 	animation_helper.update_velocity(velocity, is_turning_direction)
 	

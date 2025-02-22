@@ -24,31 +24,36 @@ func _draw():
 
 func _ready():
 	await get_tree().process_frame
-	x_half = get_rect().size.x/2
+	x_half = get_viewport_rect().size.x/2
+	print("x_half is ",x_half)
 	joystick_tex.visible = false
 	shoot_tex.visible=false
 
 # Called when the joystick should track touch
 func _input(event):
-	#print("Event detected: ",event)
+	# If touchscreen not available then just fire on mouse click
+	if not DisplayServer.is_touchscreen_available():
+		if event is InputEventMouseButton and event.pressed:
+			get_tree().call_group('player','fire_bullet')
 	# Detect touch start
-	if event is InputEventScreenTouch and event.pressed:
+	elif event is InputEventScreenTouch and event.pressed:
+		print("Event is ",event,", Pressed at ",event.position)
 		if event.position.x<=x_half:
-			print("Event is Touch, Pressed at ",event.position)
 			joystick_active = true
 			start_position = event.position
 			current_position = start_position
 			joystick_tex.global_position = start_position - Vector2(joystick_radius, joystick_radius)
 			joystick_tex.visible = true
 		else:
+			print("Pressing normal-fire now")
+			get_tree().call_group('player','fire_bullet')
 			shoot_icon_countdown.start()
 			shoot_tex.global_position = event.position - Vector2(shoot_radius,shoot_radius)
 			shoot_tex.visible=true
-			Input.action_press("normal_fire")
 
 	# Detect drag
 	if event is InputEventScreenDrag and joystick_active:
-		print("Event is Touch, Dragged at ",event.position)
+		#print("Event is Touch, Dragged at ",event.position)
 		current_position = event.position
 		var drag_vector = current_position - start_position
 		#var distance = drag_vector.length()
@@ -65,7 +70,7 @@ func _input(event):
 	# Detect touch release
 	if event is InputEventScreenTouch and not event.pressed:
 		if joystick_active:
-			print("Event is Touch, Released at ",event.position)
+			#print("Event is Touch, Released at ",event.position)
 			queue_redraw()
 			reset_joystick()
 
