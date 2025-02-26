@@ -1,5 +1,47 @@
-[gd_scene format=3 uid="uid://4optwe1dqqwf"]
+[gd_scene load_steps=6 format=3 uid="uid://4optwe1dqqwf"]
 
-[node name="PlayerNode" type="Node2D"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_jcmt5"]
+[ext_resource type="Texture2D" uid="uid://dr3fayr5tvvmr" path="res://Assets/BG.png" id="2_0fu2x"]
+[ext_resource type="Texture2D" uid="uid://dkq70vt6tfjxx" path="res://Assets/Game/bone.png" id="2_j8m2w"]
+[ext_resource type="PackedScene" uid="uid://bg6knr0xi6b6t" path="res://Prefabs/Game/Parts/torch_node.tscn" id="4_fylmx"]
 
-[node name="TorchNode" type="Node2D" parent="."]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7xg3t"]
+radius = 47.0
+height = 160.0
+
+[node name="PlayerNode" type="CharacterBody2D"]
+script = ExtResource("1_jcmt5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.466181, 0.466181, 0.466181, 1)
+offset_left = -617.0
+offset_top = -391.0
+offset_right = 713.0
+offset_bottom = 365.0
+texture = ExtResource("2_0fu2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_7xg3t")
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Body"]
+position = Vector2(33, -1)
+scale = Vector2(0.402597, 0.363636)
+texture = ExtResource("2_j8m2w")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Body"]
+position = Vector2(56, -16)
+rotation = 1.5708
+scale = Vector2(0.325307, 0.310003)
+texture = ExtResource("2_j8m2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Body/Sprite2D3"]
+position = Vector2(49.1844, 180.643)
+scale = Vector2(3.19365, 3.60239)
+texture = ExtResource("2_j8m2w")
+
+[node name="TorchNode" parent="." instance=ExtResource("4_fylmx")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

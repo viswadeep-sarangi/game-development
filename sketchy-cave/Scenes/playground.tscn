@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn1xwoa20om7m"]
+
+[ext_resource type="Texture2D" uid="uid://dr3fayr5tvvmr" path="res://Assets/BG.png" id="1_rvmh3"]
+[ext_resource type="PackedScene" uid="uid://4optwe1dqqwf" path="res://Prefabs/Game/player.tscn" id="2_u4n0f"]
+
+[node name="Playground" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.550293, 0.550293, 0.550293, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rvmh3")
+
+[node name="PlayerNode" parent="." instance=ExtResource("2_u4n0f")]
+position = Vector2(633, 387)
