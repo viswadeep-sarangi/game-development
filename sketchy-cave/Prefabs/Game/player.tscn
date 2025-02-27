@@ -1,47 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://4optwe1dqqwf"]
+[gd_scene load_steps=7 format=3 uid="uid://4optwe1dqqwf"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_jcmt5"]
-[ext_resource type="Texture2D" uid="uid://dr3fayr5tvvmr" path="res://Assets/BG.png" id="2_0fu2x"]
-[ext_resource type="Texture2D" uid="uid://dkq70vt6tfjxx" path="res://Assets/Game/bone.png" id="2_j8m2w"]
+[ext_resource type="Texture2D" uid="uid://cdnojkq1id67t" path="res://Assets/MVP/player.png" id="3_krwtr"]
+[ext_resource type="Texture2D" uid="uid://dpe170qa47w47" path="res://Assets/MVP/torch.png" id="4_cx1d1"]
 [ext_resource type="PackedScene" uid="uid://bg6knr0xi6b6t" path="res://Prefabs/Game/Parts/torch_node.tscn" id="4_fylmx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7xg3t"]
-radius = 47.0
-height = 160.0
+radius = 58.0
+height = 184.0
 
-[node name="PlayerNode" type="CharacterBody2D"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_trl1a"]
+polygon = PackedVector2Array(8, -8, 9, 17, 23, 69, 42, 79, 33, 84, 8, 84, 4, 53, -7, 34, -11, 56, -15, 82, -45, 89, -45, 80, -28, 71, -23, 19, -23, -21, -36, -17, -38, 1, -31, 10, -42, 12, -41, 21, -57, 9, -52, -5, -45, -37, -17, -46, -24, -60, -50, -53, -52, -65, -22, -71, -20, -87, -6, -90, -1, -78, 24, -74, 26, -66, 5, -62, 1, -51, 14, -36, 25, -26, 39, -34, 41, -55, 60, -54, 51, -19, 42, -13, 23, -9, 9, -20)
+
+[node name="PlayerNode" type="CharacterBody2D" groups=[">>>game_play_level_player"]]
 script = ExtResource("1_jcmt5")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.466181, 0.466181, 0.466181, 1)
-offset_left = -617.0
-offset_top = -391.0
-offset_right = 713.0
-offset_bottom = 365.0
-texture = ExtResource("2_0fu2x")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CapsuleShape2D_7xg3t")
 
 [node name="Body" type="Node2D" parent="."]
 
-[node name="Sprite2D2" type="Sprite2D" parent="Body"]
-position = Vector2(33, -1)
-scale = Vector2(0.402597, 0.363636)
-texture = ExtResource("2_j8m2w")
+[node name="Body" type="TextureRect" parent="Body"]
+offset_left = -65.0
+offset_top = -101.0
+offset_right = 275.0
+offset_bottom = 397.0
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("3_krwtr")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Body"]
-position = Vector2(56, -16)
-rotation = 1.5708
-scale = Vector2(0.325307, 0.310003)
-texture = ExtResource("2_j8m2w")
+[node name="Torch" type="TextureRect" parent="Body"]
+offset_left = 34.0
+offset_top = -64.0
+offset_right = 114.0
+offset_bottom = 60.0
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("4_cx1d1")
 
-[node name="Sprite2D" type="Sprite2D" parent="Body/Sprite2D3"]
-position = Vector2(49.1844, 180.643)
-scale = Vector2(3.19365, 3.60239)
-texture = ExtResource("2_j8m2w")
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_trl1a")
 
 [node name="TorchNode" parent="." instance=ExtResource("4_fylmx")]
+position = Vector2(53, -54)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
