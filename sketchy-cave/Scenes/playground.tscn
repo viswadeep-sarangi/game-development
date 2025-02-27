@@ -1,15 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn1xwoa20om7m"]
+[gd_scene load_steps=6 format=3 uid="uid://bn1xwoa20om7m"]
 
-[ext_resource type="Texture2D" uid="uid://bpl46s03njmdr" path="res://Assets/BG.png" id="1_rvmh3"]
 [ext_resource type="PackedScene" uid="uid://4optwe1dqqwf" path="res://Prefabs/Game/player.tscn" id="2_u4n0f"]
+[ext_resource type="PackedScene" uid="uid://dk8633dhkpbvu" path="res://Prefabs/Game/enemy_1_.tscn" id="3_2nty2"]
+[ext_resource type="PackedScene" uid="uid://bwveyyv1lhgdb" path="res://Prefabs/Game/enemy_2_.tscn" id="4_y874f"]
+[ext_resource type="PackedScene" uid="uid://damkqm60ycajv" path="res://Prefabs/Game/enemy_3_.tscn" id="5_uwc7k"]
+[ext_resource type="PackedScene" uid="uid://b5vdiax26tgu2" path="res://Prefabs/Game/cave_map.tscn" id="5_w0o6p"]
 
 [node name="Playground" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.550293, 0.550293, 0.550293, 1)
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_rvmh3")
+[node name="CaveMap" parent="." groups=[">>>game_play_level_map"] instance=ExtResource("5_w0o6p")]
 
 [node name="PlayerNode" parent="." instance=ExtResource("2_u4n0f")]
-position = Vector2(633, 387)
+position = Vector2(567, 444)
+
+[node name="Enemy1_" parent="." instance=ExtResource("3_2nty2")]
+position = Vector2(136, 154)
+
+[node name="Enemy2_" parent="." instance=ExtResource("4_y874f")]
+position = Vector2(83, 572)
+
+[node name="Enemy3_" parent="." instance=ExtResource("5_uwc7k")]
+position = Vector2(1165, 76)

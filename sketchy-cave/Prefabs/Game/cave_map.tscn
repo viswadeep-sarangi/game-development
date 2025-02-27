@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5vdiax26tgu2"]
+
+[ext_resource type="Texture2D" uid="uid://bpl46s03njmdr" path="res://Assets/BG.png" id="1_lex0w"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3oq1c"]
+vertices = PackedVector2Array(1323.95, 10.9609, 1321.03, 737.07, 12.0469, 746.922, 15.9375, 7.03125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(6, -3, 1334, 1, 1331, 747, 2, 757)])
+
+[node name="CaveMap" type="Node2D"]
+
+[node name="NavigationRegion" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_3oq1c")
+
+[node name="TextureRect" type="TextureRect" parent="NavigationRegion"]
+modulate = Color(0, 0, 0, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_lex0w")

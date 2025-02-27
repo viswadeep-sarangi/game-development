@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwveyyv1lhgdb"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_1.gd" id="1_eujl7"]
+[ext_resource type="Texture2D" uid="uid://dnxj3e4njwaku" path="res://Assets/MVP/enemy2.png" id="2_2ffax"]
+
+[node name="Enemy2_" type="CharacterBody2D"]
+script = ExtResource("1_eujl7")
+speed = 50.0
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Body"]
+offset_left = -48.0
+offset_top = -51.0
+offset_right = 232.0
+offset_bottom = 305.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_2ffax")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(34, 51, 16, 56, -5, 51, -19, 55, -43, 52, -49, 45, -39, 37, -35, -1, -33, -31, -21, -43, 6, -42, 19, -20, 26, 12)
