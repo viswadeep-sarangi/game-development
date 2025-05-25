@@ -1,6 +1,6 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from typing import List, Dict
-from game_manager import GameManager
+from game_server_manager import GameManager
 
 app = FastAPI()
 manager = GameManager()

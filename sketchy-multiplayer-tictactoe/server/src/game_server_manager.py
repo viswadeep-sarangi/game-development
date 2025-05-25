@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 from fastapi import WebSocket
 
 class GameManager:
@@ -27,6 +27,7 @@ class GameManager:
             if board[row][col] == "":
                 board[row][col] = symbol
                 await self.broadcast(game_id, f"UPDATE|{row}|{col}|{symbol}")
+                await self.broadcast(game_id, self.draw_board(self.games[game_id]["board"]))
 
                 if self.check_win(board, symbol):
                     await self.broadcast(game_id, f"WIN|{player_id}")
@@ -47,3 +48,11 @@ class GameManager:
 
     def check_draw(self, board):
         return all(cell != "" for row in board for cell in row)
+    
+    def draw_board(self, board):
+        _board = '\n|'
+        for row in board:
+            for x in row:
+                _board+=f' {x} |'
+            _board+='\n|'
+        return _board
