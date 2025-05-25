@@ -1,7 +1,9 @@
 # TIC TAC TOE - Online Multiplayer
-## This game consists of 2 parts, (1) Server, (2) Client
+## This game consists of 2 parts:
+- ### FastAPI WebSocket Tic Tac Toe Server
+- ### Godot Client
 ----------------------------
-### 📡 (1) FastAPI WebSocket Tic Tac Toe Server
+## 📡 FastAPI WebSocket Tic Tac Toe Server
 This is a lightweight, server-authoritative backend for a multiplayer Tic Tac Toe game, built using FastAPI and WebSockets. The server supports room-based gameplay and real-time communication between two players.
 
 🔗 Clients can be built in any engine or framework that supports WebSocket (e.g., Godot, Unity, JavaScript).
