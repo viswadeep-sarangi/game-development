@@ -9,6 +9,7 @@ This is a lightweight, server-authoritative backend for a multiplayer Tic Tac To
 🔗 Clients can be built in any engine or framework that supports WebSocket (e.g., Godot, Unity, JavaScript).
 
 🚀 Features
+
 ✅ Real-time 2-player WebSocket communication
 
 ✅ Room-based multiplayer via {game_id}
