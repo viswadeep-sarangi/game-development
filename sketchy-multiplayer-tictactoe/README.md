@@ -40,7 +40,7 @@ pip install -r requirements.txt
 ```
 2. Run the server locally
 ```
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn main_server:app --host 0.0.0.0 --port 8000 --reload
 ```
 The server will be available at:
 
@@ -49,7 +49,7 @@ ws://localhost:8000/ws/{game_id}/{player_id}
 ```
 You can test it using:
 
-**Piesocket WebSocket Tester**
+[Piesocket WebSocket Tester](https://piehost.com/websocket-tester)
 
 Or any WebSocket client (including your game)
 ```
