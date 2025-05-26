@@ -84,6 +84,7 @@ fly auth login
 fly launch
 ```
 Choose a name and region, and decline the Postgres option.
+It will build the `fly.toml` file now. Have some patience here.
 
 3. Deploy your server
 ```
