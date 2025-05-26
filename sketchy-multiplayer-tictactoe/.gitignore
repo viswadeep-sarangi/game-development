@@ -18,3 +18,38 @@
 
 # Compiled files
 *.pck
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+*.db
+*.env
+*.env.*
+
+# Virtual environment
+*.venv/
+*venv/
+*ENV/
+*env/
+
+# VS Code settings
+*.vscode/
+
+# macOS
+*.DS_Store
+
+# Fly.io build cache
+*fly.toml.__*
+
+# Build artifacts
+*.egg-info/
+*/dist/
+*/build/
+
+# OS-specific
+*/Thumbs.db
+*/ehthumbs.db

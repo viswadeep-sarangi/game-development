@@ -53,6 +53,7 @@ class GameManager:
         _board = '\n|'
         for row in board:
             for x in row:
+                x = x if x!='' else ' '
                 _board+=f' {x} |'
             _board+='\n|'
         return _board
