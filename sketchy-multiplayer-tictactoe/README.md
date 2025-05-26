@@ -69,6 +69,15 @@ DRAW	Game ended in a draw
 ```
 curl -L https://fly.io/install.sh | sh
 ```
+If in Windows, may have to do this in Powershell
+```
+powershell -Command "iwr https://fly.io/install.ps1 -useb | iex"
+```
+Then might have to add `fly` to the PATH system variable, like so:
+```
+echo 'export PATH="$HOME/.fly/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
 2. Log in and initialize
 ```
 fly auth login
