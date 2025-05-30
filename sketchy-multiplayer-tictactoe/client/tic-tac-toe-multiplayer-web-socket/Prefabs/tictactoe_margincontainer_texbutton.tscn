@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://buqkt7pesgwwd"]
+
+[ext_resource type="Script" path="res://Scripts/tictactoe_cell.gd" id="1_1p12y"]
+[ext_resource type="Texture2D" uid="uid://cickd6hg85bbn" path="res://Assets/BG.png" id="1_s36av"]
+
+[node name="MarginContainer" type="MarginContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+script = ExtResource("1_1p12y")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("1_s36av")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
