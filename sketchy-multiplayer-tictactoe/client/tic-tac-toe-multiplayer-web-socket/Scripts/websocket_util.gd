@@ -3,7 +3,7 @@ class_name WebSocketUtils
 signal connected
 signal connection_error
 signal disconnected
-signal message_received(msg_type: String, data: Array)
+signal message_received(msg: String)
 
 var player_name: String
 var game_id: String
@@ -61,10 +61,10 @@ func send_move(row: int, col: int):
 	send_text_message("MOVE|%d|%d" % [row, col])
 
 func _decode_server_message(msg: String):
-	var parts = msg.split("|")
-	var msg_type = parts[0]
-	var data = parts.slice(1)
-	emit_signal("message_received", msg_type, data)
+	emit_signal("message_received",msg)
+	#var parts = msg.split("|")
+	#var msg_type = parts[0]
+	#var data = parts.slice(1)
 	
 static func generate_short_id(length := 8) -> String:
 	const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

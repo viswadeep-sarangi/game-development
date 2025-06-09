@@ -6,6 +6,7 @@ extends Node2D
 
 @export var main_ui_scene:PackedScene
 @export var game_scene:PackedScene
+var game_instance:Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +15,18 @@ func _ready() -> void:
 	main_ui_instance.connect("create_game", self._on_create_game)
 
 func _on_create_game(player_name:String, game_id:String):
+	if game_instance!=null:
+		game_instance.queue_free()
+	
 	websocketmaster.initialise(player_name, game_id)
-	ui.visible = false
-	var game_instance = game_scene.instantiate()
+	#ui.visible = false
+	game_instance = game_scene.instantiate()
+	game_instance.connect("grid_cell_clicked", websocketmaster.send_player_move)
+	game_instance.connect("game_finished",self._on_game_finished)
+	websocketmaster.connect("message_received", game_instance._on_server_receive_msg)
 	game.add_child(game_instance)
+
+func _on_game_finished():
+	if game_instance!=null:
+		game_instance.queue_free()
+	ui.visible = true

@@ -13,4 +13,4 @@ async def websocket_endpoint(websocket: WebSocket, game_id: str, player_id: str)
             data = await websocket.receive_text()
             await manager.receive_move(game_id, player_id, data)
     except WebSocketDisconnect:
-        manager.disconnect(game_id, player_id)
+        await manager.disconnect(game_id, player_id)

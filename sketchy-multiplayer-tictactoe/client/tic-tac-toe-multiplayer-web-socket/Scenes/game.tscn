@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx6ectwm8gja2"]
+[gd_scene load_steps=7 format=3 uid="uid://dx6ectwm8gja2"]
 
 [ext_resource type="Theme" uid="uid://bb5bcu2h2c4os" path="res://Assets/theme.tres" id="1_kccqh"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="2_mbc8y"]
 [ext_resource type="PackedScene" uid="uid://buqkt7pesgwwd" path="res://Prefabs/tictactoe_margincontainer_texbutton.tscn" id="3_8w7fv"]
+[ext_resource type="Texture2D" uid="uid://bqsoxjm2fscle" path="res://Assets/BG - X.png" id="4_1dx5n"]
+[ext_resource type="Texture2D" uid="uid://yuwgi24bx6fr" path="res://Assets/BG - O.png" id="5_u7qlj"]
+[ext_resource type="PackedScene" uid="uid://bfvx85wy4kci3" path="res://Prefabs/msg_box.tscn" id="6_c4s2r"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -14,6 +17,9 @@ grow_vertical = 2
 theme = ExtResource("1_kccqh")
 script = ExtResource("2_mbc8y")
 margin_cont_button = ExtResource("3_8w7fv")
+x_tex = ExtResource("4_1dx5n")
+o_tex = ExtResource("5_u7qlj")
+msg_box = ExtResource("6_c4s2r")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
