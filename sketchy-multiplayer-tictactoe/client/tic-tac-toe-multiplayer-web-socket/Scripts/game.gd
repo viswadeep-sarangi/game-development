@@ -68,7 +68,14 @@ func _on_server_receive_msg(msg:String):
 		"WIN":
 			emit_signal("game_win", data[0])
 			var x = msg_box.instantiate()
-			x.create_msgbox("Game Win", "OK,CANCEL")
 			game_panel.add_child(x)
+			x.create_msgbox("Game Win", "FINISH GAME")
+			x.connect("msgbox_button_clicked", self._on_msgbox_button_clicked)
 		"DRAW":
 			emit_signal("game_draw")
+			
+func _on_msgbox_button_clicked(button_msg:String):
+	match button_msg:
+		"FINISH GAME":
+			emit_signal("game_finished")
+			queue_free()

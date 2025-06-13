@@ -3,8 +3,8 @@
 [ext_resource type="Theme" uid="uid://bb5bcu2h2c4os" path="res://Assets/theme.tres" id="1_kccqh"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="2_mbc8y"]
 [ext_resource type="PackedScene" uid="uid://buqkt7pesgwwd" path="res://Prefabs/tictactoe_margincontainer_texbutton.tscn" id="3_8w7fv"]
-[ext_resource type="Texture2D" uid="uid://bqsoxjm2fscle" path="res://Assets/BG - X.png" id="4_1dx5n"]
-[ext_resource type="Texture2D" uid="uid://yuwgi24bx6fr" path="res://Assets/BG - O.png" id="5_u7qlj"]
+[ext_resource type="Texture2D" uid="uid://bk6cb3i56utf3" path="res://Assets/BG - X.png" id="4_1dx5n"]
+[ext_resource type="Texture2D" uid="uid://cxufcgr1ihhey" path="res://Assets/BG - O.png" id="5_u7qlj"]
 [ext_resource type="PackedScene" uid="uid://bfvx85wy4kci3" path="res://Prefabs/msg_box.tscn" id="6_c4s2r"]
 
 [node name="Game" type="Control"]

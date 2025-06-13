@@ -49,6 +49,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 bbcode_enabled = true
 text = "[center]Default Message"
+fit_content = true
 
 [node name="ButtonHBoxContainer" type="HBoxContainer" parent="MSGBox/ColorRect/MSGVBox"]
 layout_mode = 2
