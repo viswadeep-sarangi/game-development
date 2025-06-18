@@ -3,7 +3,7 @@ from fastapi import WebSocket
 
 class GameManager:
     def __init__(self):
-        self.games: Dict[str, Dict] = {}  # game_id -> {'players': {}, 'board': []}
+        self.games: Dict[str, Dict] = {}  # game_id -> {'players': {<player_id>: {'websocket': WebSocket, 'symbol': str}}, 'board': []}
 
     async def connect(self, game_id: str, player_id: str, websocket: WebSocket):
         await websocket.accept()
@@ -25,7 +25,11 @@ class GameManager:
         # Notify all players in the game about the new player
         await self.broadcast(game_id, f"JOIN|{player_id}\nPLAYERS|{list(self.games[game_id]['players'].keys())}")
 
-    async def disconnect(self, game_id: str, player_id: str):
+    async def disconnect(self, game_id: str, player_id: str):        
+        if game_id not in self.games or player_id not in self.games[game_id]["players"]:
+            return
+        await self.games[game_id]["players"][player_id]['websocket'].close()
+        # Remove player from the game
         self.games[game_id]["players"].pop(player_id, None)
         await self.broadcast(game_id, f"DISCONNECTED|{player_id}")
 
@@ -42,14 +46,25 @@ class GameManager:
             if board[row][col] == "":
                 board[row][col] = symbol
                 await self.broadcast(game_id, f"UPDATE|{row}|{col}|{symbol}")
+                all_players = list(self.games[game_id]["players"].keys())
+                player_to_move_next = all_players[(all_players.index(player_id) + 1) % len(all_players)]
+                await self.broadcast(game_id, f"NEXT_TURN|{player_to_move_next}")
                 await self.broadcast(game_id, self.draw_board(self.games[game_id]["board"]))
 
                 if self.check_win(board, symbol):
                     await self.broadcast(game_id, f"WIN|{player_id}")
                 elif self.check_draw(board):
                     await self.broadcast(game_id, "DRAW")
+        elif parts[0] == "GAME_FINISHED":
+            await self.broadcast(game_id, "CLOSE_GAME")
+            # Disconnect all players and remove the game
+            for pid in list(self.games[game_id]["players"].keys()):
+                await self.disconnect(game_id, pid)
+            self.games.pop(game_id, None)
 
     async def broadcast(self, game_id: str, message: str):
+        if game_id not in self.games:
+            return
         for ws in self.games[game_id]["players"].values():
             await ws['websocket'].send_text(message)
 
@@ -65,10 +80,11 @@ class GameManager:
         return all(cell != "" for row in board for cell in row)
     
     def draw_board(self, board):
-        _board = '\n|'
-        for row in board:
-            for x in row:
-                x = x if x!='' else ' '
-                _board+=f' {x} |'
-            _board+='\n|'
-        return _board
+        return '\n'.join(['| ' + ' | '.join(cell if cell != '' else ' ' for cell in row) + ' |' for row in board])
+        # _board = '\n|'
+        # for row in board:
+        #     for x in row:
+        #         x = x if x!='' else ' '
+        #         _board+=f' {x} |'
+        #     _board+='\n|'
+        # return _board
