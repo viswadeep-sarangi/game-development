@@ -9,6 +9,9 @@ extends Control
 
 var board:Array
 var grid_button_array:Array
+var player_id:String
+var next_turn_player_id:String = ""
+var game_id:String
 signal grid_cell_clicked(row:int, col:int)
 signal game_win(player_id:String)
 signal game_draw
@@ -43,7 +46,11 @@ func _ready() -> void:
 
 func _on_grid_cell_clicked(row:int, col:int):
 	print("Signal Caught For Cell: ",row," ,",col)
-	if board[row][col]=="":
+	if next_turn_player_id=="":
+		create_msg_box("Please wait for the second player to join", "OK")
+	elif next_turn_player_id!=player_id:
+		create_msg_box("Please wait for your turn", "OK")
+	elif board[row][col]=="":
 		emit_signal("grid_cell_clicked", row, col)
 	else:
 		print("Cell already taken: ",board[row][col])
@@ -67,15 +74,23 @@ func _on_server_receive_msg(msg:String):
 				x.texture_normal=o_tex
 		"WIN":
 			emit_signal("game_win", data[0])
-			var x = msg_box.instantiate()
-			game_panel.add_child(x)
-			x.create_msgbox("Game Win", "FINISH GAME")
-			x.connect("msgbox_button_clicked", self._on_msgbox_button_clicked)
+			create_msg_box("Game Win\n%s Won!"%[data[0]], "FINISH GAME")
 		"DRAW":
 			emit_signal("game_draw")
+			create_msg_box("Game Draw","FINISH GAME")
+		"CLOSE_GAME":
+			emit_signal("game_finished")
+		"NEXT_TURN":
+			next_turn_player_id = data[0]
 			
+			
+func create_msg_box(msg:String,btn_msgs:String):
+	var x = msg_box.instantiate()
+	game_panel.add_child(x)
+	x.create_msgbox(msg, btn_msgs)
+	x.connect("msgbox_button_clicked", self._on_msgbox_button_clicked)
+
 func _on_msgbox_button_clicked(button_msg:String):
 	match button_msg:
 		"FINISH GAME":
 			emit_signal("game_finished")
-			queue_free()

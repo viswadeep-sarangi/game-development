@@ -24,9 +24,13 @@ func _on_create_game(player_name:String, game_id:String):
 	game_instance.connect("grid_cell_clicked", websocketmaster.send_player_move)
 	game_instance.connect("game_finished",self._on_game_finished)
 	websocketmaster.connect("message_received", game_instance._on_server_receive_msg)
+	game_instance.player_id = websocketmaster.get_player_id()
+	game_instance.game_id = websocketmaster.get_game_id()
 	game.add_child(game_instance)
 
 func _on_game_finished():
+	websocketmaster.disconnect("message_received", game_instance._on_server_receive_msg)
+	websocketmaster.send_server_text("GAME_FINISHED")
 	if game_instance!=null:
 		game_instance.queue_free()
 	ui.visible = true

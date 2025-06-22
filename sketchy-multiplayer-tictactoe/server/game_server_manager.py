@@ -9,6 +9,10 @@ class GameManager:
         await websocket.accept()
         if game_id not in self.games:
             self.games[game_id] = {"players": {}, "board": [["" for _ in range(3)] for _ in range(3)]}
+        # Check if game already has two players
+        if len(self.games[game_id]["players"]) >= 2:
+            await websocket.send_text(f"ERROR|Game {game_id} already has two players.")
+            return
         # Check if player already connected
         if player_id in self.games[game_id]["players"]:
             await websocket.send_text(f"ERROR|Player {player_id} already connected to game {game_id}.")
@@ -22,6 +26,7 @@ class GameManager:
             self.games[game_id]["players"][player_id]['symbol'] = "x" # First player is 'x'
         else:
             self.games[game_id]["players"][player_id]['symbol'] = "o" # Second player is 'o'
+            await self.broadcast(game_id, f"NEXT_TURN|{list(self.games[game_id]['players'].keys())[0]}")  # Notify first player to start
         # Notify all players in the game about the new player
         await self.broadcast(game_id, f"JOIN|{player_id}\nPLAYERS|{list(self.games[game_id]['players'].keys())}")
 
@@ -32,6 +37,9 @@ class GameManager:
         # Remove player from the game
         self.games[game_id]["players"].pop(player_id, None)
         await self.broadcast(game_id, f"DISCONNECTED|{player_id}")
+        # If the game has no players left, remove the game
+        if not self.games[game_id]["players"]:
+            self.games.pop(game_id, None)
 
     async def receive_move(self, game_id: str, player_id: str, message: str):
         # Example message: "MOVE|1|2"
@@ -45,16 +53,19 @@ class GameManager:
             board = self.games[game_id]["board"]
             if board[row][col] == "":
                 board[row][col] = symbol
-                await self.broadcast(game_id, f"UPDATE|{row}|{col}|{symbol}")
-                all_players = list(self.games[game_id]["players"].keys())
-                player_to_move_next = all_players[(all_players.index(player_id) + 1) % len(all_players)]
-                await self.broadcast(game_id, f"NEXT_TURN|{player_to_move_next}")
-                await self.broadcast(game_id, self.draw_board(self.games[game_id]["board"]))
 
                 if self.check_win(board, symbol):
                     await self.broadcast(game_id, f"WIN|{player_id}")
                 elif self.check_draw(board):
                     await self.broadcast(game_id, "DRAW")
+                else:
+                    await self.broadcast(game_id, f"UPDATE|{row}|{col}|{symbol}")
+                    all_players = list(self.games[game_id]["players"].keys())
+                    player_to_move_next = all_players[(all_players.index(player_id) + 1) % len(all_players)]
+                    await self.broadcast(game_id, f"NEXT_TURN|{player_to_move_next}")
+                    await self.broadcast(game_id, self.draw_board(self.games[game_id]["board"]))
+
+                
         elif parts[0] == "GAME_FINISHED":
             await self.broadcast(game_id, "CLOSE_GAME")
             # Disconnect all players and remove the game
@@ -80,7 +91,7 @@ class GameManager:
         return all(cell != "" for row in board for cell in row)
     
     def draw_board(self, board):
-        return '\n'.join(['| ' + ' | '.join(cell if cell != '' else ' ' for cell in row) + ' |' for row in board])
+        return '\n'+'\n'.join(['| ' + ' | '.join(cell if cell != '' else ' ' for cell in row) + ' |' for row in board])
         # _board = '\n|'
         # for row in board:
         #     for x in row:
