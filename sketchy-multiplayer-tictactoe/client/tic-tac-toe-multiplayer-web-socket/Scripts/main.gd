@@ -1,18 +1,34 @@
 extends Node2D
+class_name Main
 
 @onready var ui = $UI
 @onready var game = $Game
-@onready var websocketmaster = $WebSocketMaster
+@onready var websocketmaster:WebsockerMaster = $WebSocketMaster
 
 @export var main_ui_scene:PackedScene
 @export var game_scene:PackedScene
 var game_instance:Node
+var main_ui_instance:MainUI
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var main_ui_instance = main_ui_scene.instantiate()
+	main_ui_instance = main_ui_scene.instantiate()
 	ui.add_child(main_ui_instance)
 	main_ui_instance.connect("create_game", self._on_create_game)
+	main_ui_instance.connect("refresh_games", self._on_refresh_games)
+	websocketmaster.connect("waiting_games_fetched", self._on_waiting_games_fetched)
+
+func _on_waiting_games_fetched(games:String):
+	var json = JSON.new()
+	var parsed = json.parse(games)
+	if parsed == OK:
+		main_ui_instance.populate_waiting_games(json)
+	else:
+		print("ERROR Fetching Waiting Games")
+
+func _on_refresh_games():
+	websocketmaster.get_waiting_games()
 
 func _on_create_game(player_name:String, game_id:String):
 	if game_instance!=null:

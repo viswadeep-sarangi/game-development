@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgu0bgj3yiyh1"]
+[gd_scene load_steps=4 format=3 uid="uid://dgu0bgj3yiyh1"]
 
 [ext_resource type="Theme" uid="uid://bb5bcu2h2c4os" path="res://Assets/theme.tres" id="1_ftl0a"]
 [ext_resource type="Script" path="res://Scripts/main_ui.gd" id="2_7ahi4"]
+[ext_resource type="PackedScene" uid="uid://g3idwykqr7tl" path="res://Prefabs/existing_game_button.tscn" id="3_y7jd8"]
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
@@ -12,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ftl0a")
 script = ExtResource("2_7ahi4")
+existing_game_button = ExtResource("3_y7jd8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -81,6 +83,11 @@ text = "CREATE GAME"
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="RefreshGameButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "REFRESH GAMES"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -97,3 +104,4 @@ size_flags_vertical = 3
 text = "JOIN GAME"
 
 [connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/VBoxContainer/CreateGameButton" to="." method="_on_create_game_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/VBoxContainer2/RefreshGameButton" to="." method="_on_refresh_game_button_pressed"]
