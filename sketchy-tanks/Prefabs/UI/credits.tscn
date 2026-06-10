@@ -58,7 +58,8 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 30
-text = "Hope you're enjoying the game!
+text = "Hi I'm Vish! 
+Hope you're enjoying the game!
 Feel free to reach me on:
 "
 fit_content = true
