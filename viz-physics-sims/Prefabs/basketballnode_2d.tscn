@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddvcm5b3ay7v2"]
+
+[ext_resource type="Texture2D" uid="uid://d3jfahwo27pg0" path="res://Assets/balls/basket.png" id="1_wi4dy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7v4dk"]
+radius = 420.03
+
+[node name="BasketballRigidBody2D" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_wi4dy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-07, 1)
+scale = Vector2(0.05, 0.05)
+shape = SubResource("CircleShape2D_7v4dk")

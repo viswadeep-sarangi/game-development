@@ -1,0 +1,5 @@
+{
+	"sketchy_multiplayer_tictactoe": {
+		"websocket_server_url": "wss://server-lingering-breeze-8312.fly.dev"
+	}
+}

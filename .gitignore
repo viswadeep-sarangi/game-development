@@ -1,0 +1,45 @@
+_executables/
+# Godot import and cache directories
+**/.import/
+**/.godot/
+**/*.import
+
+# Godot editor settings (user-specific)
+**/*.godot
+**/*.godot-sessions
+**/.editor_config
+**/.project_metadata
+
+# Exported builds
+**/bin/
+**/export/
+
+# Logs and crash reports
+**/*.log
+**/*.log.*
+**/*.dump
+**/*.trace
+
+# Godot temporary files
+**/*.tmp
+**/*.tmp.*
+
+# IDE/editor files
+**/.vscode/
+**/.idea/
+
+# Mono/C# files
+**/mono_crash.*
+**/*.csproj
+**/*.sln
+**/obj/
+**/bin/
+
+# Backup files
+**/*.bak
+**/*.old
+**/*~
+
+# OS files
+.DS_Store
+Thumbs.db

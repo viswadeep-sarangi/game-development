@@ -1,0 +1,46 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bjy1wccpxksw4"]
+
+[ext_resource type="Texture2D" uid="uid://baq4sunete73g" path="res://Assets/waves-sheet.png" id="1_87pmy"]
+[ext_resource type="Texture2D" uid="uid://b7h16ustrkard" path="res://Assets/diamond-sheet.png" id="2_ycbi5"]
+[ext_resource type="Texture2D" uid="uid://ciprme06qrh1e" path="res://Assets/bricks-sheet.png" id="3_pin4q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_de632"]
+texture = ExtResource("1_87pmy")
+margins = Vector2i(3, 5)
+texture_region_size = Vector2i(16, 15)
+1:1/size_in_atlas = Vector2i(8, 5)
+1:1/animation_separation = Vector2i(4, 0)
+1:1/animation_frame_0/duration = 0.25
+1:1/animation_frame_1/duration = 0.25
+1:1/animation_frame_2/duration = 0.25
+1:1/animation_frame_3/duration = 0.25
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64.1699, -37.8302, 64.1699, -37.4767, 64.3467, 37.8302, -64.17, 37.6534)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hce1n"]
+texture = ExtResource("2_ycbi5")
+texture_region_size = Vector2i(256, 200)
+0:0/animation_frame_0/duration = 0.5
+0:0/animation_frame_1/duration = 0.5
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hert8"]
+texture = ExtResource("3_pin4q")
+margins = Vector2i(30, 33)
+separation = Vector2i(13, 11)
+texture_region_size = Vector2i(150, 150)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-63.6396, -65.0538, 70.7107, -63.6396, 72.1249, 70.7107, -63.6396, 67.8822)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-62.8579, -62.8579, 68.4702, -67.3477, 68.4702, 66.2253, -63.9803, 67.3477)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64.1447, -65.9265, 65.0356, -64.1447, 64.1447, 67.7083, -68.5992, 66.8174)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-69.5926, -67.3477, 65.1028, -63.9803, 61.7354, 69.5927, -68.4702, 69.5927)
+
+[resource]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_de632")
+sources/1 = SubResource("TileSetAtlasSource_hce1n")
+sources/2 = SubResource("TileSetAtlasSource_hert8")

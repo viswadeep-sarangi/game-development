@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx7vbdy8tymci"]
+
+[ext_resource type="Script" path="res://addons/godot-rapier2d/faucet_2d.gd" id="1_my4cn"]
+[ext_resource type="Texture2D" uid="uid://b37cg320wqcvf" path="res://Assets/BG - Black.png" id="2_naulo"]
+[ext_resource type="Texture2D" uid="uid://nslmpkh443xc" path="res://Assets/BG.png" id="3_p4ys5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjnsh"]
+size = Vector2(202, 1164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv8db"]
+size = Vector2(1056, 208)
+
+[node name="FluidNode2D" type="Node2D"]
+
+[node name="BlackSprite2D2" type="Sprite2D" parent="."]
+position = Vector2(303, 618)
+scale = Vector2(1.04812, 1.91931)
+texture = ExtResource("2_naulo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(325, 352.25)
+scale = Vector2(0.490226, 2.11574)
+texture = ExtResource("3_p4ys5")
+
+[node name="leftStaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftStaticBody2D"]
+position = Vector2(-103, 572)
+shape = SubResource("RectangleShape2D_rjnsh")
+
+[node name="rightStaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="rightStaticBody2D2"]
+position = Vector2(753, 577)
+shape = SubResource("RectangleShape2D_rjnsh")
+
+[node name="bottomStaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bottomStaticBody2D3"]
+position = Vector2(333, 1255)
+shape = SubResource("RectangleShape2D_cv8db")
+
+[node name="Faucet2D" type="Fluid2D" parent="."]
+debug_draw = true
+density = 3.45
+position = Vector2(331, 869)
+script = ExtResource("1_my4cn")

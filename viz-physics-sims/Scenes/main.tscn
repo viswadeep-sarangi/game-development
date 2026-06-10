@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy5q5olwqf08f"]
+
+[ext_resource type="Texture2D" uid="uid://nslmpkh443xc" path="res://Assets/BG.png" id="1_w3iq3"]
+[ext_resource type="PackedScene" uid="uid://qh04s8w8vkv6" path="res://Scenes/menu.tscn" id="2_ne68j"]
+[ext_resource type="PackedScene" uid="uid://bqlvl4smjhwqy" path="res://Scenes/high_tower.tscn" id="3_hfrx8"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(573, 326)
+scale = Vector2(1.81094, 1.81094)
+texture = ExtResource("1_w3iq3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 328)
+zoom = Vector2(0.5, 0.5)
+
+[node name="MenuControl" parent="." instance=ExtResource("2_ne68j")]
+visible = false
+
+[node name="TowerBaseNode2D" parent="." instance=ExtResource("3_hfrx8")]
+position = Vector2(191, 348)

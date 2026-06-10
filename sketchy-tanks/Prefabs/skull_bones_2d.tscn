@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://x117ude3r5b7"]
+
+[ext_resource type="Texture2D" uid="uid://cp4smhyyedc3c" path="res://Assets/skull.png" id="1_vt2jd"]
+[ext_resource type="Texture2D" uid="uid://b2t48pxs756ut" path="res://Assets/bone.png" id="2_u12cj"]
+
+[node name="SkullBones2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.534722, 0.534722)
+texture = ExtResource("1_vt2jd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(3, 56)
+rotation = 0.523599
+scale = Vector2(0.681818, 0.37013)
+texture = ExtResource("2_u12cj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(9, 56)
+rotation = 2.61799
+scale = Vector2(0.681818, 0.37013)
+texture = ExtResource("2_u12cj")

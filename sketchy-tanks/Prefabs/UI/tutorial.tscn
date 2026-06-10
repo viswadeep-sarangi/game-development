@@ -1,0 +1,284 @@
+[gd_scene load_steps=8 format=3 uid="uid://dab1iot1elxkm"]
+
+[ext_resource type="Theme" uid="uid://bpw84t04e4r2r" path="res://Assets/theme.tres" id="1_43bp2"]
+[ext_resource type="Texture2D" uid="uid://brw0bgknkyybn" path="res://Assets/UI/tutorial-1-1.png" id="2_02vo5"]
+[ext_resource type="Script" path="res://Scripts/s_tutorial.gd" id="2_je5ps"]
+[ext_resource type="Texture2D" uid="uid://dofq2otaadnsf" path="res://Assets/UI/tank-movement.png" id="3_7lbav"]
+[ext_resource type="Texture2D" uid="uid://rkbs45x4njrl" path="res://Assets/UI/tutorial-1-2.png" id="4_mp5qr"]
+[ext_resource type="Texture2D" uid="uid://bqmnxplmqec0e" path="res://Assets/UI/tank-bullet.png" id="5_kmrga"]
+[ext_resource type="Texture2D" uid="uid://b3whj4kbhrbo2" path="res://Assets/UI/tutorial-3-1.png" id="7_eselv"]
+
+[node name="Tutorial" type="Control" node_paths=PackedStringArray("page_container", "page_1", "page_2", "page_3", "button_1", "button_2")]
+z_index = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_43bp2")
+script = ExtResource("2_je5ps")
+page_container = NodePath("VBoxContainer/PageMargin")
+page_1 = NodePath("VBoxContainer/PageMargin/Page1MarginContainer")
+page_2 = NodePath("VBoxContainer/PageMargin/Page2MarginContainer")
+page_3 = NodePath("VBoxContainer/PageMargin/Page3MarginContainer")
+button_1 = NodePath("VBoxContainer/ButtonsMargin/HBoxContainer/MarginContainer/Button")
+button_2 = NodePath("VBoxContainer/ButtonsMargin/HBoxContainer/MarginContainer2/Button")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleMargin" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/TitleMargin"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Tutorial"
+fit_content = true
+
+[node name="PageMargin" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Page1MarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PageMargin/Page1MarginContainer"]
+layout_mode = 2
+
+[node name="PageMarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page1MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PageMargin/Page1MarginContainer/HBoxContainer/PageMarginContainer"]
+layout_mode = 2
+
+[node name="TextMarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page1MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PageMargin/Page1MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer/TextMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/bold_font_size = 0
+text = "Controls"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page1MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PageMargin/Page1MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_02vo5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="InstructionsMarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page1MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_override_constants/margin_left = 10
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/PageMargin/Page1MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer/InstructionsMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Use keyboard arrow keys, WSAD or touch and drag on left half of screen to move the tank"
+fit_content = true
+scroll_following = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page1MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 10
+
+[node name="TankTextureRect" type="TextureRect" parent="VBoxContainer/PageMargin/Page1MarginContainer/HBoxContainer/MarginContainer"]
+modulate = Color(0.784314, 1, 0.788235, 1)
+layout_mode = 2
+texture = ExtResource("3_7lbav")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Page2MarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PageMargin/Page2MarginContainer"]
+layout_mode = 2
+
+[node name="PageMarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page2MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PageMargin/Page2MarginContainer/HBoxContainer/PageMarginContainer"]
+layout_mode = 2
+
+[node name="TextMarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page2MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PageMargin/Page2MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer/TextMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Controls"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page2MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PageMargin/Page2MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_mp5qr")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="InstructionsMarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page2MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_override_constants/margin_left = 10
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/PageMargin/Page2MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer/InstructionsMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Press Spacebar, Left Mouse Button or Touch on right half of screen to fire bullet"
+fit_content = true
+scroll_following = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page2MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 10
+
+[node name="TankTextureRect" type="TextureRect" parent="VBoxContainer/PageMargin/Page2MarginContainer/HBoxContainer/MarginContainer"]
+modulate = Color(0.796078, 1, 0.756863, 1)
+layout_mode = 2
+texture = ExtResource("5_kmrga")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Page3MarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PageMargin/Page3MarginContainer"]
+layout_mode = 2
+
+[node name="PageMarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer/PageMarginContainer"]
+layout_mode = 2
+
+[node name="TextMarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer/TextMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 40
+text = "Objective"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer/MarginContainer"]
+modulate = Color(0.698039, 1, 1, 1)
+layout_mode = 2
+texture = ExtResource("7_eselv")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="InstructionsMarginContainer" type="MarginContainer" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_override_constants/margin_left = 10
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer/PageMarginContainer/VBoxContainer/InstructionsMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Protect your Gem at all costs
+Destroy ALL enemy tanks"
+fit_content = true
+scroll_following = true
+
+[node name="MarginContainer" type="VBoxContainer" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PageMargin/Page3MarginContainer/HBoxContainer/MarginContainer"]
+modulate = Color(0.721569, 1, 0.705882, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_kmrga")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="ButtonsMargin" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ButtonsMargin"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonsMargin/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="VBoxContainer/ButtonsMargin/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Prev"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/ButtonsMargin/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="VBoxContainer/ButtonsMargin/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Next"
+
+[connection signal="pressed" from="VBoxContainer/ButtonsMargin/HBoxContainer/MarginContainer/Button" to="." method="_on_prev_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonsMargin/HBoxContainer/MarginContainer2/Button" to="." method="_on_next_button_pressed"]

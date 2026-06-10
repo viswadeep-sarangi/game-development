@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdcixrhk06bsk"]
+
+[ext_resource type="Script" path="res://Scripts/s_bullet.gd" id="1_c3t6d"]
+[ext_resource type="Texture2D" uid="uid://cfmouxbd8ikf8" path="res://Assets/normal-bullet.png" id="1_yp6tn"]
+[ext_resource type="PackedScene" uid="uid://cl8fqeulix1n2" path="res://Prefabs/implosion_anim.tscn" id="2_8g5px"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c6yrd"]
+radius = 12.0
+height = 40.0
+
+[node name="BulletRigidBody2D" type="RigidBody2D" groups=["bullets"]]
+mass = 0.001
+gravity_scale = 0.0
+custom_integrator = true
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_c3t6d")
+implosion_anim = ExtResource("2_8g5px")
+
+[node name="BulletSprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_yp6tn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_c6yrd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

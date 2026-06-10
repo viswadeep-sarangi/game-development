@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq3opp3w3ei5k"]
+
+[ext_resource type="Texture2D" uid="uid://qgti526arudt" path="res://Assets/shiny/3.png" id="1_ysikv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q17ot"]
+radius = 30.0
+
+[node name="CircleRigidBody2D" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ysikv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_q17ot")
