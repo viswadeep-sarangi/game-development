@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://d3v0o1l77g7kx" path="res://Assets/back-icon-filled.png" id="4_8rnr3"]
 [ext_resource type="PackedScene" uid="uid://cusu3huqm5hkh" path="res://Prefabs/UI/dialog_box_control.tscn" id="4_tkqs2"]
 [ext_resource type="PackedScene" uid="uid://dab1iot1elxkm" path="res://Prefabs/UI/tutorial.tscn" id="5_t3noa"]
-[ext_resource type="Texture2D" uid="uid://ben4dqqih4fkm" path="res://Assets/sketchy-tanks-banner.png" id="6_4k4sy"]
+[ext_resource type="Texture2D" uid="uid://cbp2m2it0asu4" path="res://Assets/sketchy-tanks-banner.png" id="6_4k4sy"]
 [ext_resource type="PackedScene" uid="uid://dv34a0k0m1g07" path="res://Prefabs/UI/credits.tscn" id="6_am4ge"]
 [ext_resource type="Shader" path="res://Prefabs/UI/animated_diagonal_lines.gdshader" id="7_tjf21"]
-[ext_resource type="Texture2D" uid="uid://flxosqds0fg6" path="res://Assets/tank-bg.png" id="8_og7rf"]
+[ext_resource type="Texture2D" uid="uid://cyfske32siutl" path="res://Assets/tank-bg.png" id="8_og7rf"]
 [ext_resource type="Shader" path="res://Prefabs/UI/green_to_red_fade.gdshader" id="9_novew"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_12dps"]
