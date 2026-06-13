@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://boliybpa1cs1g"]
+[gd_scene load_steps=17 format=3 uid="uid://boliybpa1cs1g"]
 
 [ext_resource type="PackedScene" uid="uid://bg3tq855xfpre" path="res://Scenes/main_screen_ui.tscn" id="1_g5guu"]
 [ext_resource type="Script" path="res://Scripts/s_main_game.gd" id="1_u68us"]
 [ext_resource type="Script" path="res://Scripts/s_game_level.gd" id="2_h4p3u"]
 [ext_resource type="PackedScene" uid="uid://wwkjyuilvf8u" path="res://Prefabs/main_audio_master.tscn" id="4_aoa0c"]
+[ext_resource type="AudioStream" uid="uid://hiaoco6u1u45" path="res://Assets/Audio/ui background music.ogg" id="5_cnqk5"]
+[ext_resource type="AudioStream" uid="uid://c0sem0dkgsqy1" path="res://Assets/Audio/background level 1 to 3.ogg" id="6_hreu3"]
+[ext_resource type="AudioStream" uid="uid://dx37we8285e38" path="res://Assets/Audio/background level 8 to 10.ogg" id="6_s8uyq"]
+[ext_resource type="AudioStream" uid="uid://bhec610o7w2co" path="res://Assets/Audio/background level 4 to 7.ogg" id="7_460jh"]
+[ext_resource type="AudioStream" uid="uid://8qbcsfmjh5y8" path="res://Assets/Audio/bullet fire.ogg" id="7_qk10v"]
+[ext_resource type="AudioStream" uid="uid://d1ssltyokxrxf" path="res://Assets/Audio/bullet hit.ogg" id="8_0yboi"]
+[ext_resource type="AudioStream" uid="uid://b8lpw25i6lhgv" path="res://Assets/Audio/enemy boom.ogg" id="9_c0w4v"]
+[ext_resource type="AudioStream" uid="uid://bit5vtfk3ciie" path="res://Assets/Audio/brick boom.ogg" id="10_j5xt8"]
+[ext_resource type="AudioStream" uid="uid://dwo4vwogcpogd" path="res://Assets/Audio/player hit.ogg" id="11_mggd4"]
+[ext_resource type="AudioStream" uid="uid://bym3t7t5au1g5" path="res://Assets/Audio/player tank boom.ogg" id="12_kxh3b"]
+[ext_resource type="AudioStream" uid="uid://b26wged55ujhy" path="res://Assets/Audio/diamond hit.ogg" id="13_6wfxa"]
+[ext_resource type="AudioStream" uid="uid://f2xtidxq2osi" path="res://Assets/Audio/button click.ogg" id="14_ydwat"]
 
 [node name="MainGame" type="Node" groups=["level_signals", "main_game_signal_emitters"]]
 process_mode = 3
@@ -17,3 +29,15 @@ script = ExtResource("2_h4p3u")
 first_level_uis = []
 
 [node name="MainAudioMaster" parent="." instance=ExtResource("4_aoa0c")]
+ui_background_music = ExtResource("5_cnqk5")
+level_1_3_background = ExtResource("6_hreu3")
+level_4_7_background = ExtResource("7_460jh")
+level_8_10_background = ExtResource("6_s8uyq")
+bullet_fire = ExtResource("7_qk10v")
+bullet_hit = ExtResource("8_0yboi")
+enemy_tank_boom = ExtResource("9_c0w4v")
+brick_boom = ExtResource("10_j5xt8")
+player_hit = ExtResource("11_mggd4")
+player_tank_boom = ExtResource("12_kxh3b")
+diamond_hit = ExtResource("13_6wfxa")
+button_click = ExtResource("14_ydwat")
