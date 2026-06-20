@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8qbcsfmjh5y8"
+path="res://.godot/imported/bullet fire.ogg-5db11795c57ab2856dfe264031e259ac.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/bullet fire.ogg"
+dest_files=["res://.godot/imported/bullet fire.ogg-5db11795c57ab2856dfe264031e259ac.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
