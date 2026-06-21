@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqfp42slyq8ek"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u3qjk"]
+radius = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tpklp"]
+radius = 10.0
+
+[node name="EnemyUnit" type="CharacterBody2D"]
+script = ExtResource("res://scripts/swarm/SwarmUnit.gd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u3qjk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_tpklp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+color = Color.RED
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]

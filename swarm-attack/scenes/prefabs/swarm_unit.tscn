@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxsppchjbblsw"]
+
+[ext_resource type="Script" path="res://scenes/prefabs/SwarmUnit.gd" id="1_4jasd"]
+[ext_resource type="Texture2D" uid="uid://b1u0bpvsscru2" path="res://assets/arrow.png" id="2_upy2b"]
+
+[node name="SwarnUnit" type="CharacterBody2D"]
+script = ExtResource("1_4jasd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_upy2b")

@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="Swarm Attack"
+run/main_scene="res://scenes/game/main_game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalHub="*res://autoload/SignalHub.gd"
+Constants="*res://scripts/utils/Constants.gd"
+LevelManager="res://scripts/managers/LevelManager.gd"
 
 [rendering]
 
