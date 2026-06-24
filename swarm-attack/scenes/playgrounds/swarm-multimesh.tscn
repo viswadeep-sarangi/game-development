@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://x85v1t7qog4"]
+
+[ext_resource type="Script" path="res://scenes/playgrounds/SwarmMultimesh.gd" id="1_iu7hj"]
+[ext_resource type="Texture2D" uid="uid://coldvfawyfq8r" path="res://assets/arrow2.png" id="2_uurkx"]
+
+[node name="Swarm-multimesh" type="Node2D"]
+script = ExtResource("1_iu7hj")
+
+[node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="."]
+texture = ExtResource("2_uurkx")
