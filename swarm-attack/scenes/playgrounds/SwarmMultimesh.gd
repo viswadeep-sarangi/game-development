@@ -1,15 +1,27 @@
 extends Node2D
 class_name SwarmMultiMesh
 
-@export var boid_count := 5000
-@export var speed := 250.0
-@export var turn_rate := 12.0
-@export var spread_radius := 120.0
-@export var return_strength := 1.8
-@export var swirl_strength := 0.9
+@export var boid_count := 100
+@export var speed := 300.0
+@export var turn_rate := 8.0
+@export var spread_radius := 300.0
+@export var return_strength := 2.0
+@export var swirl_strength := 0.5
 @export var boid_scale := Vector2(1.0, 1.0)
 
 @onready var multimesh_instance: MultiMeshInstance2D = $MultiMeshInstance2D
+
+# Flocking mechanism
+@export var cell_size := 75.0
+@export var separation_radius := 30.0
+@export var cohesion_radius := 100.0
+@export var alignment_radius := 120.0
+@export var separation_weight := 5.0
+@export var cohesion_weight := 0.25
+@export var alignment_weight := 2.0
+@export var target_weight := 2.0
+@export var max_neighbours_per_boid := 30
+var grid := {}
 
 var positions: PackedVector2Array
 var velocities: PackedVector2Array
@@ -52,24 +64,103 @@ func _setup_multimesh() -> void:
 	multi.mesh = quad
 
 	multimesh_instance.multimesh = multi
+	
+func _rebuild_grid() -> void:
+	grid.clear()
+	for i in boid_count:
+		var cell := _get_cell(positions[i])
 
+		if not grid.has(cell):
+			grid[cell] = []
+
+		grid[cell].append(i)
+
+func _get_cell(pos: Vector2) -> Vector2i:
+	return Vector2i(
+		floori(pos.x / cell_size),
+		floori(pos.y / cell_size)
+	)
 
 func _update_boids(delta: float, target_position: Vector2) -> void:
+	_rebuild_grid()
+
 	for i in boid_count:
 		var position := positions[i]
 		var velocity := velocities[i]
 
-		var to_target := target_position - position
-		var distance_to_target := to_target.length()
+		var separation := Vector2.ZERO
+		var cohesion := Vector2.ZERO
+		var alignment := Vector2.ZERO
+
+		var separation_count := 0
+		var cohesion_count := 0
+		var alignment_count := 0
+
+		var current_cell := _get_cell(position)
+
+		var checked_neighbours := 0
+		for x in range(-1, 2):
+			for y in range(-1, 2):
+				var neighbour_cell := current_cell + Vector2i(x, y)
+
+				if not grid.has(neighbour_cell):
+					continue
+
+				for other_index in grid[neighbour_cell]:
+					if other_index == i:
+						continue
+
+					checked_neighbours += 1
+					
+					if checked_neighbours > max_neighbours_per_boid:
+						break
+
+					var other_position := positions[other_index]
+					var other_velocity := velocities[other_index]
+
+					var offset := position - other_position
+					var distance_squared := offset.length_squared()
+
+					if distance_squared <= 0.001:
+						continue
+
+					# Separation
+					if distance_squared < separation_radius * separation_radius:
+						var distance := sqrt(distance_squared)
+						var push_strength := 1.0 - (distance / separation_radius)
+						separation += offset.normalized() * push_strength
+						separation_count += 1
+
+					# Cohesion
+					if distance_squared < cohesion_radius * cohesion_radius:
+						cohesion += other_position
+						cohesion_count += 1
+
+					# Alignment
+					if distance_squared < alignment_radius * alignment_radius:
+						alignment += other_velocity
+						alignment_count += 1
 
 		var desired_direction := Vector2.ZERO
 
-		if distance_to_target > 1.0:
-			desired_direction += to_target.normalized() * return_strength
+		if separation_count > 0:
+			separation /= separation_count
+			desired_direction += separation.normalized() * separation_weight
 
-		var tangent := to_target.normalized().rotated(PI / 2.0)
-		var wave := sin(Time.get_ticks_msec() * 0.002 + phases[i])
-		desired_direction += tangent * wave * swirl_strength
+		if cohesion_count > 0:
+			cohesion /= cohesion_count
+			var to_center := cohesion - position
+			if to_center.length() > 0.01:
+				desired_direction += to_center.normalized() * cohesion_weight
+
+		if alignment_count > 0:
+			alignment /= alignment_count
+			if alignment.length() > 0.01:
+				desired_direction += alignment.normalized() * alignment_weight
+
+		var to_target := target_position - position
+		if to_target.length() > 1.0:
+			desired_direction += to_target.normalized() * target_weight
 
 		if desired_direction.length() > 0.01:
 			var current_direction := velocity.normalized()
@@ -86,7 +177,6 @@ func _update_boids(delta: float, target_position: Vector2) -> void:
 
 		positions[i] = position
 		velocities[i] = velocity
-
 
 func _update_multimesh() -> void:
 	var multi := multimesh_instance.multimesh
