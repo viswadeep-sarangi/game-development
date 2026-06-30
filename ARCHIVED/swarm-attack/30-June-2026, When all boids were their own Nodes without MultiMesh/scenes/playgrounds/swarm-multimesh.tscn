@@ -5,7 +5,7 @@
 
 [sub_resource type="Gradient" id="Gradient_p2ttv"]
 offsets = PackedFloat32Array(0.979079)
-colors = PackedColorArray(0.195833, 0.194343, 0.190289, 1)
+colors = PackedColorArray(0.706238, 0.703803, 0.697168, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r0sc6"]
 gradient = SubResource("Gradient_p2ttv")

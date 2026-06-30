@@ -2,8 +2,8 @@ extends Node2D
 class_name SwarmMultiMesh
 
 @export var boid_count := 100
-@export var speed := 300.0
-@export var turn_rate := 8.0
+@export var speed := 200.0
+@export var turn_rate := 4.0
 @export var spread_radius := 300.0
 @export var return_strength := 2.0
 @export var swirl_strength := 0.5
@@ -13,7 +13,7 @@ class_name SwarmMultiMesh
 
 # Flocking mechanism
 @export var cell_size := 75.0
-@export var separation_radius := 30.0
+@export var separation_radius := 25.0
 @export var cohesion_radius := 100.0
 @export var alignment_radius := 120.0
 @export var separation_weight := 5.0
@@ -31,9 +31,12 @@ func _ready() -> void:
 	_setup_arrays()
 	_setup_multimesh()
 
+func _get_target_position() -> Vector2:
+	return global_position
+	
 
 func _process(delta: float) -> void:
-	var target_position := get_global_mouse_position()
+	var target_position := _get_target_position()
 
 	_update_boids(delta, target_position)
 	_update_multimesh()
@@ -189,3 +192,14 @@ func _update_multimesh() -> void:
 		transform = transform.scaled(boid_scale)
 
 		multi.set_instance_transform_2d(i, transform)
+
+func get_swarm_center() -> Vector2:
+	if boid_count <= 0:
+		return global_position
+
+	var center := Vector2.ZERO
+
+	for i in boid_count:
+		center += positions[i]
+
+	return center / boid_count

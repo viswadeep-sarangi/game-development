@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 SignalHub="*res://autoload/SignalHub.gd"
 Constants="*res://scripts/utils/Constants.gd"
-LevelManager="res://scripts/managers/LevelManager.gd"
 
 [rendering]
 

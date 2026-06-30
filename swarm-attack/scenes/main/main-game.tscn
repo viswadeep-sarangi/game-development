@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmvstc3jjmiac"]
+
+[ext_resource type="Script" path="res://scenes/main/LevelManager.gd" id="1_t0frj"]
+[ext_resource type="PackedScene" uid="uid://bp1y71it4o8c2" path="res://scenes/enemy/enemy-swarm.tscn" id="2_gg2fe"]
+[ext_resource type="PackedScene" uid="uid://be8bx6otqjios" path="res://scenes/player/player-swarm.tscn" id="2_vddwa"]
+
+[node name="Main Game" type="Node2D"]
+
+[node name="Level Manager" type="Node2D" parent="." node_paths=PackedStringArray("player_swarm", "enemy_container")]
+script = ExtResource("1_t0frj")
+enemy_scene = ExtResource("2_gg2fe")
+player_swarm = NodePath("../Player Swarm")
+enemy_container = NodePath("../Enemy Container")
+
+[node name="Player Swarm" parent="." instance=ExtResource("2_vddwa")]
+
+[node name="Enemy Container" type="Node2D" parent="."]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://be8bx6otqjios"]
+
+[ext_resource type="Script" path="res://scenes/player/PlayerSwarm.gd" id="1_th1i0"]
+[ext_resource type="Texture2D" uid="uid://coldvfawyfq8r" path="res://assets/arrow2.png" id="2_bar7j"]
+
+[sub_resource type="Gradient" id="Gradient_p2ttv"]
+offsets = PackedFloat32Array(0.979079)
+colors = PackedColorArray(0.706238, 0.703803, 0.697168, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r0sc6"]
+gradient = SubResource("Gradient_p2ttv")
+
+[node name="Player Swarm" type="Node2D"]
+script = ExtResource("1_th1i0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1168.0
+offset_bottom = 658.0
+texture = SubResource("GradientTexture2D_r0sc6")
+
+[node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="."]
+texture = ExtResource("2_bar7j")
